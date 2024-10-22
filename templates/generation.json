@@ -1,0 +1,55 @@
+{
+    "property_address": "11 Coulters Crescent, Carmunnock, Glasgow, G76",
+    "property_overview": [
+      "Rarely available 5 bedroom luxury family home",
+      "Highly private landscaped gardens",
+      "Double garage",
+      "Beautifully presented and equipped to high standards"
+    ],
+    "external_features": [
+      "Substantial gardens with level lawn and patio area",
+      "Fully enclosed rear garden",
+      "Large driveway providing ample parking",
+      "Integral double garage"
+    ],
+    "local_area_highlights": [
+      "Carmunnock is a charming conservation village",
+      "Proximity to Cathkin Braes Country Park, offering outdoor activities and scenic views",
+      "Highly regarded village primary school",
+      "Local amenities include a post office, grocery shop, coffee shop, and popular restaurant",
+      "Well-connected to Glasgow city center via public transport and road links",
+      "Easy access to East Kilbride Shopping Centre",
+      "Close to M77 and M8 motorways for wider travel",
+      "Local golf courses such as Cathkin Braes Golf Club",
+      "Nearby walking and cycling routes"
+    ],
+    "floorplan": [
+      {
+        "ground_floor": {
+          "features": [
+            "Bright living room",
+            "Open plan layout kitchen and dining area",
+            "Impressive dining kitchen with modern units and integrated appliances",
+            "Pantry",
+            "Front-facing Double bedroom / Office",
+            "WC"
+          ]
+        },
+        "first_floor": {
+          "features": [
+            "Six double bedrooms",
+            "Principal bedroom with en-suite and walk-in wardrobe",
+            "Second bedroom with en-suite",
+            "Stylish family bathroom",
+            "Two large cupboards"
+          ]
+        }
+      }
+    ],
+    "additional_notes": [
+      "Positioned within the exclusive Coulter’s Brae development",
+      "Built by Stewart Milne circa 2019",
+      "Kingsmoor style model",
+      "Accommodation in excess of 1570 sq. ft"
+    ]
+  }
