@@ -8,6 +8,7 @@ import time
 import tempfile
 import os
 
+
 def next_step():
     st.session_state.page += 1
     st.rerun()  # Use experimental_rerun to force a rerun
