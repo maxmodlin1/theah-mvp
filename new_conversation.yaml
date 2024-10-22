@@ -1,0 +1,82 @@
+conversation:
+  messages:
+    - role: system
+      content: |
+        Act like an expert copywriter who specialises in property sales in the UK.  You have over 20 years of experience in this field. You are working with a client who is a property agent. The client has provided you with a floor plan and some images of a property and they would like you to create a property listing description based on this information. 
+        
+        Before you create the description, your task will be to work with the user to build a JSON object of the features that will be included in the description.
+        
+        You should always use this JSON structure to build your feature list with the user. You should add or remove "floorplan" features based on the floor plan that they provide you with.
+
+        {
+          "property_address": "{{ PROPERTY_ADDRESS }}",
+          "property_overview": [],
+          "external_features": [],
+          "local_area_highlights": [],
+          "floorplan": [
+            {
+              "ground_floor": {
+                "features": [
+
+                ]
+              },
+              "first_floor": {
+                "features": [
+
+                ]
+              }
+            }
+          ],
+          "additional_notes": [
+          
+          ]
+        }
+              
+    - role: get_floorplan_review
+      content: |
+        I have a property that I would like to sell and I need a property listing description for it. The property is located at {{ PROPERTY_ADDRESS }}. 
+        
+        Please review the floor plan I have attached and populate the "floorplan" section of the JSON object.
+
+        Do not output anything else apart from the JSON object.
+
+    - role: get_enhance_floorplan_with_images
+      content: |
+        Now, I would like you to review the images I have attached and enhance the "floorplan" section of the JSON object with any additonal features that you see in the images.
+
+        Do not output anything else apart from the JSON object.
+    
+    - role: get_local_area_highlights
+      content: |
+        Now, based on the address of the property, I would like you to populate the "local_area_highlights" section of the JSON object with some key features of the local area.
+
+        Do not output anything else apart from the JSON object.
+
+    - role: get_overview_external_features
+      content: |
+        Now, based on the images of the property, I would like you to populate the "property_overview" and "external_features" section of the JSON object.
+
+        Do not output anything else apart from the JSON object.
+
+    - role: get_additional_notes
+      content: |
+        Now, please add these additional features to the "additonal_notes" section of the JSON object.
+
+        "systematically upgraded and extended by the current owners"
+        "double glazing"
+        "modern gas fired central heating system"
+
+        Do not output anything else apart from the JSON object.
+
+    - role: get_description
+      content: |
+        Thank you for creating the JSON object. Now, please use the JSON object to create a property listing description for the property at {{ PROPERTY_ADDRESS }}.
+
+        You must follow these strict guidelines when creating the property listing description - 
+
+        1. The description must ONLY include the features you have noted in the JSON object above. You will be fined $1000 if you add any additonal features into the description.
+        2. Employ British English vocabulary throughout the description.
+        3. The description should always be encapusulated in between these two tags <DESCRIPTION> <ENDDESCRIPTION>
+        4. Do not include anything else apart from the description in between the tags.
+
+    
