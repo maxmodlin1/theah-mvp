@@ -1,15 +1,49 @@
 import json
-import re
+import openai
+from openai import OpenAI
 
-with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
-    data = json.load(f)
+messages = []
 
-property_overview = data.get("property_overview", "")
+def add_message(role, text, image_url=None):
+    content = [{"type": "text", "text": text}]
+    if image_url:
+        content.append({
+            "type": "image_url",
+            "image_url": {
+                "url": image_url,
+            }
+        })
+    message = {
+        "role": role,
+        "content": content
+    }
+    messages.append(message)
 
-# Check if property_overview is a list
-if isinstance(property_overview, list):
-    # Join the list elements into a single string with each element on a new line
-    property_overview = '\n'.join(property_overview)
+add_message(
+    role="user",
+    text="What's in this image?",
+    image_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+)
 
-print(property_overview)
+# Pretty print the messages object
+pretty_messages = json.dumps(messages, indent=4)
+print(pretty_messages)
 
+
+client = OpenAI(api_key="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")
+
+assistant = client.beta.assistants.create(
+    name="Test Image Upload",
+    instructions="Follow my instructions",
+    model="ft:gpt-4o-2024-08-06:personal::AGXYRssh"
+)
+
+thread = client.beta.threads.create()
+
+response = client.beta.threads.messages.create(
+    thread_id=thread.id,
+    role="user",
+    content=messages
+)
+
+print(response)

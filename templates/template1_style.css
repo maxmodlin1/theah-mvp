@@ -229,3 +229,7 @@ h1 {
     border: none;  
     cursor: pointer;  
 }
+
+.custom-markdown {
+    background-color: #f9f9f9;
+}

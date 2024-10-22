@@ -7,7 +7,9 @@ from streamlit.components.v1 import html
 import time
 import tempfile
 import os
-
+import yaml
+import openai
+from openai import OpenAI
 
 def next_step():
     st.session_state.page += 1
@@ -24,14 +26,54 @@ def preprocess_text(text):
         new_text = '\n'.join(text)
     return new_text
 
-def upload_files_openai(image_path, client):
-    upload = client.files.create(
-        file=open(image_path, 'rb'),  # Open the image file in binary mode
-        purpose="vision",
-    )
-    return upload  # Return the list of uploaded image IDs
+def get_theah_content(role_name):
+    for message in st.session_state['theah_convo']['conversation']['messages']:
+        if message['role'] == role_name:
+            return message['content']
+    return None
 
-def create_temp_file(uploaded_file,type=None):
+def add_thread(thread_id,message,role,files=None):
+
+    client = OpenAI(api_key="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")
+
+    messages = []
+
+    if files:
+        
+        msg = {
+            "type": "text",
+            "text": message
+        }
+        messages.append(msg)
+
+        for file in files:
+            file_obj = {
+                "type": "image_file",
+                "image_file": {
+                    "file_id": str(file)
+                }
+            }
+
+            messages.append(file_obj)
+    else:
+        msg = {
+            "type": "text",
+            "text": message
+        }
+        messages.append(msg)
+
+    response = client.beta.threads.messages.create(
+        thread_id=thread_id,
+        role="user",
+        content=messages
+    )
+
+    return messages
+
+def upload_files_openai(uploaded_file,type=None):
+    
+    client = OpenAI(api_key="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")
+
     # Create a temporary directory
     temp_dir = tempfile.mkdtemp()
     
@@ -42,10 +84,77 @@ def create_temp_file(uploaded_file,type=None):
     with open(file_path, "wb") as f:
         f.write(uploaded_file.getvalue())
     
-    # Now you can use file_path as needed
-    st.session_state['floorplan_path'].append(file_path)
-    print(st.session_state['floorplan_path'])
+    # UPLOAD TO OPENAI
+    try:
+        # UPLOAD TO OPENAI
+        upload = client.files.create(
+            file=open(file_path, 'rb'),  # Open the image file in binary mode
+            purpose="vision"
+        )
+        print(f"File uploaded successfully: {upload}")
+    except Exception as e:
+        print(f"An error occurred during file upload: {e}")
 
+    if type == "floorplan":
+        st.session_state['floorplan_id'].append(upload.id)
+        return st.session_state['floorplan_id']
+    elif type == "propertyphotos":
+        st.session_state['property_photo_ids'].append(upload.id)
+        return st.session_state['property_photo_ids']
+
+def go_home():
+    st.session_state.page = 0
+
+def create_assistant(name,instructions,model):
+    
+    client = OpenAI(api_key="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")
+
+    assistant = client.beta.assistants.create(
+        name=name,
+        instructions=instructions,
+        model=st.session_state['model']
+    )
+
+    thread = client.beta.threads.create()
+
+    obj = {"assistantid": assistant.id, "threadid": thread.id}
+
+    return obj
+
+def run_assistant(threadid,assistantid):
+
+    client = OpenAI(api_key="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")
+
+    run = client.beta.threads.runs.create(
+        thread_id=threadid,
+        assistant_id=assistantid
+        )
+
+    while True:
+
+        run_status = client.beta.threads.runs.retrieve(
+            thread_id=threadid, 
+            run_id=run.id
+        )
+
+        if run_status.status == "completed":
+            break
+        elif run_status.status == "failed":
+            print("Run failed:", run_status.last_error)
+            break
+        time.sleep(2)  # wait for 2 seconds before checking again
+
+def print_last_assistant_message(threadid):
+    
+    client = OpenAI(api_key="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")
+
+    messages = client.beta.threads.messages.list(
+            thread_id=threadid
+        )
+    
+    if messages.data:  # Check if there are any messages
+        return (messages.data[0].content[0].text.value) 
+    
 def page_1():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -60,10 +169,9 @@ def page_2():
         
         # Address input fields
         address = st.text_input("Enter the Street Name of the property")
-        postcode = st.text_input("Enter the postcode of the property")
         
         # Update session state with form data
-        st.session_state.form_data.update({"property_address": address, "property_postcode": postcode})
+        st.session_state.form_data.update({"property_address": address})
         
         # Back and Next buttons
         col_back, col_next = st.columns([1, 1])
@@ -75,7 +183,7 @@ def page_2():
                 next_step()
 
 def page_3():
-    st.session_state['floorplan_path'] = []
+ 
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Please upload the floorplan of your property.")
@@ -89,14 +197,14 @@ def page_3():
         with col_next:
             if st.button("Next"):
                 if property_floorplan is not None:
-                    create_temp_file(property_floorplan, type="floorplan")
+                    upload_files_openai(property_floorplan, type="floorplan")
                 next_step()
 
 def page_4():
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Please upload some photos of your property.")
-        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"])
+        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"],accept_multiple_files=True)
         st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
         col_back, col_next = st.columns([1, 1])
         with col_back:
@@ -104,6 +212,27 @@ def page_4():
                 previous_step()
         with col_next:
             if st.button("Next"):
+                print(property_photos)
+                if property_photos:
+                    with st.spinner('Processing...'):
+                        for photo in property_photos:
+                            upload_files_openai(photo, type="propertyphotos")
+                        
+                        # CREATE THE ASSISTANT
+                        name = "Theah Content Generator V2"      
+                        initial_instruction = get_theah_content("system")                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        assistant = create_assistant(name=name,instructions=initial_instruction,model=st.session_state['model'])
+                        st.session_state['assistant_id'] = assistant['assistantid']
+                        st.session_state['thread_id'] = assistant["threadid"]
+                        print(st.session_state['assistant_id'])
+                        print(st.session_state['thread_id'])
+
+                        # REVIEW THE FLOORPLAN  
+                        floorplan_instruction = get_theah_content("get_floorplan_review")   
+                        new_thread_message = add_thread(thread_id=st.session_state['thread_id'] ,message=floorplan_instruction,files=st.session_state['floorplan_id'],role="user")
+                        run_assistant(threadid=st.session_state['thread_id'],assistantid=st.session_state['assistant_id'])
+                        final_json = print_last_assistant_message(threadid=st.session_state['thread_id'])
+                    
                 next_step()
 
 def page_5():
@@ -201,15 +330,47 @@ def page_7():
 
     st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/OverleeRoad/P1311672-Medium.jpg",width=500)
     
-    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/description.txt', 'r') as f:
+    #with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/description.txt', 'r') as f:
+    with open('C:\\Users\\Administrator\\theah-mvp\\templates\\description.txt', 'r') as f:
         desc = f.read()
+        desc = desc.replace('\n', '<br>')
 
-    st.markdown(desc)
+    
+    css = """
+    <style>
+        .custom-markdownn {
+            border: 1px dashed #ffffff; /* Slightly thinner border for a cleaner look */  
+            border-radius: 2px; /* Rounded corners for a modern touch */  
+            padding: 8px 12px; /* Adjusted padding for better alignment */  
+            background-color: #0D1342; /* Light background color for contrast */  
+            font-size: 16px; /* Slightly larger font for readability */  
+            color: #ffffff; /* Darker text color for better readability */  
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+  
 
-def main():  
-    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+        }
+    </style>
+    """
+
+    styled_desc = f"{css}<div class='custom-markdownn'>{desc}</div>"
+
+    # Display the styled markdown content
+    st.markdown(styled_desc, unsafe_allow_html=True)
+
+
+def main(): 
+
+    #with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+    with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
         data = json.load(f)
         st.session_state['data'] = data
+
+    with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
+        theah_convo = yaml.safe_load(file)
+        st.session_state['theah_convo'] = theah_convo
+
+
 
     if 'page' not in st.session_state:
         st.session_state.page = 0
@@ -219,6 +380,17 @@ def main():
 
     if "scroll_to_top" not in st.session_state:
         st.session_state.scroll_to_top = False
+
+    if 'floorplan_id' not in st.session_state:
+        st.session_state['floorplan_id'] = []
+    
+    if 'property_photo_ids' not in st.session_state:
+        st.session_state['property_photo_ids'] = []
+    
+    if 'model' not in st.session_state:
+        st.session_state.model = "ft:gpt-4o-2024-08-06:personal::AGXYRssh"
+
+    st.sidebar.button("New Description", on_click=go_home)
     
     pages = [page_1, page_2, page_3, page_4, page_5, page_6,page_7]
     
