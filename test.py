@@ -1,8 +1,20 @@
 import json
 import openai
 from openai import OpenAI
+import yaml
 
 messages = []
+
+client = OpenAI(api_key="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")
+
+with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+    theah_convo = yaml.safe_load(file)
+
+def get_theah_content(role_name):
+    for message in theah_convo['conversation']['messages']:
+        if message['role'] == role_name:
+            return message['content']
+    return None
 
 def add_message(role, text, image_url=None):
     content = [{"type": "text", "text": text}]
@@ -19,31 +31,32 @@ def add_message(role, text, image_url=None):
     }
     messages.append(message)
 
+
+# # Pretty print the messages object
+# pretty_messages = json.dumps(messages, indent=4)
+# print(pretty_messages)
+
+# Initialize OpenAI client
+openai.api_key = "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"
+
+system = get_theah_content("system")
+floorplan = get_theah_content("get_floorplan_review")
+
 add_message(
     role="user",
-    text="What's in this image?",
-    image_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+    text=floorplan,
+    image_url="https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/CarolsideAvenue/floorplan.jpg"
 )
 
-# Pretty print the messages object
-pretty_messages = json.dumps(messages, indent=4)
-print(pretty_messages)
-
-
-client = OpenAI(api_key="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")
-
-assistant = client.beta.assistants.create(
-    name="Test Image Upload",
-    instructions="Follow my instructions",
-    model="ft:gpt-4o-2024-08-06:personal::AGXYRssh"
+json.dumps(messages, indent=4)
+# Make a chat completion call
+response = client.chat.completions.create(
+    model="ft:gpt-4o-2024-08-06:personal:corum-v1-october:ALQtVsTt",
+    messages=[
+        {"role": "system", "content": system},
+        *messages
+    ],
+    temperature=0
 )
 
-thread = client.beta.threads.create()
-
-response = client.beta.threads.messages.create(
-    thread_id=thread.id,
-    role="user",
-    content=messages
-)
-
-print(response)
+print(response.choices[0].message.content)
