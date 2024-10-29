@@ -32,3 +32,5 @@ print(p)
 
 
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/maxmodlin/maxdev/theah-mvp/maxs-first-project-408116-ea16fdbe2f7a.json"
+
+$env:GOOGLE_APPLICATION_CREDENTIALS = "C:\\Users\\Administrator\\theah-mvp\\maxs-first-project-408116-ea16fdbe2f7a.json"

@@ -187,15 +187,17 @@ h1 {
 
 .stTextArea [data-baseweb="base-input"] {
     background-color: #0D1342;
-    height: 500px !important
+    height: 250px !important;
+    caret-color: #ffffff;
 }
 
 .stTextArea [data-baseweb="base-input"] > textarea {
     color: white !important;
     font-size: 14px;
-    height: 500px !important;
-}
+    height: 250px !important;
+    caret-color: #ffffff;
 
+}
 
 .stTextArea input {  
     border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
@@ -206,8 +208,15 @@ h1 {
     color: #ffffff; /* Darker text color for better readability */  
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
-    height: fit-content;
+    height: 300px;
 }  
+
+
+.stTextInput input::placeholder {
+    color: grey; /* Change this to your desired color */
+    font-size: small;
+    opacity: 1; /* Ensure the opacity is set to 1 for full color */
+}
 
 .orange-text {
     color: orange;

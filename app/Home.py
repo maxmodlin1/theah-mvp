@@ -145,7 +145,9 @@ def upload_files(uploaded_file,type=None):
         return st.session_state['property_photo_urls']
 
 def go_home():
+    st.session_state.clear()
     st.session_state.page = 0
+    st.rerun()
 
 def create_assistant(name,instructions,model):
     
@@ -330,11 +332,11 @@ def generate_description():
 
     # Make a chat completion call
     response = client.chat.completions.create(
-        model="ft:gpt-4o-2024-08-06:personal:corum-v1-october:ALQtVsTt",
+        model="ft:gpt-4o-2024-08-06:personal:corum-beta-v2-gendescriptions:ANSZjUc7",
         messages=[
             *st.session_state['chat_messages']
         ],
-        temperature=0.1
+        temperature=0.2
     )
 
     content = response.choices[0].message.content
@@ -353,7 +355,7 @@ def page_2():
         st.title("Where is the property located?")
         
         # Address input fields
-        address = st.text_input("Enter the Street Name of the property")
+        address = st.text_input("Enter the Street Name and Postcode of the property",placeholder='1 Overlee Road, Clarkston, Glasgow, G76')
         st.session_state['property_address'] = address
         
         # Back and Next buttons
@@ -383,10 +385,32 @@ def page_3():
                     if property_floorplan is not None:
                         upload_files(uploaded_file=property_floorplan, type="floorplan")
                         print(st.session_state['floorplan_url'])
-                        make_floorplan_review_call(st.session_state['floorplan_url'])
                 next_step()
 
 def page_4():
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.title("Please upload some photos of your property.")
+        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"],accept_multiple_files=True)
+        st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
+        col_back, col_next = st.columns([1, 1])
+        with col_back:
+            if st.button("Back"):
+                previous_step()
+        with col_next:
+            if st.button("Next"):
+                print(property_photos)
+                if property_photos:
+                    with st.spinner('Processing...'):
+                        for photo in property_photos:
+                            upload_files(photo, type="propertyphotos")
+                        print("Now making the call..")
+                        make_floorplan_review_call(st.session_state['floorplan_url'])
+                    next_step()
+                else:
+                    st.error("Please upload at least one photo")
+
+def page_5():
     st.title("Floorplan Review")
     col_back, col_next = st.columns([2, 1])
     with col_back:
@@ -394,10 +418,11 @@ def page_4():
             previous_step()
     with col_next:
         if st.button("Next"):
+            generate_json()
             next_step()
 
     st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
-    st.write("Please confirm we've got the floor plan features correct. You can add or remove floor plan specifics as you see fit. This helps us to tailor a truly accurate listing description.")
+    st.write("We've reviewed the floorplan— now it’s your turn to help us bring each room to life. By adding details about each space, you’ll help us craft a captivating description of your property. The more specifics you share, the better the result!")
     st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
 
     if 'floorplan_url' in st.session_state:
@@ -420,7 +445,7 @@ def page_4():
             existing_features = '\n'.join(st.session_state.selected_features[floor_name])
 
             # Add a text area for editing features
-            updated_features = st.text_area(f"Edit features for {formatted_floor_name}", value=existing_features, key=f"features_{floor_name}")
+            updated_features = st.text_area(f"{formatted_floor_name}: Please review and expand on each feature found on the floorplan.", value=existing_features, key=f"features_{floor_name}")
 
             # Split the updated features into a list
             updated_features_list = updated_features.split('\n')
@@ -439,29 +464,6 @@ def page_4():
     # Scroll to top after rerun if needed
     if st.session_state.scroll_to_top:
         st.session_state.scroll_to_top = True
-
-def page_5():
-    col1, col2 = st.columns([2, 1])
-    with col1:
-        st.title("Please upload some photos of your property.")
-        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"],accept_multiple_files=True)
-        st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
-        col_back, col_next = st.columns([1, 1])
-        with col_back:
-            if st.button("Back"):
-                previous_step()
-        with col_next:
-            if st.button("Next"):
-                print(property_photos)
-                if property_photos:
-                    with st.spinner('Processing...'):
-                        for photo in property_photos:
-                            upload_files(photo, type="propertyphotos")
-                        print("Now making the call..")
-                        generate_json()
-                    next_step()
-                else:
-                    st.error("Please upload at least one photo")
 
 def page_6():
     st.title("Your Property Summary.")
@@ -484,7 +486,7 @@ def page_6():
                 st.session_state.scroll_to_top = True
                 st.rerun()
     st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
-    st.write("We've summarized your property in 4 steps. Please verify you are happy with these points. You can add or remove as required.")
+    st.write("We’ve captured the key highlights of your property in four simple sections. Please review them and make any adjustments you’d like—feel free to add or remove details to ensure everything feels just right.")
 
     # Add a text area for property overview
     property_overview = st.session_state['json_object'].get("property_overview", "")
@@ -564,12 +566,13 @@ def page_7():
 
 def main(): 
 
-    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
-    #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
+    #with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+    with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
         data = json.load(f)
         st.session_state['data'] = data
 
-    with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+    #with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+    with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
         theah_convo = yaml.safe_load(file)
         st.session_state['theah_convo'] = theah_convo
 
