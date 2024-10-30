@@ -140,3 +140,30 @@ conversation:
           
           Take a deep breath and work on this problem step-by-step.
 
+    - role: user_validate
+      content: |
+        Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. 
+
+        You specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.
+
+        A client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. 
+
+        Your task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.
+
+        To perform this task:
+
+        - Compare each feature in the description with those listed in the JSON object.
+        - Remove any features or language that are not factually supported by the JSON.
+        - Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.
+
+        Provide the revised property listing description only, without extra explanations or comments.
+
+        Take a deep breath and work on this problem step-by-step.
+
+        ### JSON OBJECT ###
+        
+        {{ JSON }}
+
+        ### ORIGINAL DESCRIPTION ###
+          
+        {{ DESCRIPTION }}

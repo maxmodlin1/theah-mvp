@@ -1,8 +1,4 @@
 import streamlit as st  
-from streamlit_carousel import carousel
-import streamlit.components.v1 as components
-
-
 from styling import template1_page_style
 import json
 import re
@@ -16,60 +12,36 @@ import openai
 from openai import OpenAI
 from google.cloud import storage
 import random
-import logging
-import pyperclip
-
-
-# Configure logging
-logging.basicConfig(
-    level=logging.DEBUG,  # Set the logging level
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),  # Log to console
-        logging.FileHandler("app.log")  # Log to file
-    ]
-)
-
-# Set logging levels for specific libraries
-logging.getLogger('httpx').setLevel(logging.WARNING)
-logging.getLogger('google.auth').setLevel(logging.WARNING)
-logging.getLogger('urllib3').setLevel(logging.WARNING)
-logging.getLogger('http').setLevel(logging.WARNING)
-logging.getLogger('openai').setLevel(logging.WARNING)
-logging.getLogger('httpcore').setLevel(logging.WARNING)
-
-logger = logging.getLogger(__name__)
 
 def update_json_object(key, value):
-    logger.debug(f"Updating JSON object: {key} = {value}")
     st.session_state['json_object'][key] = value
 
 def next_step():
-    logger.info("User selected the next step")
     st.session_state.page += 1
-    st.rerun()
+    st.rerun()  # Use experimental_rerun to force a rerun
 
 def previous_step():
-    logger.info("User selected the previous step")
     st.session_state.page -= 1
-    st.rerun()
+    st.rerun()  # Use experimental_rerun to force a rerun
 
 def preprocess_text(text):
-    logger.debug(f"Preprocessing text: {text}")
+    # Check if property_overview is a list
     if isinstance(text, list):
+        # Join the list elements into a single string with each element on a new line
         new_text = '\n'.join(text)
     return new_text
 
 def get_theah_content(role_name):
-    logger.debug(f"Getting content for role: {role_name}")
     for message in st.session_state['theah_convo']['conversation']['messages']:
         if message['role'] == role_name:
             return message['content']
     return None
 
 def add_message(role, text, image_url=None):
-    logger.debug(f"Building the message to send to OpenAI")
+    content = []
+
     content = [{"type": "text", "text": text}]
+
     if image_url is not None:
         for img in image_url:
             content.append({
@@ -79,43 +51,91 @@ def add_message(role, text, image_url=None):
                     "detail": "high"
                 }
             })
-    message = {"role": role, "content": content}
+            
+    message = {
+        "role": role,
+        "content": content
+    }
+
+    print(message)
+
     st.session_state['chat_messages'].append(message)
 
-def add_thread(thread_id, message, role, files=None):
-    logger.debug(f"Adding thread: thread_id={thread_id}, message={message}, role={role}, files={files}")
+def add_thread(thread_id,message,role,files=None):
+
     client = OpenAI(api_key="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")
-    messages = [{"type": "text", "text": message}]
+
+    messages = []
+
     if files:
+        
+        msg = {
+            "type": "text",
+            "text": message
+        }
+        messages.append(msg)
+
         for file in files:
-            file_obj = {"type": "image_url", "image_file": {"file_id": str(file)}}
+            file_obj = {
+                "type": "image_url",
+                "image_file": {
+                    "file_id": str(file)
+                }
+            }
+
             messages.append(file_obj)
-    response = client.beta.threads.messages.create(thread_id=thread_id, role="user", content=messages)
+    else:
+        msg = {
+            "type": "text",
+            "text": message
+        }
+        messages.append(msg)
+
+    response = client.beta.threads.messages.create(
+        thread_id=thread_id,
+        role="user",
+        content=messages
+    )
+
     return messages
 
-def upload_to_gcs(source_file_path, file_name):
-    #logger.debug(f"Uploading to GCS: source_file_path={source_file_path}, file_name={file_name}")
+def upload_to_gcs(source_file_path,file_name):
+
     bucket_name = "bucket-quickstart_maxs-first-project-408116"
     destination_blob_name = f"client_uploads/{file_name}"
+
+    # Initialize the storage client
     storage_client = storage.Client()
+
+    # Get the bucket
     bucket = storage_client.bucket(bucket_name)
+
+    # Create a blob object and upload the file
     try:
         blob = bucket.blob(destination_blob_name)
         blob.upload_from_filename(source_file_path)
+        #print(f"File {source_file_path} uploaded to gs://{bucket_name}/{destination_blob_name}")
         public_url = f"https://storage.googleapis.com/{bucket_name}/{destination_blob_name}"
-        logger.info(f"File uploaded to GCS: {public_url}")
         return str(public_url)
     except Exception as e:
-        logger.error(f"An error occurred during GCS upload: {e}")
+        print(f"An error occurred: {e}")
 
-def upload_files(uploaded_file, type=None):
-    #logger.debug(f"Uploading file: {uploaded_file.name}, type={type}")
+def upload_files(uploaded_file,type=None):
+    
     client = OpenAI(api_key="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")
+
+    # Create a temporary directory
     temp_dir = tempfile.mkdtemp()
+    
+    # Define the path where the file will be saved
     file_path = os.path.join(temp_dir, uploaded_file.name)
+    
+    # Write the uploaded file to the temporary directory
     with open(file_path, "wb") as f:
         f.write(uploaded_file.getvalue())
-    upload_google_cloud = upload_to_gcs(source_file_path=file_path, file_name=uploaded_file.name)
+    
+    upload_google_cloud = upload_to_gcs(source_file_path=file_path,file_name=uploaded_file.name)
+
     if type == "floorplan":
         st.session_state['floorplan_url'].append(upload_google_cloud)
         return st.session_state['floorplan_url']
@@ -124,198 +144,272 @@ def upload_files(uploaded_file, type=None):
         return st.session_state['property_photo_urls']
 
 def go_home():
-    logger.info("Returning to home page")
     st.session_state.clear()
     st.session_state.page = 0
     st.rerun()
 
-def create_assistant(name, instructions, model):
-    logger.debug(f"Creating assistant: name={name}, instructions={instructions}, model={model}")
+def create_assistant(name,instructions,model):
+    
     client = OpenAI(api_key="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")
-    assistant = client.beta.assistants.create(name=name, instructions=instructions, model=st.session_state['model'])
+
+    assistant = client.beta.assistants.create(
+        name=name,
+        instructions=instructions,
+        model=st.session_state['model']
+    )
+
     thread = client.beta.threads.create()
+
     obj = {"assistantid": assistant.id, "threadid": thread.id}
+
     return obj
 
-def run_assistant(threadid, assistantid):
-    logger.debug(f"Running assistant: threadid={threadid}, assistantid={assistantid}")
+def run_assistant(threadid,assistantid):
+
     client = OpenAI(api_key="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")
-    run = client.beta.threads.runs.create(thread_id=threadid, assistant_id=assistantid)
+
+    run = client.beta.threads.runs.create(
+        thread_id=threadid,
+        assistant_id=assistantid
+        )
+
     while True:
-        run_status = client.beta.threads.runs.retrieve(thread_id=threadid, run_id=run.id)
+
+        run_status = client.beta.threads.runs.retrieve(
+            thread_id=threadid, 
+            run_id=run.id
+        )
+
         if run_status.status == "completed":
             break
         elif run_status.status == "failed":
-            logger.error(f"Run failed: {run_status.last_error}")
+            print("Run failed:", run_status.last_error)
             break
-        time.sleep(2)
+        time.sleep(2)  # wait for 2 seconds before checking again
 
 def print_last_assistant_message(threadid):
-    logger.debug(f"Printing last assistant message: threadid={threadid}")
+    
     client = OpenAI(api_key="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")
-    messages = client.beta.threads.messages.list(thread_id=threadid)
-    if messages.data:
-        return messages.data[0].content[0].text.value
+
+    messages = client.beta.threads.messages.list(
+            thread_id=threadid
+        )
+    
+    if messages.data:  # Check if there are any messages
+        return (messages.data[0].content[0].text.value) 
 
 def generate_json():
+    print("----------------------------------------------------------")
     st.session_state['chat_messages'] = []
     client = OpenAI(api_key="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")
     json_obj = st.session_state['json_object']
     json_str = json.dumps(json_obj)
     system = get_theah_content("system_buildjson")
+
+    # system_prompt = system.replace('{{ JSON }}', json_str)
+    # system_prompt = system_prompt.replace('{{ PROPERTY_ADDRESS }}', str(st.session_state['property_address']))
+
+    print("SYSTEM!")
+    print(system)
+
     features_update = get_theah_content("user_buildjson")
     features_update = features_update.replace('{{ JSON }}', json_str)
 
-    add_message(role="system", text=system)
-    add_message(role="user", text=features_update, image_url=st.session_state['property_photo_urls'])
-    logger.info("Sending the following JSON object to OpenAI to populate the JSON...")
-    prettyjson = json.dumps(st.session_state['chat_messages'], indent=8)
-    logger.debug(prettyjson)
+    add_message(
+        role="system",
+        text=system
+    )
 
+    add_message(
+        role="user",
+        text=features_update,
+        image_url=st.session_state['property_photo_urls']
+    )
+
+    print("SENDING------->")
+
+    print(st.session_state['chat_messages'])
+    m = st.session_state['chat_messages']
+    json_print = json.dumps(m, indent=4)
+    print(json_print)
+
+    # Make a chat completion call
     response = client.chat.completions.create(
         model="ft:gpt-4o-2024-08-06:personal::ANMvB86e",
-        messages=st.session_state['chat_messages'],
+        messages=[
+            *st.session_state['chat_messages']
+        ],
         temperature=0.1
     )
+
     content = response.choices[0].message.content
 
     try:
+        # Parse the content to a dictionary
         new_data = json.loads(content)
-        prettyjson = json.dumps(new_data, indent=4)
-        logger.debug("The Response from OpenAI and presented to the user..")
-        logger.debug(prettyjson)
-
+        print("NEW DATA")
+        print(new_data)
+        
+        # Update the relevant fields
         if 'local_area_highlights' in new_data:
             st.session_state['json_object']['local_area_highlights'] = new_data['local_area_highlights']
         if 'property_overview' in new_data:
             st.session_state['json_object']['property_overview'] = new_data['property_overview']
         if 'external_features' in new_data:
             st.session_state['json_object']['external_features'] = new_data['external_features']
+        print("Updated json_object:", st.session_state['json_object'])
     except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse JSON: {e}")
+        print("Failed to parse JSON:", e)
 
-def make_floorplan_review_call(floorplan_url):
+def make_floorplan_review_call(floorplan_url):   
+    
+    floorurl = st.session_state['floorplan_url']
+    print("Floorplan")
+    for i in st.session_state['floorplan_url']: 
+        print(i)
+    
+ 
     client = OpenAI(api_key="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")
     system = get_theah_content("system_floorplan")
     floorplan = get_theah_content("user_floorplan")
-    add_message(role="system", text=system)
-    add_message(role="user", text=floorplan, image_url=st.session_state['floorplan_url'])
-    
-    prettyjson = json.dumps(st.session_state['chat_messages'], indent=4)
-    logger.debug(f"Sending this JSON Object to OpenAI: {prettyjson}")
 
+    add_message(
+        role="system",
+        text=system,
+    )
+
+    add_message(
+        role="user",
+        text=floorplan,
+        image_url=floorurl
+    )
+
+    print("CHAT")
+    m = st.session_state['chat_messages']
+    # json_print = json.dumps(m, indent=4)
+    # print(json_print)
+
+    # Make a chat completion call
     response = client.chat.completions.create(
         model="gpt-4o",
-        messages=st.session_state['chat_messages'],
+        messages=[
+            *m
+        ],
         temperature=0.5
     )
+
     content = response.choices[0].message.content
-    logger.debug(f"Response content: {content}")
+    print("RESPONSE1-FLOORPLAN")
+    print(content)
+
     try:
         st.session_state['json_object'] = json.loads(content)
     except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse JSON: {e}")
+        print("Failed to parse JSON:", e) 
 
 def generate_description():
     st.session_state['chat_messages'] = []
-    validjson = json.dumps(st.session_state['json_object'])
     pretty_json = json.dumps(st.session_state['json_object'], indent=4)
-    #logger.debug(f"Pretty JSON: {pretty_json}")
+    print(pretty_json)
+
+    validjson = json.dumps(st.session_state['json_object'])
 
     client = OpenAI(api_key="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")
     system = get_theah_content("system_gendescription")
     description = get_theah_content("user_gendescription")
     update_description = description.replace('{{ JSON }}', str(pretty_json))
-    
-    add_message(role="system", text=system)
-    add_message(role="user", text=update_description)
 
-    logger.info("Sending this JSON object to OpenAI to generate the description...")
-    prettyjson = json.dumps(st.session_state['chat_messages'], indent=4)
+    add_message(
+        role="system",
+        text=system
+    )
 
+    add_message(
+        role="user",
+        text=update_description,
+    )
+
+    # Make a chat completion call
     response = client.chat.completions.create(
         model="ft:gpt-4o-2024-08-06:personal:corum-beta-v2-gendescriptions:ANSZjUc7",
-        messages=st.session_state['chat_messages'],
+        messages=[
+            *st.session_state['chat_messages']
+        ],
         temperature=0.2
     )
+
     content = response.choices[0].message.content
 
-    logger.debug(f"First generation response..")
-    logger.debug("")
-    logger.debug(content)
+    print("FIRST GENERATION")
+    print(content)
 
-    logger.debug("Validating the description against new AI model..")
-
-    st.session_state['chat_messages'] = []
+    ### VALIDATE DESCRIPTON ###
     validate_prompt = get_theah_content("user_validate")
     pass_json = validate_prompt.replace('{{ JSON }}', str(pretty_json))
     pass_description = pass_json.replace('{{ DESCRIPTION }}', content)
-    
-    add_message(role="user", text=pass_description)
 
-    logger.info("Sending the this prompt to OpenAI to validate the description...")
-    prettyjson = json.dumps(st.session_state['chat_messages'], indent=4)
-    logger.debug(prettyjson)
 
-    response2 = client.chat.completions.create(
-        model="o1-mini",
-        messages=[{"role": "user", "content": [{"type": "text", "text": pass_description}]}]
+    add_message(
+        role="user",
+        text=pass_description
     )
+
+    # Make a chat completion call
+    response2 = client.chat.completions.create(
+    model="o1-preview",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": pass_description
+                },
+            ],
+        }
+    ]
+)
+
+
     content2 = response2.choices[0].message.content
-    logger.debug(f"Validation content: {content2}")
+    print("FIRST GENERATION")
+    print(content2)
     return content2
+
 
 def page_1():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/no-property-img.webp", width=500)
+        st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/no-property-img.webp", width=500)  # Adjust the width as needed
         if st.button("Get Started"):
-            logger.info("User Selected Get Started")
             next_step()
 
 def page_2():
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Where is the property located?")
-
-        # Custom CSS for placeholder text color
-        custom_css = """
-        <style>
-            .stTextInput input::placeholder {
-                color: grey !important; /* Set placeholder text color to white */
-                opacity: 1; /* Ensure the placeholder text is fully opaque */
-                font-size: 14px;
-            }
-
-            .stTextInput input {
-                caret-color: white !important; /* Set cursor color to white */
-                font-size: 14px; /* Set input text font size */
-            }
-        </style>
-        """
-
-        # Inject the custom CSS into the Streamlit app
-        st.markdown(custom_css, unsafe_allow_html=True)
-
-        # Text input with placeholder
-        address = st.text_input("Enter the full address of the property including the postcode", placeholder='1 Overlee Road, Clarkston, Glasgow, G76 8BU')
-
+        
+        # Address input fields
+        address = st.text_input("Enter the Street Name and Postcode of the property",placeholder='1 Overlee Road, Clarkston, Glasgow, G76')
         st.session_state['property_address'] = address
+        
+        # Back and Next buttons
         col_back, col_next = st.columns([1, 1])
         with col_back:
             if st.button("Back"):
                 previous_step()
         with col_next:
             if st.button("Next"):
-                logger.info(f"User inputted Property Address: {address}")
                 next_step()
 
 def page_3():
+ 
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Please upload the floorplan of your property.")
         property_floorplan = st.file_uploader("Upload your floorplan", key="photos", type=["jpg", "jpeg", "png"])
-        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
+        
         col_back, col_next = st.columns([1, 1])
         with col_back:
             if st.button("Back"):
@@ -325,27 +419,27 @@ def page_3():
                 with st.spinner('Processing...'):
                     if property_floorplan is not None:
                         upload_files(uploaded_file=property_floorplan, type="floorplan")
-                        logger.debug(f"Floorplan URL: {st.session_state['floorplan_url']}")
+                        print(st.session_state['floorplan_url'])
                 next_step()
 
 def page_4():
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Please upload some photos of your property.")
-        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
-        st.markdown("<br>", unsafe_allow_html=True)
+        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"],accept_multiple_files=True)
+        st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing
         col_back, col_next = st.columns([1, 1])
         with col_back:
             if st.button("Back"):
                 previous_step()
         with col_next:
             if st.button("Next"):
-                #logger.debug(f"Property photos: {property_photos}")
+                print(property_photos)
                 if property_photos:
                     with st.spinner('Processing...'):
                         for photo in property_photos:
                             upload_files(photo, type="propertyphotos")
-                        logger.info("Making the OpenAI call to review the floorplan")
+                        print("Now making the call..")
                         make_floorplan_review_call(st.session_state['floorplan_url'])
                     next_step()
                 else:
@@ -427,19 +521,12 @@ def page_5():
             previous_step()
     with col_next:
         if st.button("Next"):
-            logger.info("User populated the floorplan section and selected the next step. Their choices are noted below")
-            prettyjson = json.dumps(st.session_state['json_object'], indent=4)
-            logger.info(prettyjson)
-            logger.info("Moving on to the populate the 'local area, overview and external features' section")
+            print(st.session_state['json_object'])
             generate_json()
             next_step()
 
-
     st.markdown("<br>", unsafe_allow_html=True)
-    st.write("We've reviewed the floor plan, and now it's your turn to help bring each space to life. Please review each area in the floor plan and add any details you think would enhance the description. You can also add or remove floors incase we've not got it quite right.")
-    
-    st.write("Simple updates like changing 'Living Room' to 'Spacious living room' or changing 'Kitchen' to 'Modern kitchen with integrated appliances' can make a big difference. The more specifics you add, the better the result!")
-
+    st.write("We've reviewed the floorplan— now it's your turn to help us bring each floor to life. By adding details about each space, you'll help us craft a captivating description of your property. The more specifics you share, the better the result!")
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Display Floorplan Image with pop-out functionality
@@ -481,22 +568,7 @@ def page_5():
     st.markdown(custom_css, unsafe_allow_html=True)
 
     # Use custom styled header
-    st.markdown('<h1 class="stHeader">Update Floor Information</h1>', unsafe_allow_html=True)
-
-    custom_css = """
-        <style>
-            .stTextInput input {
-                caret-color: white !important; /* Set cursor color to white */
-                font-size: 14px; /* Set input text font size */
-            }
-            .stTextInput p {
-                colour: orange !important;
-            }
-        </style>
-        """
-
-    # Inject the custom CSS into the Streamlit app
-    st.markdown(custom_css, unsafe_allow_html=True)
+    st.markdown('<h1 class="stHeader">Update Floors</h1>', unsafe_allow_html=True)
    
     for i, floor in enumerate(st.session_state.floors):
         current_floor_name = st.session_state.current_floor_names[i]
@@ -504,7 +576,7 @@ def page_5():
             floor_name, floor_details = list(floor.items())[0]  # Each floor is a single-item dictionary
             
             # Allow user to edit floor name
-            new_floor_name = st.text_input(f"Edit Floor Name", value=current_floor_name.replace('_', ' ').title(), key=f"floor_name_{i}")
+            new_floor_name = st.text_area(f"Edit Floor Name", value=current_floor_name.replace('_', ' ').title(), key=f"floor_name_{i}")
             new_floor_key = new_floor_name.lower().replace(' ', '_')
             
             if new_floor_key != current_floor_name:
@@ -543,7 +615,6 @@ def page_5():
     
     # Add New Floor Section
     st.markdown('<h1 class="stHeader">Add New Floor</h1>', unsafe_allow_html=True)
-    
     new_floor_name = st.text_input("Enter new floor name (e.g., 'Ground Floor', 'First Floor')", key="new_floor_input")
 
     add_button = st.button("Add Floor", key="add_floor_button")
@@ -581,10 +652,6 @@ def page_6():
                 st.session_state['json_object']["external_features"] = st.session_state['external_features_text']
                 st.session_state['json_object']["local_area_highlights"] = st.session_state['local_area_highlights_text']
                 st.session_state['json_object']["additional_notes"] = st.session_state['additional_notes_text']
-                logger.info("User populated the local area, overview and external features section and selected the next step. Their choices are noted below")
-                prettyjson = json.dumps(st.session_state['json_object'], indent=4)
-                logger.info(prettyjson)
-                logger.info("Going to generate the description based on the JSON object above")
                 st.session_state['the_description'] = generate_description()
                 st.session_state.page += 1
                 st.session_state.scroll_to_top = True
@@ -630,125 +697,44 @@ def page_6():
     #         floor_details["features"] = updated_features_list
 
 def page_7():
+    st.title("Your Property Listing Description.")
+    address = st.session_state.form_data.get("property_address", "")
+    st.write(address)
+    st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/OverleeRoad/P1311672-Medium.jpg",width=500)
     
-    st.title("Your Property Listing Description")
-    st.write("We've generated a description based on the information you've provided. Feel free to edit the description below to make it your own.")
+    # with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/description.txt', 'r') as f:
+    # #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\description.txt', 'r') as f:
+    #     desc = f.read()
+    #     desc = desc.replace('\n', '<br>')
 
-    # Create a string with the image URLs
-    image_urls = st.session_state['property_photo_urls']
-    url_string = ",".join(image_urls)
-
-    html_content = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    /* Your existing CSS here */
-    </style>
-    </head>
-    <body>
-    <div class="slideshow-container" id="slideshow-container">
-    <!-- Slides will be dynamically inserted here -->
-    </div>
-    <br>
-
-    <div style="text-align:center" id="dots-container">
-    <!-- Dots will be dynamically inserted here -->
-    </div>
-
-    <script>
-    // Split the URL string into an array
-    const imageUrls = "{url_string}".split(",");
-    let slideIndex = 0;
-
-    // Function to create slides
-    function createSlides() {{
-        const container = document.getElementById("slideshow-container");
-        const dotsContainer = document.getElementById("dots-container");
-        
-        imageUrls.forEach((url, index) => {{
-            const slide = document.createElement("div");
-            slide.className = "mySlides fade";
-            
-            const numberText = document.createElement("div");
-            numberText.className = "numbertext";
-            numberText.textContent = `${{index + 1}} / ${{imageUrls.length}}`;
-            
-            const img = document.createElement("img");
-            img.src = url;
-            img.style.width = "100%";
-            
-            const text = document.createElement("div");
-            text.className = "text";
-            text.textContent = `Caption ${{index + 1}}`;
-            
-            slide.appendChild(numberText);
-            slide.appendChild(img);
-            slide.appendChild(text);
-            
-            container.appendChild(slide);
-            
-            const dot = document.createElement("span");
-            dot.className = "dot";
-            dotsContainer.appendChild(dot);
-        }});
-    }}
-
-    function showSlides() {{
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        
-        for (let i = 0; i < slides.length; i++) {{
-            slides[i].style.display = "none";  
-        }}
-        slideIndex++;
-        if (slideIndex > slides.length) {{slideIndex = 1}}    
-        for (let i = 0; i < dots.length; i++) {{
-            dots[i].className = dots[i].className.replace(" active", "");
-        }}
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 3000); // Change image every 2 seconds
-    }}
-
-    // Create slides when the page loads
-    createSlides();
-    // Start the slideshow
-    showSlides();
-    </script>
-
-    </body>
-    </html>
-    """
-
-    st.components.v1.html(html_content, height=500)
-
-    # Custom CSS for text area height
-    custom_css = """
-        <style>
-            .stTextArea textarea {
-                height: 500px !important; /* Set the height of the text area */
-            }
-        </style>
-        """
-
-    # Inject the custom CSS into the Streamlit app
-    st.markdown(custom_css, unsafe_allow_html=True)
-        
-    # Get the description from session state
-    desc = st.session_state.get('the_description', '')
+    # newjson = st.session_state['json_object']
+    # validjson = json.dumps(newjson, indent=4)
     
-    # Create an editable text area
-    edited_desc = st.text_area("Edit your description:", value=desc)
-    
-    # Create a copy to clipboard button
-    if st.button("Copy to Clipboard"):
-        pyperclip.copy(edited_desc)
-        st.success("Description copied to clipboard!")
-    
-    # Update the session state with the edited description
-    st.session_state['the_description'] = edited_desc
+    # css = """
+    # <style>
+    #     .custom-markdownn {
+    #         border: 1px dashed #ffffff; /* Slightly thinner border for a cleaner look */  
+    #         border-radius: 2px; /* Rounded corners for a modern touch */  
+    #         padding: 8px 12px; /* Adjusted padding for better alignment */  
+    #         background-color: #0D1342; /* Light background color for contrast */  
+    #         font-size: 16px; /* Slightly larger font for readability */  
+    #         color: #ffffff; /* Darker text color for better readability */  
+    #         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+    #         transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+  
+
+    #     }
+    # </style>
+    # """
+
+    # styled_desc = f"{css}<div class='custom-markdownn'>{desc}</div>"
+
+    # # Display the styled markdown content
+    # st.markdown(styled_desc, unsafe_allow_html=True)
+
+    desc = st.session_state['the_description']
+    st.markdown(desc)
+
 def main(): 
 
     with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
