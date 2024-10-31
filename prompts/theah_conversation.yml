@@ -4,17 +4,17 @@ conversation:
       content: |
         Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.
 
-        The property agent has provided a JSON structure where each property attribute, including the "floorplan" section, will be meticulously populated.
+        The property agent has provided a JSON structure where each property attribute, including the "floorplan" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.
 
     - role: user_floorplan
       content: |
-        Objective: Your task is to study the provided floorplan image and populate only the "floorplan" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness.
+        Objective: Your task is to study the provided floorplan image and populate only the "floorplan" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. 
 
         Please follow these guidelines to complete this task:
 
         Examine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.
 
-        Populate JSON: Populate the "floorplan" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like "contemporary or "lovely" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions. See some of my examples below.
+        Populate JSON: Populate the "floorplan" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like "contemporary or "lovely" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e "Bedroom 1" or "Bedroom 2" to avoid sounding robotic. 
 
         Structure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.
 
@@ -47,39 +47,6 @@ conversation:
           
           ]
         }
-
-        ### EXAMPLE 1 ###
-
-        {
-          "property_address": "1 Overlee Road, Clarkston, Glasgow, G76",
-          "property_overview": [],
-          "external_features": [],
-          "local_area_highlights": [],
-          "floorplan": [
-            {
-              "ground_floor": {
-                "features": [
-                  "Enterance Hallway",
-                  "Front facing Lounge",
-                  "3 Bedrooms"
-                  "Shower Room",
-                  "TV Room",
-                  "Open plan Kitchen/Dining Room"
-                ]
-              },
-              "first_floor": {
-                "features": [
-                  "Study/Landing",
-                  "Forth Bedroom",
-                  "Shower Room"
-                ]
-              }
-            }
-          ],
-          "additional_notes": []
-        }
-
-        ### END OF EXAMPLE 1 ###
 
     - role: system_buildjson
       content: |

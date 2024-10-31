@@ -7,6 +7,12 @@
     background-size: cover;  /* Ensures the background image covers the entire area */
 }  
 
+.stApp > header {  
+    background-color: #0D1342;
+    color:#f8f8f8;  
+    padding:2rem;  
+}  
+
 .stTextInput, .stSelectbox{  
     margin-bottom: 20px;  /*Add spacing between these elements*/
 }  
@@ -118,15 +124,7 @@ h1 {
     color: #ffffff; /* Darker text color for better readability */  
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
-    caret-color: cadetblue;
-    
 }  
-
-.text_input_1::placeholder {
-    color: white !important;
-}
-
-.tex
 
 .stTextInput input:hover {  
     box-shadow: 0 20px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */  
@@ -190,20 +188,17 @@ h1 {
 .stTextArea [data-baseweb="base-input"] {
     background-color: #0D1342;
     height: 250px !important;
-    caret-color: #ffffff !important;
+    caret-color: #ffffff;
 }
 
 .stTextArea [data-baseweb="base-input"] > textarea {
     color: white !important;
     font-size: 14px;
     height: 250px !important;
-    caret-color: #ffffff !important;
+    caret-color: #ffffff;
 
 }
 
-.stHeader {
-    color: orange !important;
-}
 .stTextArea input {  
     border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
     border-radius: 2px; /* Rounded corners for a modern touch */  
@@ -217,6 +212,11 @@ h1 {
 }  
 
 
+.stTextInput input::placeholder {
+    color: grey; /* Change this to your desired color */
+    font-size: small;
+    opacity: 1; /* Ensure the opacity is set to 1 for full color */
+}
 
 .orange-text {
     color: orange;

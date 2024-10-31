@@ -1,8 +1,5 @@
 import streamlit as st  
-from streamlit_carousel import carousel
 import streamlit.components.v1 as components
-
-
 from styling import template1_page_style
 import json
 import re
@@ -169,11 +166,11 @@ def generate_json():
     add_message(role="system", text=system)
     add_message(role="user", text=features_update, image_url=st.session_state['property_photo_urls'])
     logger.info("Sending the following JSON object to OpenAI to populate the JSON...")
-    prettyjson = json.dumps(st.session_state['chat_messages'], indent=8)
+    prettyjson = json.dumps(st.session_state['chat_messages'], indent=4)
     logger.debug(prettyjson)
 
     response = client.chat.completions.create(
-        model="ft:gpt-4o-2024-08-06:personal::ANMvB86e",
+        model="gpt-4o",
         messages=st.session_state['chat_messages'],
         temperature=0.1
     )
@@ -540,7 +537,7 @@ def page_5():
                 del st.session_state.selected_features[new_floor_key]
                 st.session_state.current_floor_names.pop(i)
                 st.rerun()
-    
+                
     # Add New Floor Section
     st.markdown('<h1 class="stHeader">Add New Floor</h1>', unsafe_allow_html=True)
     
@@ -751,13 +748,13 @@ def page_7():
     st.session_state['the_description'] = edited_desc
 def main(): 
 
-    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
-    #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
+    #with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+    with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
         data = json.load(f)
         st.session_state['data'] = data
 
-    with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
-    #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
+    #with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+    with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
         theah_convo = yaml.safe_load(file)
         st.session_state['theah_convo'] = theah_convo
 

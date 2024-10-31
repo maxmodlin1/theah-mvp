@@ -9236,3 +9236,1425 @@ Externally, the property is set within landscaped gardens with a south facing re
 Local Area
 
 The district offers an abundance of sports and recreational facilities, excellent shopping and retail outlets, and some of the best schooling within the East Renfrewshire district. Pre-schooling, primary schooling, and secondary schooling are all found nearby. Retail shopping is available at The Avenue Shopping Centre. Transport links are easy by both road and rail into the city centre and beyond.
+2024-10-31 10:35:26,485 - __main__ - INFO - User Selected Get Started
+2024-10-31 10:35:26,512 - __main__ - INFO - User selected the next step
+2024-10-31 10:35:32,679 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 10:35:32,713 - __main__ - INFO - User selected the next step
+2024-10-31 10:35:42,377 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2024-10-31 10:38:14,503 - __main__ - INFO - User Selected Get Started
+2024-10-31 10:38:14,513 - __main__ - INFO - User selected the next step
+2024-10-31 10:38:18,419 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 10:38:18,434 - __main__ - INFO - User selected the next step
+2024-10-31 10:38:36,464 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 10:38:36,511 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 10:38:36,513 - __main__ - INFO - User selected the next step
+2024-10-31 10:38:47,911 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 10:38:48,259 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 10:38:48,601 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 10:38:49,015 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 10:38:49,345 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 10:38:49,686 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 10:38:49,687 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 10:38:49,705 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 10:38:49,983 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 10:38:49,985 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:38:49,986 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:38:49,987 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness.\n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions. See some of my examples below.\n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n\n### EXAMPLE 1 ###\n\n{\n  \"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G76\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n          \"Enterance Hallway\",\n          \"Front facing Lounge\",\n          \"3 Bedrooms\"\n          \"Shower Room\",\n          \"TV Room\",\n          \"Open plan Kitchen/Dining Room\"\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n          \"Study/Landing\",\n          \"Forth Bedroom\",\n          \"Shower Room\"\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": []\n}\n\n### END OF EXAMPLE 1 ###\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 10:38:55,200 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance Hall",
+          "Lounge",
+          "Bedroom 1",
+          "Bedroom 2",
+          "Bedroom 3",
+          "Shower Room",
+          "TV Room",
+          "Kitchen/Dining Room"
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Study/Landing",
+          "Bedroom 4",
+          "Shower Room"
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 10:38:55,207 - __main__ - INFO - User selected the next step
+2024-10-31 10:40:54,571 - __main__ - INFO - User Selected Get Started
+2024-10-31 10:40:54,577 - __main__ - INFO - User selected the next step
+2024-10-31 10:40:57,753 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 10:40:57,781 - __main__ - INFO - User selected the next step
+2024-10-31 10:41:05,992 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 10:41:05,992 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 10:41:05,992 - __main__ - INFO - User selected the next step
+2024-10-31 10:41:14,941 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 10:41:15,279 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 10:41:15,615 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 10:41:15,919 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 10:41:16,277 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 10:41:16,659 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 10:41:16,662 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 10:41:16,700 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 10:41:16,701 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 10:41:16,702 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:41:16,703 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:41:16,705 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions. See some of my previous examples when populating the \"floorplan\" section of the JSON, but remember every propety is different.\n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 10:41:28,902 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to various rooms.",
+          "Lounge located at the front with multiple windows.",
+          "Kitchen/Dining Room at the rear with access to the outside.",
+          "TV Room adjacent to the kitchen.",
+          "Bedroom 1 located near the entrance with nearby access to a shower room.",
+          "Bedroom 2 and Bedroom 3 situated next to each other, sharing a corridor access.",
+          "Shower Room conveniently located adjacent to Bedroom 2."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Bedroom 4 with built-in wardrobe space.",
+          "Study/Landing area providing access to rooms.",
+          "Shower Room located next to Bedroom 4.",
+          "Additional storage cupboard in the corridor."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 10:41:28,919 - __main__ - INFO - User selected the next step
+2024-10-31 10:49:50,043 - __main__ - INFO - User Selected Get Started
+2024-10-31 10:49:50,084 - __main__ - INFO - User selected the next step
+2024-10-31 10:49:53,369 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 10:49:53,392 - __main__ - INFO - User selected the next step
+2024-10-31 10:50:02,090 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 10:50:02,091 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 10:50:02,092 - __main__ - INFO - User selected the next step
+2024-10-31 10:50:13,967 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 10:50:14,297 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 10:50:14,719 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 10:50:15,130 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 10:50:15,448 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 10:50:15,803 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 10:50:15,804 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 10:50:15,836 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 10:50:15,845 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 10:50:15,846 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:50:15,847 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 10:50:15,848 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 10:50:23,869 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Spacious lounge located at the front of the property.",
+          "Two bedrooms situated off the main hall.",
+          "Additional bedroom adjacent to the lounge.",
+          "Shower room accessible from the hallway.",
+          "Large kitchen/dining room at the rear with multiple entry points.",
+          "TV room connecting the kitchen/dining area to the main hall."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "One bedroom with built-in storage.",
+          "Separate shower room.",
+          "Study/landing area with built-in storage."
+        ]
+      }
+    }
+  ],
+  "additional_notes": [
+  
+  ]
+}
+2024-10-31 10:50:23,869 - __main__ - INFO - User selected the next step
+2024-10-31 11:42:17,614 - __main__ - INFO - User Selected Get Started
+2024-10-31 11:42:17,618 - __main__ - INFO - User selected the next step
+2024-10-31 11:42:21,826 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 11:42:21,875 - __main__ - INFO - User selected the next step
+2024-10-31 11:42:30,342 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 11:42:30,344 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 11:42:30,346 - __main__ - INFO - User selected the next step
+2024-10-31 11:42:40,447 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 11:42:40,819 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 11:42:41,139 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 11:42:41,487 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 11:42:41,809 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 11:42:42,187 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 11:42:42,187 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 11:42:42,216 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 11:42:42,216 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 11:42:42,217 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 11:42:42,217 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 11:42:42,218 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 11:42:52,402 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Lounge with access from the hall.",
+          "Two bedrooms located on this floor.",
+          "Shower room adjacent to the hall.",
+          "Spacious kitchen/dining room with access to the exterior.",
+          "TV room connected to the hall.",
+          "Additional bedroom with access from the hall."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Landing area with study space.",
+          "Bedroom with built-in storage.",
+          "Shower room located next to the bedroom."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 11:42:52,402 - __main__ - INFO - User selected the next step
+2024-10-31 11:59:04,397 - __main__ - INFO - User Selected Get Started
+2024-10-31 11:59:04,426 - __main__ - INFO - User selected the next step
+2024-10-31 11:59:08,985 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 11:59:08,997 - __main__ - INFO - User selected the next step
+2024-10-31 11:59:16,866 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 11:59:16,867 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 11:59:16,868 - __main__ - INFO - User selected the next step
+2024-10-31 11:59:28,088 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 11:59:28,542 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 11:59:28,934 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 11:59:29,337 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 11:59:29,748 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 11:59:30,163 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 11:59:30,164 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 11:59:30,218 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 11:59:30,222 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 11:59:30,222 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 11:59:30,224 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 11:59:30,224 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 11:59:35,687 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Lounge with dual aspect windows",
+          "Kitchen/Dining Room with rear access",
+          "TV Room adjacent to the hall",
+          "Three bedrooms",
+          "Shower room accessible from the hall"
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Fourth bedroom with built-in storage",
+          "Study/Landing area",
+          "Shower room with adjacent storage",
+          "Additional storage cupboard"
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 11:59:35,695 - __main__ - INFO - User selected the next step
+2024-10-31 12:59:24,141 - __main__ - INFO - User Selected Get Started
+2024-10-31 12:59:24,151 - __main__ - INFO - User selected the next step
+2024-10-31 12:59:27,739 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 12:59:27,764 - __main__ - INFO - User selected the next step
+2024-10-31 12:59:36,217 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 12:59:36,217 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 12:59:36,217 - __main__ - INFO - User selected the next step
+2024-10-31 12:59:45,357 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 12:59:45,718 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 12:59:46,094 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 12:59:46,493 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 12:59:46,867 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 12:59:47,220 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 12:59:47,221 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 12:59:47,246 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 12:59:47,247 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 12:59:47,248 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 12:59:47,254 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 12:59:47,256 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 12:59:51,677 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Lounge with access to the hall.",
+          "Two bedrooms located on the left side.",
+          "Shower room adjacent to the bedrooms.",
+          "Kitchen/Dining room at the rear, accessible from the hall.",
+          "TV room connected to the hall.",
+          "Additional bedroom situated near the TV room."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Large bedroom with built-in wardrobes.",
+          "Shower room adjacent to the bedroom.",
+          "Study/landing area with storage cupboards."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 12:59:51,688 - __main__ - INFO - User selected the next step
+2024-10-31 14:55:15,255 - __main__ - INFO - User Selected Get Started
+2024-10-31 14:55:15,299 - __main__ - INFO - User selected the next step
+2024-10-31 14:55:19,162 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 14:55:19,177 - __main__ - INFO - User selected the next step
+2024-10-31 14:55:26,459 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 14:55:26,459 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 14:55:26,459 - __main__ - INFO - User selected the next step
+2024-10-31 14:55:34,834 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 14:55:35,160 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 14:55:35,530 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 14:55:35,860 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 14:55:36,209 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 14:55:36,539 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 14:55:36,540 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 14:55:36,559 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 14:55:36,566 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 14:55:36,567 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 14:55:36,567 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 14:55:36,568 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 14:55:42,564 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Hall providing access to multiple rooms.",
+          "Lounge with front-facing windows.",
+          "Kitchen/Dining Room with access to the exterior.",
+          "TV Room adjacent to the Kitchen/Dining Room.",
+          "Three bedrooms, two with front-facing windows.",
+          "Shower Room near the bedrooms.",
+          "Closet space in one of the bedrooms."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Bedroom with front-facing windows.",
+          "Shower Room adjacent to the bedroom.",
+          "Study/Landing area providing access to the first-floor rooms.",
+          "Closet space available on this floor."
+        ]
+      }
+    }
+  ],
+  "additional_notes": [
+  
+  ]
+}
+2024-10-31 14:55:42,568 - __main__ - INFO - User selected the next step
+2024-10-31 14:57:31,725 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-10-31 14:57:31,748 - __main__ - INFO - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Hall providing access to multiple rooms.",
+                    "Lounge with front-facing windows.",
+                    "Kitchen/Dining Room with access to the exterior.",
+                    "TV Room adjacent to the Kitchen/Dining Room.",
+                    "Three bedrooms, two with front-facing windows.",
+                    "Shower Room near the bedrooms.",
+                    "Closet space in one of the bedrooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Bedroom with front-facing windows.",
+                    "Shower Room adjacent to the bedroom.",
+                    "Study/Landing area providing access to the first-floor rooms.",
+                    "Closet space available on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 14:57:31,763 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-10-31 14:57:31,801 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-10-31 14:57:31,929 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-10-31 14:57:31,977 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 14:57:31,992 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 14:57:32,008 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-10-31 14:57:32,017 - __main__ - DEBUG - [
+        {
+                "role": "system",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+                        }
+                ]
+        },
+        {
+                "role": "user",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Your task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"65 Carolside Avenue, Clarkston, G46\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Hall providing access to multiple rooms.\", \"Lounge with front-facing windows.\", \"Kitchen/Dining Room with access to the exterior.\", \"TV Room adjacent to the Kitchen/Dining Room.\", \"Three bedrooms, two with front-facing windows.\", \"Shower Room near the bedrooms.\", \"Closet space in one of the bedrooms.\"]}}, {\"first_floor\": {\"features\": [\"Bedroom with front-facing windows.\", \"Shower Room adjacent to the bedroom.\", \"Study/Landing area providing access to the first-floor rooms.\", \"Closet space available on this floor.\"]}}], \"additional_notes\": []}\n\nMaterials Provided:\n\nProperty Images - Use these to gather visual details.\nJSON Object - Populate specified sections in this JSON object.\n\nGUIDELINES\n\n1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property\u00e2\u20ac\u2122s value and aesthetic appeal.\n\n3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.\nPrioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields.\n\nFormat: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\nTake a deep breath and work on this problem step-by-step.\n"
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg",
+                                        "detail": "high"
+                                }
+                        }
+                ]
+        }
+]
+2024-10-31 14:57:46,837 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-10-31 14:57:46,837 - __main__ - DEBUG - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [
+        "Traditional detached bungalow.",
+        "Extensive private garden grounds.",
+        "Set within the highly reputable school catchments.",
+        "Spacious, flexible accommodation over two levels.",
+        "Impressive entrance hallway with ample storage adjacent.",
+        "Feature formal lounge with stylish window seat and fireplace.",
+        "Generous dining kitchen with open plan layout to TV room.",
+        "Four double bedrooms, two contemporary shower rooms.",
+        "Second public room which could be utilized as fifth bedroom.",
+        "Fully refurbished with luxurious fixtures and fittings."
+    ],
+    "external_features": [
+        "Privated gardens.",
+        "Large lawned area.",
+        "Colourful plants and shrubs.",
+        "Paved seating area.",
+        "Driveway to side offering ample off-street parking."
+    ],
+    "local_area_highlights": [
+        "Abundance of sports and recreational facilities.",
+        "Excellent shopping and retail outlets.",
+        "Best schooling within the East Renfrewshire district.",
+        "Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.",
+        "Retail park at Greenlaw Village, Newton Mearns.",
+        "Frequent train and bus services to Glasgow City Centre and beyond."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Hall providing access to multiple rooms.",
+                    "Lounge with front-facing windows.",
+                    "Kitchen/Dining Room with access to the exterior.",
+                    "TV Room adjacent to the Kitchen/Dining Room.",
+                    "Three bedrooms, two with front-facing windows.",
+                    "Shower Room near the bedrooms.",
+                    "Closet space in one of the bedrooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Bedroom with front-facing windows.",
+                    "Shower Room adjacent to the bedroom.",
+                    "Study/Landing area providing access to the first-floor rooms.",
+                    "Closet space available on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 14:57:46,857 - __main__ - INFO - User selected the next step
+2024-10-31 14:57:47,010 - __main__ - DEBUG - Preprocessing text: ['Traditional detached bungalow.', 'Extensive private garden grounds.', 'Set within the highly reputable school catchments.', 'Spacious, flexible accommodation over two levels.', 'Impressive entrance hallway with ample storage adjacent.', 'Feature formal lounge with stylish window seat and fireplace.', 'Generous dining kitchen with open plan layout to TV room.', 'Four double bedrooms, two contemporary shower rooms.', 'Second public room which could be utilized as fifth bedroom.', 'Fully refurbished with luxurious fixtures and fittings.']
+2024-10-31 14:57:47,016 - __main__ - DEBUG - Preprocessing text: ['Privated gardens.', 'Large lawned area.', 'Colourful plants and shrubs.', 'Paved seating area.', 'Driveway to side offering ample off-street parking.']
+2024-10-31 14:57:47,019 - __main__ - DEBUG - Preprocessing text: ['Abundance of sports and recreational facilities.', 'Excellent shopping and retail outlets.', 'Best schooling within the East Renfrewshire district.', 'Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.', 'Retail park at Greenlaw Village, Newton Mearns.', 'Frequent train and bus services to Glasgow City Centre and beyond.']
+2024-10-31 15:12:41,598 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-10-31 15:12:41,620 - __main__ - INFO - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [
+        "Traditional detached bungalow.",
+        "Extensive private garden grounds.",
+        "Set within the highly reputable school catchments.",
+        "Spacious, flexible accommodation over two levels.",
+        "Impressive entrance hallway with ample storage adjacent.",
+        "Feature formal lounge with stylish window seat and fireplace.",
+        "Generous dining kitchen with open plan layout to TV room.",
+        "Four double bedrooms, two contemporary shower rooms.",
+        "Second public room which could be utilized as fifth bedroom.",
+        "Fully refurbished with luxurious fixtures and fittings."
+    ],
+    "external_features": [
+        "Privated gardens.",
+        "Large lawned area.",
+        "Colourful plants and shrubs.",
+        "Paved seating area.",
+        "Driveway to side offering ample off-street parking."
+    ],
+    "local_area_highlights": [
+        "Abundance of sports and recreational facilities.",
+        "Excellent shopping and retail outlets.",
+        "Best schooling within the East Renfrewshire district.",
+        "Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.",
+        "Retail park at Greenlaw Village, Newton Mearns.",
+        "Frequent train and bus services to Glasgow City Centre and beyond."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Hall providing access to multiple rooms.",
+                    "Lounge with front-facing windows.",
+                    "Kitchen/Dining Room with access to the exterior.",
+                    "TV Room adjacent to the Kitchen/Dining Room.",
+                    "Three bedrooms, two with front-facing windows.",
+                    "Shower Room near the bedrooms.",
+                    "Closet space in one of the bedrooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Bedroom with front-facing windows.",
+                    "Shower Room adjacent to the bedroom.",
+                    "Study/Landing area providing access to the first-floor rooms.",
+                    "Closet space available on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 15:12:41,682 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-10-31 15:12:41,803 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-10-31 15:12:41,807 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-10-31 15:12:41,809 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 15:12:41,811 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 15:12:41,812 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-10-31 15:12:41,813 - __main__ - DEBUG - [
+        {
+                "role": "system",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+                        }
+                ]
+        },
+        {
+                "role": "user",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Your task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"65 Carolside Avenue, Clarkston, G46\", \"property_overview\": [\"Traditional detached bungalow.\", \"Extensive private garden grounds.\", \"Set within the highly reputable school catchments.\", \"Spacious, flexible accommodation over two levels.\", \"Impressive entrance hallway with ample storage adjacent.\", \"Feature formal lounge with stylish window seat and fireplace.\", \"Generous dining kitchen with open plan layout to TV room.\", \"Four double bedrooms, two contemporary shower rooms.\", \"Second public room which could be utilized as fifth bedroom.\", \"Fully refurbished with luxurious fixtures and fittings.\"], \"external_features\": [\"Privated gardens.\", \"Large lawned area.\", \"Colourful plants and shrubs.\", \"Paved seating area.\", \"Driveway to side offering ample off-street parking.\"], \"local_area_highlights\": [\"Abundance of sports and recreational facilities.\", \"Excellent shopping and retail outlets.\", \"Best schooling within the East Renfrewshire district.\", \"Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.\", \"Retail park at Greenlaw Village, Newton Mearns.\", \"Frequent train and bus services to Glasgow City Centre and beyond.\"], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Hall providing access to multiple rooms.\", \"Lounge with front-facing windows.\", \"Kitchen/Dining Room with access to the exterior.\", \"TV Room adjacent to the Kitchen/Dining Room.\", \"Three bedrooms, two with front-facing windows.\", \"Shower Room near the bedrooms.\", \"Closet space in one of the bedrooms.\"]}}, {\"first_floor\": {\"features\": [\"Bedroom with front-facing windows.\", \"Shower Room adjacent to the bedroom.\", \"Study/Landing area providing access to the first-floor rooms.\", \"Closet space available on this floor.\"]}}], \"additional_notes\": []}\n\nMaterials Provided:\n\nProperty Images - Use these to gather visual details.\nJSON Object - Populate specified sections in this JSON object.\n\nGUIDELINES\n\n1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property\u00e2\u20ac\u2122s value and aesthetic appeal.\n\n3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.\nPrioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields.\n\nFormat: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\nTake a deep breath and work on this problem step-by-step.\n"
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg",
+                                        "detail": "high"
+                                }
+                        }
+                ]
+        }
+]
+2024-10-31 15:12:55,747 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-10-31 15:12:55,748 - __main__ - DEBUG - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [
+        "Traditional detached bungalow.",
+        "Extensive private garden grounds.",
+        "Set within the highly reputable school catchments.",
+        "Spacious, flexible accommodation over two levels.",
+        "Impressive entrance hallway with ample storage adjacent.",
+        "Feature formal lounge with stylish window seat and fireplace.",
+        "Generous dining kitchen with open plan layout to TV room.",
+        "Four double bedrooms, two contemporary shower rooms.",
+        "Second public room which could be utilized as fifth bedroom.",
+        "Fully refurbished with luxurious fixtures and fittings."
+    ],
+    "external_features": [
+        "Privated gardens.",
+        "Large lawned area.",
+        "Colourful plants and shrubs.",
+        "Paved seating area.",
+        "Driveway to side offering ample off-street parking."
+    ],
+    "local_area_highlights": [
+        "Abundance of sports and recreational facilities.",
+        "Excellent shopping and retail outlets.",
+        "Best schooling within the East Renfrewshire district.",
+        "Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.",
+        "Retail park at Greenlaw Village, Newton Mearns.",
+        "Frequent train and bus services to Glasgow City Centre and beyond."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Hall providing access to multiple rooms.",
+                    "Lounge with front-facing windows.",
+                    "Kitchen/Dining Room with access to the exterior.",
+                    "TV Room adjacent to the Kitchen/Dining Room.",
+                    "Three bedrooms, two with front-facing windows.",
+                    "Shower Room near the bedrooms.",
+                    "Closet space in one of the bedrooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Bedroom with front-facing windows.",
+                    "Shower Room adjacent to the bedroom.",
+                    "Study/Landing area providing access to the first-floor rooms.",
+                    "Closet space available on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 15:12:55,754 - __main__ - INFO - User selected the next step
+2024-10-31 15:12:55,887 - __main__ - DEBUG - Preprocessing text: ['Traditional detached bungalow.', 'Extensive private garden grounds.', 'Set within the highly reputable school catchments.', 'Spacious, flexible accommodation over two levels.', 'Impressive entrance hallway with ample storage adjacent.', 'Feature formal lounge with stylish window seat and fireplace.', 'Generous dining kitchen with open plan layout to TV room.', 'Four double bedrooms, two contemporary shower rooms.', 'Second public room which could be utilized as fifth bedroom.', 'Fully refurbished with luxurious fixtures and fittings.']
+2024-10-31 15:12:55,891 - __main__ - DEBUG - Preprocessing text: ['Privated gardens.', 'Large lawned area.', 'Colourful plants and shrubs.', 'Paved seating area.', 'Driveway to side offering ample off-street parking.']
+2024-10-31 15:12:55,894 - __main__ - DEBUG - Preprocessing text: ['Abundance of sports and recreational facilities.', 'Excellent shopping and retail outlets.', 'Best schooling within the East Renfrewshire district.', 'Clarkston shopping suburb with independent retailers, cafes, restaurants, and bars.', 'Retail park at Greenlaw Village, Newton Mearns.', 'Frequent train and bus services to Glasgow City Centre and beyond.']
+2024-10-31 16:10:10,569 - __main__ - INFO - User Selected Get Started
+2024-10-31 16:10:10,577 - __main__ - INFO - User selected the next step
+2024-10-31 16:10:14,415 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 16:10:14,465 - __main__ - INFO - User selected the next step
+2024-10-31 16:10:24,533 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 16:10:24,539 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 16:10:24,543 - __main__ - INFO - User selected the next step
+2024-10-31 16:10:32,547 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 16:10:32,971 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 16:10:33,344 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 16:10:33,757 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 16:10:34,100 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 16:10:34,547 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 16:10:34,548 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 16:10:34,576 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 16:10:34,577 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 16:10:34,577 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:10:34,578 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:10:34,578 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 16:10:39,742 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Hall providing access to all rooms.",
+          "Lounge with multiple windows.",
+          "Kitchen/Dining Room with external access.",
+          "TV Room adjacent to the kitchen.",
+          "Shower Room centrally located.",
+          "Three bedrooms, each with window views.",
+          "Cupboard space in one of the bedrooms."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Landing area leading to all rooms.",
+          "Large bedroom with two windows.",
+          "Shower Room with adjacent storage.",
+          "Study/Landing area with cupboard space."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 16:10:39,751 - __main__ - INFO - User selected the next step
+2024-10-31 16:11:07,944 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-10-31 16:11:08,071 - __main__ - INFO - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Hall providing access to all rooms.",
+                    "Lounge with multiple windows.",
+                    "Kitchen/Dining Room with external access.",
+                    "TV Room adjacent to the kitchen.",
+                    "Shower Room centrally located.",
+                    "Three bedrooms, each with window views.",
+                    "Cupboard space in one of the bedrooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Landing area leading to all rooms.",
+                    "Large bedroom with two windows.",
+                    "Shower Room with adjacent storage.",
+                    "Study/Landing area with cupboard space."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 16:11:08,077 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-10-31 16:11:08,200 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-10-31 16:11:08,232 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-10-31 16:11:08,310 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:11:08,318 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:11:08,350 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-10-31 16:11:08,376 - __main__ - DEBUG - [
+        {
+                "role": "system",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+                        }
+                ]
+        },
+        {
+                "role": "user",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Your task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"65 Carolside Avenue, Clarkston, G46\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Hall providing access to all rooms.\", \"Lounge with multiple windows.\", \"Kitchen/Dining Room with external access.\", \"TV Room adjacent to the kitchen.\", \"Shower Room centrally located.\", \"Three bedrooms, each with window views.\", \"Cupboard space in one of the bedrooms.\"]}}, {\"first_floor\": {\"features\": [\"Landing area leading to all rooms.\", \"Large bedroom with two windows.\", \"Shower Room with adjacent storage.\", \"Study/Landing area with cupboard space.\"]}}], \"additional_notes\": []}\n\nMaterials Provided:\n\nProperty Images - Use these to gather visual details.\nJSON Object - Populate specified sections in this JSON object.\n\nGUIDELINES\n\n1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property\u00e2\u20ac\u2122s value and aesthetic appeal.\n\n3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.\nPrioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields.\n\nFormat: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\nTake a deep breath and work on this problem step-by-step.\n"
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg",
+                                        "detail": "high"
+                                }
+                        }
+                ]
+        }
+]
+2024-10-31 16:11:27,777 - __main__ - ERROR - Failed to parse JSON: Expecting value: line 1 column 1 (char 0)
+2024-10-31 16:11:27,779 - __main__ - INFO - User selected the next step
+2024-10-31 16:11:27,934 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:11:27,944 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:11:27,947 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:11:53,528 - __main__ - INFO - Returning to home page
+2024-10-31 16:11:55,198 - __main__ - INFO - User Selected Get Started
+2024-10-31 16:11:55,219 - __main__ - INFO - User selected the next step
+2024-10-31 16:12:19,046 - __main__ - INFO - User inputted Property Address: 21 Viewfield Gardens, Glasgow, G74
+2024-10-31 16:12:19,056 - __main__ - INFO - User selected the next step
+2024-10-31 16:12:26,133 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 16:12:26,134 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 16:12:26,135 - __main__ - INFO - User selected the next step
+2024-10-31 16:12:34,564 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 16:12:35,014 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 16:12:35,372 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 16:12:35,692 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 16:12:36,024 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 16:12:36,422 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 16:12:36,424 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 16:12:36,486 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 16:12:36,492 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 16:12:36,494 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:12:36,494 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:12:36,495 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 16:12:42,419 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Lounge with access to the hall.",
+          "Two bedrooms adjacent to each other, one with a closet.",
+          "Shower room accessible from the hall.",
+          "TV room connecting to the hall and adjacent to the staircase.",
+          "Spacious kitchen/dining room at the rear of the property."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Large bedroom with two storage areas.",
+          "Shower room adjacent to the bedroom.",
+          "Study/landing area with storage space."
+        ]
+      }
+    }
+  ],
+  "additional_notes": [
+  
+  ]
+}
+2024-10-31 16:12:42,463 - __main__ - INFO - User selected the next step
+2024-10-31 16:13:13,409 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-10-31 16:13:13,438 - __main__ - INFO - {
+    "property_address": "21 Viewfield Gardens, Glasgow, G74",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Lounge with access to the hall.",
+                    "Two bedrooms adjacent to each other, one with a closet.",
+                    "Shower room accessible from the hall.",
+                    "TV room connecting to the hall and adjacent to the staircase.",
+                    "Spacious kitchen/dining room at the rear of the property."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Large bedroom with two storage areas.",
+                    "Shower room adjacent to the bedroom.",
+                    "Study/landing area with storage space."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 16:13:13,569 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-10-31 16:13:13,726 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-10-31 16:13:13,728 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-10-31 16:13:13,729 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:13:13,730 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:13:13,731 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-10-31 16:13:13,732 - __main__ - DEBUG - [
+        {
+                "role": "system",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+                        }
+                ]
+        },
+        {
+                "role": "user",
+                "content": [
+                        {
+                                "type": "text",
+                                "text": "Your task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"21 Viewfield Gardens, Glasgow, G74\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Lounge with access to the hall.\", \"Two bedrooms adjacent to each other, one with a closet.\", \"Shower room accessible from the hall.\", \"TV room connecting to the hall and adjacent to the staircase.\", \"Spacious kitchen/dining room at the rear of the property.\"]}}, {\"first_floor\": {\"features\": [\"Large bedroom with two storage areas.\", \"Shower room adjacent to the bedroom.\", \"Study/landing area with storage space.\"]}}], \"additional_notes\": []}\n\nMaterials Provided:\n\nProperty Images - Use these to gather visual details.\nJSON Object - Populate specified sections in this JSON object.\n\nGUIDELINES\n\n1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property\u00e2\u20ac\u2122s value and aesthetic appeal.\n\n3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.\nPrioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields.\n\nFormat: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\nTake a deep breath and work on this problem step-by-step.\n"
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg",
+                                        "detail": "high"
+                                }
+                        },
+                        {
+                                "type": "image_url",
+                                "image_url": {
+                                        "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg",
+                                        "detail": "high"
+                                }
+                        }
+                ]
+        }
+]
+2024-10-31 16:13:27,096 - __main__ - ERROR - Failed to parse JSON: Expecting value: line 1 column 1 (char 0)
+2024-10-31 16:13:27,097 - __main__ - INFO - User selected the next step
+2024-10-31 16:13:27,299 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:13:27,306 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:13:27,308 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:16:44,691 - __main__ - INFO - User Selected Get Started
+2024-10-31 16:16:44,694 - __main__ - INFO - User selected the next step
+2024-10-31 16:16:49,565 - __main__ - INFO - User inputted Property Address: 65 Carolside Avenue, Clarkston, G46
+2024-10-31 16:16:49,567 - __main__ - INFO - User selected the next step
+2024-10-31 16:16:56,826 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg
+2024-10-31 16:16:56,828 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg']
+2024-10-31 16:16:56,829 - __main__ - INFO - User selected the next step
+2024-10-31 16:17:06,362 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg
+2024-10-31 16:17:06,721 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg
+2024-10-31 16:17:07,064 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg
+2024-10-31 16:17:07,404 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg
+2024-10-31 16:17:07,761 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg
+2024-10-31 16:17:08,125 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg
+2024-10-31 16:17:08,135 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-10-31 16:17:08,184 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-10-31 16:17:08,194 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-10-31 16:17:08,195 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:17:08,196 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:17:08,196 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/floor.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 16:17:14,684 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Lounge with access from the hall and dual aspect windows.",
+          "Kitchen/Dining Room with rear access and multiple windows.",
+          "TV Room adjacent to the hall and kitchen/dining area.",
+          "Three bedrooms accessible from the main hall.",
+          "Shower Room located near the bedrooms.",
+          "Central hall providing access to all ground floor rooms."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Bedroom with built-in storage options.",
+          "Shower Room adjacent to the bedroom.",
+          "Study/Landing area with access to all first-floor rooms.",
+          "Additional storage cupboard."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-10-31 16:17:14,691 - __main__ - INFO - User selected the next step
+2024-10-31 16:18:15,154 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-10-31 16:18:15,172 - __main__ - INFO - {
+    "property_address": "65 Carolside Avenue, Clarkston, G46",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Lounge with access from the hall and dual aspect windows.",
+                    "Open plan Kitchen/Dining Room with rear access.",
+                    "TV Room adjacent to the hall and kitchen/dining area.",
+                    "Three bedrooms accessible from the main hall.",
+                    "Shower Room located near the bedrooms.",
+                    "Central hall providing access to all ground floor rooms."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Bedroom with built-in storage options.",
+                    "Shower Room adjacent to the bedroom.",
+                    "Study/Landing area with access to all first-floor rooms.",
+                    "Additional storage cupboard."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-10-31 16:18:15,193 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-10-31 16:18:15,225 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-10-31 16:18:15,226 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-10-31 16:18:15,226 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:18:15,227 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-10-31 16:18:15,227 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-10-31 16:18:15,228 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"65 Carolside Avenue, Clarkston, G46\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Lounge with access from the hall and dual aspect windows.\", \"Open plan Kitchen/Dining Room with rear access.\", \"TV Room adjacent to the hall and kitchen/dining area.\", \"Three bedrooms accessible from the main hall.\", \"Shower Room located near the bedrooms.\", \"Central hall providing access to all ground floor rooms.\"]}}, {\"first_floor\": {\"features\": [\"Bedroom with built-in storage options.\", \"Shower Room adjacent to the bedroom.\", \"Study/Landing area with access to all first-floor rooms.\", \"Additional storage cupboard.\"]}}], \"additional_notes\": []}\n\nMaterials Provided:\n\nProperty Images - Use these to gather visual details.\nJSON Object - Populate specified sections in this JSON object.\n\nGUIDELINES\n\n1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property\u00e2\u20ac\u2122s value and aesthetic appeal.\n\n3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.\nPrioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields.\n\nFormat: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\nTake a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum1.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum3.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum4.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum8.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/CarolSide_Corum10.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-10-31 16:18:27,793 - __main__ - ERROR - Failed to parse JSON: Expecting value: line 1 column 1 (char 0)
+2024-10-31 16:18:27,794 - __main__ - INFO - User selected the next step
+2024-10-31 16:18:27,916 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:18:27,918 - __main__ - DEBUG - Preprocessing text: []
+2024-10-31 16:18:27,919 - __main__ - DEBUG - Preprocessing text: []
