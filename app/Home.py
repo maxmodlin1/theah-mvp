@@ -174,6 +174,7 @@ def generate_json():
         messages=st.session_state['chat_messages'],
         temperature=0.1
     )
+    
     content = response.choices[0].message.content
 
     try:

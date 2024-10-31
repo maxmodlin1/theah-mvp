@@ -76,7 +76,7 @@ conversation:
 
           Output Requirements
 
-          Deliverable: Provide only the completed JSON object with populated "local_area_highlights", "property_overview", and "external_features" fields.
+          Deliverable: Provide only the completed JSON object with populated "local_area_highlights", "property_overview", and "external_features" fields. Do not output any additional content or explanations outside the JSON structure.
 
           Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.
 
