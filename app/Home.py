@@ -38,6 +38,25 @@ logging.getLogger('httpcore').setLevel(logging.WARNING)
 
 logger = logging.getLogger(__name__)
 
+import streamlit as st
+
+def login():
+
+    st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-negative.png",width=250)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.title("Login")
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username == "clarkston@corumproperty.co.uk" and password == "CorumClarkston":
+            st.session_state.logged_in = True
+            st.rerun()
+        else:
+            st.error("Invalid username or password")
+
 def update_json_object(key, value):
     logger.debug(f"Updating JSON object: {key} = {value}")
     st.session_state['json_object'][key] = value
@@ -842,79 +861,85 @@ def page_7():
     st.session_state['the_description'] = edited_desc
 def main(): 
 
-    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
-    #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
-        data = json.load(f)
-        st.session_state['data'] = data
+    if 'logged_in' not in st.session_state:
+        st.session_state.logged_in = False
 
-    with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
-    #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
-        theah_convo = yaml.safe_load(file)
-        st.session_state['theah_convo'] = theah_convo
-
-    if 'page' not in st.session_state:
-        st.session_state.page = 0
-
-    if 'form_data' not in st.session_state:
-        st.session_state.form_data = {}
-
-    if "scroll_to_top" not in st.session_state:
-        st.session_state.scroll_to_top = False
-
-    if 'floorplan_url' not in st.session_state:
-        st.session_state['floorplan_url'] = []
-    
-    if 'property_photo_urls' not in st.session_state:
-        st.session_state['property_photo_urls'] = []
-    
-    if 'model' not in st.session_state:
-        st.session_state.model = "ft:gpt-4o-2024-08-06:personal::AGXYRssh"
-
-    if 'json_object' not in st.session_state:
-        st.session_state['json_object'] = None
-    
-    if 'chat_messages' not in st.session_state:
-        st.session_state['chat_messages'] = []
-    
-    if 'property_overview_text' not in st.session_state:
-        st.session_state['property_overview_text'] = ""
-    
-    if 'external_features_text' not in st.session_state:
-        st.session_state['external_features_text'] = ""
-    
-    if 'local_area_highlights_text' not in st.session_state:
-        st.session_state['local_area_highlights_text'] = ""
-    
-    if 'additional_notes_text' not in st.session_state:
-        st.session_state['additional_notes_text'] = ""
-
-    st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png", width=200)
-    st.sidebar.markdown("<br>", unsafe_allow_html=True)
-    st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png", width=200)
-    st.sidebar.markdown("<br>", unsafe_allow_html=True)
-    st.sidebar.markdown("<br>", unsafe_allow_html=True)
-    st.sidebar.markdown("<br>", unsafe_allow_html=True)
-
-    st.sidebar.button("New Description", on_click=go_home,use_container_width=True)
-    
-    pages = [page_1, page_2, page_3, page_4, page_5, page_6,page_7]
-    
-    if st.session_state.page < len(pages):
-        pages[st.session_state.page]()
+    if not st.session_state.logged_in:
+        login()
     else:
-        st.error("Invalid page")
+        with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+        #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
+            data = json.load(f)
+            st.session_state['data'] = data
 
-    if st.session_state.scroll_to_top:
+        with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+        #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
+            theah_convo = yaml.safe_load(file)
+            st.session_state['theah_convo'] = theah_convo
+
+        if 'page' not in st.session_state:
+            st.session_state.page = 0
+
+        if 'form_data' not in st.session_state:
+            st.session_state.form_data = {}
+
+        if "scroll_to_top" not in st.session_state:
+            st.session_state.scroll_to_top = False
+
+        if 'floorplan_url' not in st.session_state:
+            st.session_state['floorplan_url'] = []
         
-        js = '''
-        <script>
-            var body = window.parent.document.querySelectorAll('.stElementContainer element-container st-emotion-cache-u1rfgn e1f1d6gn4');
-            console.log(body);
-            body.scrollTop = 0;
-        </script>
-        '''
+        if 'property_photo_urls' not in st.session_state:
+            st.session_state['property_photo_urls'] = []
+        
+        if 'model' not in st.session_state:
+            st.session_state.model = "ft:gpt-4o-2024-08-06:personal::AGXYRssh"
 
-        st.components.v1.html(js)
+        if 'json_object' not in st.session_state:
+            st.session_state['json_object'] = None
+        
+        if 'chat_messages' not in st.session_state:
+            st.session_state['chat_messages'] = []
+        
+        if 'property_overview_text' not in st.session_state:
+            st.session_state['property_overview_text'] = ""
+        
+        if 'external_features_text' not in st.session_state:
+            st.session_state['external_features_text'] = ""
+        
+        if 'local_area_highlights_text' not in st.session_state:
+            st.session_state['local_area_highlights_text'] = ""
+        
+        if 'additional_notes_text' not in st.session_state:
+            st.session_state['additional_notes_text'] = ""
+
+        st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png", width=200)
+        st.sidebar.markdown("<br>", unsafe_allow_html=True)
+        st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png", width=200)
+        st.sidebar.markdown("<br>", unsafe_allow_html=True)
+        st.sidebar.markdown("<br>", unsafe_allow_html=True)
+        st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+        st.sidebar.button("New Description", on_click=go_home,use_container_width=True)
+        
+        pages = [page_1, page_2, page_3, page_4, page_5, page_6,page_7]
+        
+        if st.session_state.page < len(pages):
+            pages[st.session_state.page]()
+        else:
+            st.error("Invalid page")
+
+        if st.session_state.scroll_to_top:
+            
+            js = '''
+            <script>
+                var body = window.parent.document.querySelectorAll('.stElementContainer element-container st-emotion-cache-u1rfgn e1f1d6gn4');
+                console.log(body);
+                body.scrollTop = 0;
+            </script>
+            '''
+
+            st.components.v1.html(js)   
 
 
 if __name__ == "__main__":  
