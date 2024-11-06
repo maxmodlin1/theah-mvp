@@ -1,6 +1,7 @@
 import streamlit as st  
 import streamlit.components.v1 as components
 from styling import template1_page_style
+from streamlit_extras.stylable_container import stylable_container
 import json
 import re
 import streamlit.components.v1 as components
@@ -172,12 +173,14 @@ def generate_json():
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=st.session_state['chat_messages'],
-        temperature=0.1
+        temperature=0.2
     )
     
     content = response.choices[0].message.content
 
     try:
+        logger.debug("The Response from OpenAI. Trying to convert it to JSON now..")
+        logger.debug(content)
         new_data = json.loads(content)
         prettyjson = json.dumps(new_data, indent=4)
         logger.debug("The Response from OpenAI and presented to the user..")
@@ -271,6 +274,44 @@ def page_1():
             logger.info("User Selected Get Started")
             next_step()
 
+        # with stylable_container(
+        #     key="custom_popover",
+        #     css_styles="""
+        #         button {
+        #             background-color: #4CAF50;
+        #             color: white;
+        #             border: none;
+        #             border-radius: 5px;
+        #             font-size: 16px;
+        #             cursor: pointer;
+        #         }
+
+        #         .stTextInput input {  
+        #             border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
+        #             border-radius: 2px; /* Rounded corners for a modern touch */  
+        #             padding: 8px 12px; /* Adjusted padding for better alignment */  
+        #             background-color: #0D1342; /* Light background color for contrast */  
+        #             font-size: 16px; /* Slightly larger font for readability */  
+        #             color: #ffffff; /* Darker text color for better readability */  
+        #             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+        #             transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+        #         }  
+
+        #         .stTextInput input:hover {  
+        #             box-shadow: 0 20px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */  
+        #             border-color: #FFBB0B;  
+        #         }  
+
+        #         .stTextInput label {
+        #             font-size: 24px;
+        #             color: red;
+        #         }
+       
+        #     """
+        # ):
+        #     with st.popover("Add a New Floor"):
+        #         st.text_input("Enter Floor Name")
+
 def page_2():
     col1, col2 = st.columns([2, 1])
     with col1:
@@ -330,7 +371,9 @@ def page_4():
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Please upload some photos of your property.")
-        property_photos = st.file_uploader("Upload your photos", key="photos", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
+        st.write("You don’t need to upload photos of every room. We suggest including at least one photo of the property’s exterior, any gardens (whether shared or private), and any standout images that contain features you’d like to highlight (open plan kitchens, stunning bathrooms etc.)")
+        st.markdown("<br>", unsafe_allow_html=True)
+        property_photos = st.file_uploader("Upload your photos",key="photos", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
         st.markdown("<br>", unsafe_allow_html=True)
         col_back, col_next = st.columns([1, 1])
         with col_back:
@@ -416,6 +459,58 @@ def page_5():
     </script>
     """
 
+    # Custom CSS for cards
+    custom_css = """
+    <style>
+        .card {
+            background-color: #0D1342;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dotted grey;
+        }
+        .card-header {
+            font-size: 20px;
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+        }
+        .card-content {
+            font-size: 16px;
+            background-color: #D1342
+            colour: white;
+        }
+        .card-content label {
+            color: orange;
+        }
+        .card-content input {
+            border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
+            border-radius: 2px; /* Rounded corners for a modern touch */  
+            padding: 8px 12px; /* Adjusted padding for better alignment */  
+            background-color: #0D1342; /* Light background color for contrast */  
+            font-size: 16px; /* Slightly larger font for readability */  
+            color: #ffffff; /* Darker text color for better readability */  
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+        }
+        .card-content textarea {
+            border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
+            border-radius: 2px; /* Rounded corners for a modern touch */  
+            padding: 8px 12px; /* Adjusted padding for better alignment */  
+            background-color: #0D1342; /* Light background color for contrast */  
+            font-size: 16px; /* Slightly larger font for readability */  
+            color: #ffffff; /* Darker text color for better readability */  
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+            height:300px !important;
+        }
+    </style>
+    """
+
+    # Inject custom CSS into the Streamlit app
+    st.markdown(custom_css, unsafe_allow_html=True)
+
     st.title("Floorplan Review")
 
     # Navigation Buttons
@@ -425,19 +520,17 @@ def page_5():
             previous_step()
     with col_next:
         if st.button("Next"):
-            logger.info("User populated the floorplan section and selected the next step. Their choices are noted below")
-            prettyjson = json.dumps(st.session_state['json_object'], indent=4)
-            logger.info(prettyjson)
-            logger.info("Moving on to the populate the 'local area, overview and external features' section")
-            generate_json()
-            next_step()
-
+            with st.spinner('Processing...'):
+                logger.info("User populated the floorplan section and selected the next step. Their choices are noted below")
+                prettyjson = json.dumps(st.session_state['json_object'], indent=4)
+                logger.info(prettyjson)
+                logger.info("Moving on to the populate the 'local area, overview and external features' section")
+                generate_json()
+                next_step()
 
     st.markdown("<br>", unsafe_allow_html=True)
-    st.write("We've reviewed the floor plan, and now it's your turn to help bring each space to life. Please review each area in the floor plan and add any details you think would enhance the description. You can also add or remove floors incase we've not got it quite right.")
-    
+    st.write("We've reviewed the floor plan, and now it's your turn to review and help bring each area to life. Please review each area in the floor plan and add any details you think would enhance the description. You can also add or remove floors incase we've not got it quite right.")
     st.write("Simple updates like changing 'Living Room' to 'Spacious living room' or changing 'Kitchen' to 'Modern kitchen with integrated appliances' can make a big difference. The more specifics you add, the better the result!")
-
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Display Floorplan Image with pop-out functionality
@@ -464,96 +557,92 @@ def page_5():
     if 'current_floor_names' not in st.session_state:
         st.session_state.current_floor_names = [list(floor.keys())[0] for floor in st.session_state.floors]
 
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Existing Floors Section
-    # Custom CSS for header and columns
-    custom_css = """
-    <style>
-        .stHeader {
-            font-size: 24px;
-            color: orange;
-        }
-    </style>
-    """
-
-    # Inject custom CSS
-    st.markdown(custom_css, unsafe_allow_html=True)
-
-    # Use custom styled header
-    st.markdown('<h1 class="stHeader">Update Floor Information</h1>', unsafe_allow_html=True)
-
-    custom_css = """
-        <style>
-            .stTextInput input {
-                caret-color: white !important; /* Set cursor color to white */
-                font-size: 14px; /* Set input text font size */
-            }
-            .stTextInput p {
-                colour: orange !important;
-            }
-        </style>
-        """
-
-    # Inject the custom CSS into the Streamlit app
-    st.markdown(custom_css, unsafe_allow_html=True)
-   
     for i, floor in enumerate(st.session_state.floors):
         current_floor_name = st.session_state.current_floor_names[i]
-        with st.expander(f"Floor: {current_floor_name.replace('_', ' ').title()}", expanded=False):
-            floor_name, floor_details = list(floor.items())[0]  # Each floor is a single-item dictionary
-            
-            # Allow user to edit floor name
-            new_floor_name = st.text_input(f"Edit Floor Name", value=current_floor_name.replace('_', ' ').title(), key=f"floor_name_{i}")
-            new_floor_key = new_floor_name.lower().replace(' ', '_')
-            
-            if new_floor_key != current_floor_name:
-                # Update floor name in session state
-                st.session_state.floors[i] = {new_floor_key: floor_details}
-                if floor_name in st.session_state.selected_features:
-                    st.session_state.selected_features[new_floor_key] = st.session_state.selected_features.pop(floor_name)
-                st.session_state.current_floor_names[i] = new_floor_key
-                st.rerun()
+        floor_name, floor_details = list(floor.items())[0]  # Each floor is a single-item dictionary
 
-            # Ensure the floor is in selected_features
-            if new_floor_key not in st.session_state.selected_features:
-                st.session_state.selected_features[new_floor_key] = floor_details.get("features", [])
+        # Create a card for each floor
+        st.markdown(f"""
+        <div class="card">
+            <div class="card-header">Floor: {current_floor_name.replace('_', ' ').title()}</div>
+            <div class="card-content">
+                <label for="floor_name_{i}">Edit Floor Name</label>
+                <input type="text" id="floor_name_{i}" value="{current_floor_name.replace('_', ' ').title()}" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                <label for="features_{i}">Edit Features for {current_floor_name.replace('_', ' ').title()}</label>
+                <textarea id="features_{i}" style="width: 100%; height: 100px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">{'\n'.join(floor_details['features'])}</textarea>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-            # Combine existing features into a single string
-            existing_features = '\n'.join(st.session_state.selected_features[new_floor_key])
-
-            # Add a text area for editing features
-            updated_features = st.text_area(f"Edit Features for {new_floor_name}", value=existing_features, key=f"features_{new_floor_key}")
-
-            # Split the updated features into a list
-            updated_features_list = [feature.strip() for feature in updated_features.split('\n') if feature.strip()]
-
-            # Update the session state with the updated features
-            st.session_state.selected_features[new_floor_key] = updated_features_list
-
-            # Update the floor's "features" section with the new features
-            floor_details["features"] = updated_features_list
-
-            # Add button to remove floor
-            if st.button(f"Remove {new_floor_name}", key=f"remove_{new_floor_key}"):
-                st.session_state.floors.pop(i)
-                del st.session_state.selected_features[new_floor_key]
-                st.session_state.current_floor_names.pop(i)
-                st.rerun()
-                
-    # Add New Floor Section
-    st.markdown('<h1 class="stHeader">Add New Floor</h1>', unsafe_allow_html=True)
-    
-    new_floor_name = st.text_input("Enter new floor name (e.g., 'Ground Floor', 'First Floor')", key="new_floor_input")
-
-    add_button = st.button("Add Floor", key="add_floor_button")
-
-    if add_button and new_floor_name:
-        new_floor_key = new_floor_name.lower().replace(' ', '_')
-        if not any(new_floor_key in floor for floor in st.session_state.floors):
-            new_floor = {new_floor_key: {"features": []}}
-            st.session_state.floors.append(new_floor)
-            st.session_state.selected_features[new_floor_key] = []
-            st.session_state.current_floor_names.append(new_floor_key)
+        if st.button(f"Remove {current_floor_name.replace('_', ' ').title()}", key=f"remove_{i}"):
+            st.session_state.floors.pop(i)
+            st.session_state.current_floor_names.pop(i)
             st.rerun()
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    with stylable_container(
+        key="custom_popover",
+        css_styles="""
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .stTextInput input {  
+                border: 1px dashed #0c00e6; /* Slightly thinner border for a cleaner look */  
+                border-radius: 2px; /* Rounded corners for a modern touch */  
+                padding: 8px 12px; /* Adjusted padding for better alignment */  
+                background-color: #0D1342; /* Light background color for contrast */  
+                font-size: 16px; /* Slightly larger font for readability */  
+                color: #ffffff; /* Darker text color for better readability */  
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */  
+                transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */  
+            }  
+
+            .stTextInput input:hover {  
+                box-shadow: 0 20px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */  
+                border-color: #FFBB0B;  
+            }  
+
+            .stTextInput label {
+                font-size: 24px;
+                color: red;
+            }
+    
+        """
+    ):
+        with st.popover("Add a New Floor"):
+            new_floor_name = st.text_input("Enter new floor name and Press Enter", key="new_floor_input")
+            if new_floor_name:
+                new_floor_key = new_floor_name.lower().replace(' ', '_')
+                if not any(new_floor_key in floor for floor in st.session_state.floors):
+                    new_floor = {new_floor_key: {"features": []}}
+                    st.session_state.floors.append(new_floor)
+                    st.session_state.selected_features[new_floor_key] = []
+                    st.session_state.current_floor_names.append(new_floor_key)
+                    st.rerun()
+
+
+    # with stylable_container(key="styled_popover", css_styles=popover_styles):
+    #     # Add New Floor Section
+    #     with st.popover("Add a New Floor",):    
+    #         new_floor_name = st.text_input("Enter new floor name (e.g., 'Ground Floor', 'First Floor')", key="new_floor_input")
+    #         if new_floor_name:
+    #             new_floor_key = new_floor_name.lower().replace(' ', '_')
+    #             if not any(new_floor_key in floor for floor in st.session_state.floors):
+    #                 new_floor = {new_floor_key: {"features": []}}
+    #                 st.session_state.floors.append(new_floor)
+    #                 st.session_state.selected_features[new_floor_key] = []
+    #                 st.session_state.current_floor_names.append(new_floor_key)
+    #                 st.rerun()
 
     # Update the json_object with the modified floors
     st.session_state['json_object']["property_address"] = st.session_state['property_address']
@@ -561,7 +650,7 @@ def page_5():
 
     # Scroll to top after rerun if needed
     if st.session_state.get('scroll_to_top', False):
-        st.session_state.scroll_to_top = False  
+        st.session_state.scroll_to_top = False
 
 def page_6():
     st.title("Your Property Summary.")
@@ -749,13 +838,13 @@ def page_7():
     st.session_state['the_description'] = edited_desc
 def main(): 
 
-    #with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
-    with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
+    with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+    #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
         data = json.load(f)
         st.session_state['data'] = data
 
-    #with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
-    with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
+    with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+    #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
         theah_convo = yaml.safe_load(file)
         st.session_state['theah_convo'] = theah_convo
 

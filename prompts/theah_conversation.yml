@@ -56,27 +56,23 @@ conversation:
 
     - role: user_buildjson
       content: |
-          Your task is to analyze the property images and JSON object provided, then comprehensively populate the "local_area_highlights", "property_overview", and "external_features" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.
+        Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.
 
-          {{ JSON }}
+        Your task is to analyze the property images and JSON object provided, then comprehensively populate the "local_area_highlights", "property_overview", and "external_features" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.
 
-          Materials Provided:
+        {{ JSON }}
 
-          Property Images - Use these to gather visual details.
-          JSON Object - Populate specified sections in this JSON object.
+        Here are the guidelines to follow when completing this task:
 
-          GUIDELINES
+        1. The "Property Overview" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.
 
-          1. Local Area Highlights: Use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.
+        2. When populating the "Local Area Highlights" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.
 
-          2. Property Overview: Review the provided images closely along with the floorplan section of the JSON to describe key property features (e.g., layout, size, unique architectural details, interior finishes). Emphasize attributes that contribute to the property's appeal, such as modern kitchen designs, spacious rooms, unique architectural features, or luxury finishes. These features should be punctucal and no more than 5 lines. Write in a professional tone that enhances the property’s value and aesthetic appeal.
+        3. When populating the "External Features" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.
 
-          3. External Features: From the images, note all visible external property features, including landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities.
-          Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.
+        Output Requirements
 
-          Output Requirements
-
-          Deliverable: Provide only the completed JSON object with populated "local_area_highlights", "property_overview", and "external_features" fields. Do not output any additional content or explanations outside the JSON structure.
+        Deliverable: Provide only the completed JSON object with populated "local_area_highlights", "property_overview", and "external_features" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.
 
           Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.
 
@@ -99,9 +95,8 @@ conversation:
           Guidelines
 
           1. You must ONLY include the features noted in the JSON object. You will be fined $1000 if you add any additional features into the description. 
-          2. You must write this description in the same tone and style as my past listing descriptions.
           3. Employ British English vocabulary throughout the description. 
-          4. Format for Readability: Ensure the listing flows logically and is formatted to enhance readability.
+          4. Format for Readability: Ensure the listing flows logically and is formatted to enhance readability. Never list features in bullet points.
           5. The description should always be encapusulated in between these two tags <DESCRIPTION> <ENDDESCRIPTION>
           6. Do not include anything else apart from the description in between the tags.
           

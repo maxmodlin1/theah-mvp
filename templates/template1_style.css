@@ -211,14 +211,13 @@ h1 {
     height: 300px;
 }  
 
-
 .stTextInput input::placeholder {
     color: grey; /* Change this to your desired color */
     font-size: small;
     opacity: 1; /* Ensure the opacity is set to 1 for full color */
 }
 
-.orange-text {
+.orange-∑∑∑ {
     color: orange;
 }
 
@@ -245,3 +244,72 @@ h1 {
 .custom-markdown {
     background-color: #f9f9f9;
 }
+
+.stPopover {
+    position: relative !important;
+  }
+  
+  .stPopover button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 10px 15px !important;
+    background-color: #000000 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .stPopover button:hover {
+    background-color: #e0e0e0 !important;
+  }
+  
+  .stPopover button p {
+    margin: 0 !important;
+    font-size: 14px !important;
+  }
+  
+  .stPopover svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: currentColor !important;
+  }
+  
+  .st-ae {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
+    display: none !important;
+  }
+  
+  .stPopover[aria-expanded="true"] .st-ae {
+    display: block !important;
+  }
+  
+  .stVerticalBlock {
+    padding: 15px !important;
+  }
+  
+  .stMarkdownContainer p {
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  .stPopoverButton [kind="secondary"] {
+    background-color: #00e6d3 !important;
+    color: white !important;
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
