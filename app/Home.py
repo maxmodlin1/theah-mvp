@@ -270,6 +270,10 @@ def page_1():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/no-property-img.webp", width=500)
+        st.write("Welcome to Corum's AI Property Description Generator!")
+        st.markdown("This tool is built specifically for Corum Clarkston, using a custom AI model to craft detailed listing descriptions that capture the style and tone your brand.")
+        st.markdown("Just click the button below to get started!") 
+        st.markdown("<br>", unsafe_allow_html=True)
         if st.button("Get Started"):
             logger.info("User Selected Get Started")
             next_step()
@@ -884,7 +888,14 @@ def main():
     if 'additional_notes_text' not in st.session_state:
         st.session_state['additional_notes_text'] = ""
 
-    st.sidebar.button("New Description", on_click=go_home)
+    st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png", width=200)
+    st.sidebar.markdown("<br>", unsafe_allow_html=True)
+    st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png", width=200)
+    st.sidebar.markdown("<br>", unsafe_allow_html=True)
+    st.sidebar.markdown("<br>", unsafe_allow_html=True)
+    st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+    st.sidebar.button("New Description", on_click=go_home,use_container_width=True)
     
     pages = [page_1, page_2, page_3, page_4, page_5, page_6,page_7]
     

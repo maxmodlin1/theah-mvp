@@ -18913,3 +18913,339 @@ Externally, the property benefits from a well-maintained communal garden with ma
 
 Located in the charming village of Bothwell, known for its historic architecture and vibrant community, the property is in close proximity to Bothwell Castle and scenic walking trails. Excellent local amenities, including shops, cafes, and restaurants, are nearby, along with easy access to public transport links and major road networks. Reputable schools and educational facilities are also within the vicinity.
 2024-11-06 22:05:18,012 - __main__ - INFO - Returning to home page
+2024-11-06 22:08:56,157 - __main__ - INFO - Returning to home page
+2024-11-06 22:31:45,871 - __main__ - INFO - User Selected Get Started
+2024-11-06 22:31:45,874 - __main__ - INFO - User selected the next step
+2024-11-06 22:32:00,678 - __main__ - INFO - User inputted Property Address: 1 Overlee Road, Clarkston, Glasgow, G76
+2024-11-06 22:32:00,679 - __main__ - INFO - User selected the next step
+2024-11-06 22:32:10,527 - __main__ - INFO - User selected the previous step
+2024-11-06 22:32:16,742 - __main__ - INFO - User inputted Property Address: 30 Woodcroft Avenue, G11 7HY, Glasgow
+2024-11-06 22:32:16,744 - __main__ - INFO - User selected the next step
+2024-11-06 22:32:24,185 - __main__ - INFO - User selected the previous step
+2024-11-06 22:33:01,544 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-06 22:33:01,545 - __main__ - INFO - User selected the next step
+2024-11-06 22:34:41,014 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg
+2024-11-06 22:34:41,016 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg']
+2024-11-06 22:34:41,017 - __main__ - INFO - User selected the next step
+2024-11-06 22:36:57,718 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/1.jpeg
+2024-11-06 22:36:58,261 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/2.jpeg
+2024-11-06 22:36:58,772 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/6.jpeg
+2024-11-06 22:36:59,251 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/7.jpeg
+2024-11-06 22:36:59,929 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/11.jpeg
+2024-11-06 22:37:00,437 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/14.jpeg
+2024-11-06 22:37:00,950 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17.jpeg
+2024-11-06 22:37:01,450 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/18.jpeg
+2024-11-06 22:37:01,451 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-06 22:37:01,523 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-06 22:37:01,523 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-06 22:37:01,523 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:01,523 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:01,523 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-06 22:37:07,727 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen with entrance leading to the lounge.",
+          "Lounge with access to the kitchen.",
+          "Bathroom located adjacent to the entrance.",
+          "Two bedrooms, each with a window.",
+          "En-suite bathroom connected to one bedroom.",
+          "Multiple storage cupboards labeled 'W' and 'C'."
+        ]
+      },
+      "first_floor": {
+        "features": []
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-06 22:37:07,729 - __main__ - INFO - User selected the next step
+2024-11-06 22:37:25,743 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-06 22:37:25,744 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen with entrance leading to the lounge.",
+                    "Lounge with access to the kitchen.",
+                    "Bathroom located adjacent to the entrance.",
+                    "Two bedrooms, each with a window.",
+                    "En-suite bathroom connected to one bedroom.",
+                    "Multiple storage cupboards labeled 'W' and 'C'."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-06 22:37:25,745 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-06 22:37:25,811 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-06 22:37:25,811 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-06 22:37:25,811 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:25,811 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:25,811 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-06 22:37:25,812 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Kitchen with entrance leading to the lounge.\", \"Lounge with access to the kitchen.\", \"Bathroom located adjacent to the entrance.\", \"Two bedrooms, each with a window.\", \"En-suite bathroom connected to one bedroom.\", \"Multiple storage cupboards labeled 'W' and 'C'.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/1.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/2.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/6.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/7.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/11.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/14.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17.jpeg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/18.jpeg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-06 22:37:38,522 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-06 22:37:38,523 - __main__ - DEBUG - {
+  "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+  "property_overview": [
+    "Charming two-bedroom flat in a traditional sandstone tenement.",
+    "Spacious lounge with bay windows and elegant fireplace.",
+    "Modern kitchen with sleek cabinetry and integrated appliances.",
+    "Master bedroom with en-suite bathroom.",
+    "Stylish family bathroom with contemporary fittings.",
+    "Ample storage space throughout the property."
+  ],
+  "external_features": [
+    "Communal garden area with mature trees and landscaping.",
+    "On-street parking available.",
+    "Secure entry system for added safety."
+  ],
+  "local_area_highlights": [
+    "Located in the desirable Broomhill area, known for its vibrant community.",
+    "Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.",
+    "Excellent transport links with nearby bus and train services.",
+    "Walking distance to Victoria Park, offering green spaces and recreational facilities.",
+    "Nearby schools and educational institutions, ideal for families."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen with entrance leading to the lounge.",
+          "Lounge with access to the kitchen.",
+          "Bathroom located adjacent to the entrance.",
+          "Two bedrooms, each with a window.",
+          "En-suite bathroom connected to one bedroom.",
+          "Multiple storage cupboards labeled 'W' and 'C'."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-06 22:37:38,524 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-06 22:37:38,524 - __main__ - DEBUG - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [
+        "Charming two-bedroom flat in a traditional sandstone tenement.",
+        "Spacious lounge with bay windows and elegant fireplace.",
+        "Modern kitchen with sleek cabinetry and integrated appliances.",
+        "Master bedroom with en-suite bathroom.",
+        "Stylish family bathroom with contemporary fittings.",
+        "Ample storage space throughout the property."
+    ],
+    "external_features": [
+        "Communal garden area with mature trees and landscaping.",
+        "On-street parking available.",
+        "Secure entry system for added safety."
+    ],
+    "local_area_highlights": [
+        "Located in the desirable Broomhill area, known for its vibrant community.",
+        "Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.",
+        "Excellent transport links with nearby bus and train services.",
+        "Walking distance to Victoria Park, offering green spaces and recreational facilities.",
+        "Nearby schools and educational institutions, ideal for families."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen with entrance leading to the lounge.",
+                    "Lounge with access to the kitchen.",
+                    "Bathroom located adjacent to the entrance.",
+                    "Two bedrooms, each with a window.",
+                    "En-suite bathroom connected to one bedroom.",
+                    "Multiple storage cupboards labeled 'W' and 'C'."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-06 22:37:38,524 - __main__ - INFO - User selected the next step
+2024-11-06 22:37:38,626 - __main__ - DEBUG - Preprocessing text: ['Charming two-bedroom flat in a traditional sandstone tenement.', 'Spacious lounge with bay windows and elegant fireplace.', 'Modern kitchen with sleek cabinetry and integrated appliances.', 'Master bedroom with en-suite bathroom.', 'Stylish family bathroom with contemporary fittings.', 'Ample storage space throughout the property.']
+2024-11-06 22:37:38,629 - __main__ - DEBUG - Preprocessing text: ['Communal garden area with mature trees and landscaping.', 'On-street parking available.', 'Secure entry system for added safety.']
+2024-11-06 22:37:38,629 - __main__ - DEBUG - Preprocessing text: ['Located in the desirable Broomhill area, known for its vibrant community.', 'Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.', 'Excellent transport links with nearby bus and train services.', 'Walking distance to Victoria Park, offering green spaces and recreational facilities.', 'Nearby schools and educational institutions, ideal for families.']
+2024-11-06 22:37:53,653 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-06 22:37:53,655 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": "Charming two-bedroom flat in a traditional sandstone tenement.\nSpacious lounge with bay windows and elegant fireplace.\nModern kitchen with sleek cabinetry and integrated appliances.\nMaster bedroom with en-suite bathroom.\nStylish family bathroom with contemporary fittings.\nAmple storage space throughout the property.",
+    "external_features": "Communal garden area with mature trees and landscaping.\nOn-street parking available.\nSecure entry system for added safety.",
+    "local_area_highlights": "Located in the desirable Broomhill area, known for its vibrant community.\nClose proximity to Broomhill Shopping Centre with a variety of shops and cafes.\nExcellent transport links with nearby bus and train services.\nWalking distance to Victoria Park, offering green spaces and recreational facilities.\nNearby schools and educational institutions, ideal for families.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen with entrance leading to the lounge.",
+                    "Lounge with access to the kitchen.",
+                    "Bathroom located adjacent to the entrance.",
+                    "Two bedrooms, each with a window.",
+                    "En-suite bathroom connected to one bedroom.",
+                    "Multiple storage cupboards labeled 'W' and 'C'."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-06 22:37:53,655 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-06 22:37:53,733 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-06 22:37:53,734 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-06 22:37:53,734 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:53,734 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:53,734 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-06 22:37:59,186 - __main__ - DEBUG - First generation response..
+2024-11-06 22:37:59,187 - __main__ - DEBUG - 
+2024-11-06 22:37:59,187 - __main__ - DEBUG - <DESCRIPTION> 
+A charming two-bedroom flat set in a traditional sandstone tenement.
+
+This charming two-bedroom flat occupies a ground floor position within a traditional sandstone tenement building. The property is ideally positioned to benefit from the host of local amenities and transport links on offer within the immediate area.
+
+The internal accommodation comprises; spacious lounge with bay window and elegant fireplace, modern kitchen with sleek cabinetry and integrated appliances, master bedroom with en-suite bathroom and a stylish family bathroom with contemporary fittings. The property also benefits from ample storage space throughout.
+
+Externally there is a communal garden area to the rear which is well tended with mature trees and landscaping. On-street parking is available and there is a secure entry system in place.
+
+Local Area
+The Broomhill area is held in high regard and provides a vibrant social community. Local amenities can be found on Crow Road and Broomhill Shopping Centre offers a number of shops and cafes. More extensive amenities are available at the nearby West End Retail Park, which offers a Sainsbury’s supermarket amongst other well-known retailers. There are excellent public transport links to Glasgow City Centre via bus and rail and good road links to the City Centre and M8 motorway. Recreational amenities can be found at the nearby Victoria Park which is within walking distance.
+<ENDDESCRIPTION>
+
+2024-11-06 22:37:59,187 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-06 22:37:59,188 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-06 22:37:59,188 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-06 22:37:59,188 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-06 22:37:59,188 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Charming two-bedroom flat in a traditional sandstone tenement.\\nSpacious lounge with bay windows and elegant fireplace.\\nModern kitchen with sleek cabinetry and integrated appliances.\\nMaster bedroom with en-suite bathroom.\\nStylish family bathroom with contemporary fittings.\\nAmple storage space throughout the property.\",\n    \"external_features\": \"Communal garden area with mature trees and landscaping.\\nOn-street parking available.\\nSecure entry system for added safety.\",\n    \"local_area_highlights\": \"Located in the desirable Broomhill area, known for its vibrant community.\\nClose proximity to Broomhill Shopping Centre with a variety of shops and cafes.\\nExcellent transport links with nearby bus and train services.\\nWalking distance to Victoria Park, offering green spaces and recreational facilities.\\nNearby schools and educational institutions, ideal for families.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Kitchen with entrance leading to the lounge.\",\n                    \"Lounge with access to the kitchen.\",\n                    \"Bathroom located adjacent to the entrance.\",\n                    \"Two bedrooms, each with a window.\",\n                    \"En-suite bathroom connected to one bedroom.\",\n                    \"Multiple storage cupboards labeled 'W' and 'C'.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA charming two-bedroom flat set in a traditional sandstone tenement.\n\nThis charming two-bedroom flat occupies a ground floor position within a traditional sandstone tenement building. The property is ideally positioned to benefit from the host of local amenities and transport links on offer within the immediate area.\n\nThe internal accommodation comprises; spacious lounge with bay window and elegant fireplace, modern kitchen with sleek cabinetry and integrated appliances, master bedroom with en-suite bathroom and a stylish family bathroom with contemporary fittings. The property also benefits from ample storage space throughout.\n\nExternally there is a communal garden area to the rear which is well tended with mature trees and landscaping. On-street parking is available and there is a secure entry system in place.\n\nLocal Area\nThe Broomhill area is held in high regard and provides a vibrant social community. Local amenities can be found on Crow Road and Broomhill Shopping Centre offers a number of shops and cafes. More extensive amenities are available at the nearby West End Retail Park, which offers a Sainsbury\u2019s supermarket amongst other well-known retailers. There are excellent public transport links to Glasgow City Centre via bus and rail and good road links to the City Centre and M8 motorway. Recreational amenities can be found at the nearby Victoria Park which is within walking distance.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-06 22:38:10,499 - __main__ - DEBUG - Validation content: <DESCRIPTION> 
+A charming two-bedroom flat set in a traditional sandstone tenement.
+
+This charming two-bedroom flat occupies a ground floor position within a traditional sandstone tenement building. The property is ideally positioned to benefit from local amenities and transport links on offer within the immediate area.
+
+The internal accommodation comprises a spacious lounge with bay windows and an elegant fireplace, a modern kitchen with sleek cabinetry and integrated appliances, a master bedroom with an en-suite bathroom, and a stylish family bathroom with contemporary fittings. The property also benefits from ample storage space throughout.
+
+Externally, there is a communal garden area to the rear which is well-tended with mature trees and landscaping. On-street parking is available, and there is a secure entry system in place.
+
+Local Area
+Located in the desirable Broomhill area, known for its vibrant community. Close proximity to Broomhill Shopping Centre with a variety of shops and cafes. Excellent transport links with nearby bus and train services. Walking distance to Victoria Park, offering green spaces and recreational facilities. Nearby schools and educational institutions, ideal for families.
+<ENDDESCRIPTION>
+2024-11-06 22:40:47,284 - __main__ - INFO - Returning to home page
