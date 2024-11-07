@@ -101,7 +101,7 @@ def add_message(role, text, image_url=None):
 
 def add_thread(thread_id, message, role, files=None):
     logger.debug(f"Adding thread: thread_id={thread_id}, message={message}, role={role}, files={files}")
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     messages = [{"type": "text", "text": message}]
     if files:
         for file in files:
@@ -127,7 +127,7 @@ def upload_to_gcs(source_file_path, file_name):
 
 def upload_files(uploaded_file, type=None):
     #logger.debug(f"Uploading file: {uploaded_file.name}, type={type}")
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     temp_dir = tempfile.mkdtemp()
     file_path = os.path.join(temp_dir, uploaded_file.name)
     with open(file_path, "wb") as f:
@@ -142,13 +142,17 @@ def upload_files(uploaded_file, type=None):
 
 def go_home():
     logger.info("Returning to home page")
-    st.session_state.clear()
-    st.session_state.page = 0
+    keys_to_keep = ['logged_in']
+    keys_to_remove = [key for key in st.session_state.keys() if key not in keys_to_keep]
+    for key in keys_to_remove:
+        del st.session_state[key]
+
+    st.session_state.page = 1
     st.rerun()
 
 def create_assistant(name, instructions, model):
     logger.debug(f"Creating assistant: name={name}, instructions={instructions}, model={model}")
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     assistant = client.beta.assistants.create(name=name, instructions=instructions, model=st.session_state['model'])
     thread = client.beta.threads.create()
     obj = {"assistantid": assistant.id, "threadid": thread.id}
@@ -156,7 +160,7 @@ def create_assistant(name, instructions, model):
 
 def run_assistant(threadid, assistantid):
     logger.debug(f"Running assistant: threadid={threadid}, assistantid={assistantid}")
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     run = client.beta.threads.runs.create(thread_id=threadid, assistant_id=assistantid)
     while True:
         run_status = client.beta.threads.runs.retrieve(thread_id=threadid, run_id=run.id)
@@ -169,14 +173,14 @@ def run_assistant(threadid, assistantid):
 
 def print_last_assistant_message(threadid):
     logger.debug(f"Printing last assistant message: threadid={threadid}")
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     messages = client.beta.threads.messages.list(thread_id=threadid)
     if messages.data:
         return messages.data[0].content[0].text.value
 
 def generate_json():
     st.session_state['chat_messages'] = []
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     json_obj = st.session_state['json_object']
     json_str = json.dumps(json_obj)
     system = get_theah_content("system_buildjson")
@@ -215,7 +219,7 @@ def generate_json():
         logger.error(f"Failed to parse JSON: {e}")
 
 def make_floorplan_review_call(floorplan_url):
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     system = get_theah_content("system_floorplan")
     floorplan = get_theah_content("user_floorplan")
     add_message(role="system", text=system)
@@ -242,7 +246,7 @@ def generate_description():
     pretty_json = json.dumps(st.session_state['json_object'], indent=4)
     #logger.debug(f"Pretty JSON: {pretty_json}")
 
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=st.secrets["api_key"])
     system = get_theah_content("system_gendescription")
     description = get_theah_content("user_gendescription")
     update_description = description.replace('{{ JSON }}', str(pretty_json))
@@ -290,9 +294,8 @@ def page_1():
     with col2:
         st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/no-property-img.webp", width=500)
         st.write("Welcome to Corum's AI Property Description Generator!")
-        st.markdown("This tool is built specifically for Corum Clarkston, using a custom AI model to craft detailed listing descriptions that capture the style and tone your brand.")
-        st.markdown("Just click the button below to get started!") 
-        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("This tool will help you write a detailed property listing description in minutes, using an AI model developed specifically for Corum Clarkston.")
+        st.markdown("Click the button below to get started!") 
         if st.button("Get Started"):
             logger.info("User Selected Get Started")
             next_step()
@@ -859,6 +862,7 @@ def page_7():
     
     # Update the session state with the edited description
     st.session_state['the_description'] = edited_desc
+
 def main(): 
 
     if 'logged_in' not in st.session_state:
@@ -876,6 +880,8 @@ def main():
         #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
             theah_convo = yaml.safe_load(file)
             st.session_state['theah_convo'] = theah_convo
+
+        st.session_state['api_key'] = st.secrets["api_key"]
 
         if 'page' not in st.session_state:
             st.session_state.page = 0
@@ -913,9 +919,38 @@ def main():
         if 'additional_notes_text' not in st.session_state:
             st.session_state['additional_notes_text'] = ""
 
-        st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png", width=200)
+
+        # Inject custom CSS into the Streamlit app
+        st.markdown("""
+        <style>
+            .centered-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+        st.sidebar.markdown("""
+        <div class="centered-image">
+            <img src="https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png" width="150">
+        </div>
+        """, unsafe_allow_html=True)
+
         st.sidebar.markdown("<br>", unsafe_allow_html=True)
-        st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png", width=200)
+        st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+        st.sidebar.markdown("""
+        <div class="centered-image">
+            <img src="https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png" width="150">
+        </div>
+        """, unsafe_allow_html=True)
+
+   
+
+
+        #st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-positive.png", width=100)
+        #st.sidebar.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/corumlogo.png", width=100)
         st.sidebar.markdown("<br>", unsafe_allow_html=True)
         st.sidebar.markdown("<br>", unsafe_allow_html=True)
         st.sidebar.markdown("<br>", unsafe_allow_html=True)
@@ -940,7 +975,6 @@ def main():
             '''
 
             st.components.v1.html(js)   
-
 
 if __name__ == "__main__":  
     template1_page_style()

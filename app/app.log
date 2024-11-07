@@ -19249,3 +19249,2084 @@ Local Area
 Located in the desirable Broomhill area, known for its vibrant community. Close proximity to Broomhill Shopping Centre with a variety of shops and cafes. Excellent transport links with nearby bus and train services. Walking distance to Victoria Park, offering green spaces and recreational facilities. Nearby schools and educational institutions, ideal for families.
 <ENDDESCRIPTION>
 2024-11-06 22:40:47,284 - __main__ - INFO - Returning to home page
+2024-11-06 23:05:37,168 - __main__ - INFO - User Selected Get Started
+2024-11-06 23:05:37,171 - __main__ - INFO - User selected the next step
+2024-11-06 23:05:38,944 - __main__ - INFO - User selected the previous step
+2024-11-06 23:05:40,732 - __main__ - INFO - User Selected Get Started
+2024-11-06 23:05:40,734 - __main__ - INFO - User selected the next step
+2024-11-06 23:05:42,550 - __main__ - INFO - User inputted Property Address: 
+2024-11-06 23:05:42,551 - __main__ - INFO - User selected the next step
+2024-11-07 20:05:26,725 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:05:26,727 - __main__ - INFO - User selected the next step
+2024-11-07 20:05:54,580 - __main__ - INFO - User inputted Property Address: 51 Heathcliff Drive, Jackton, Glasgow, G75
+2024-11-07 20:05:54,581 - __main__ - INFO - User selected the next step
+2024-11-07 20:07:54,926 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:07:54,930 - __main__ - INFO - User selected the next step
+2024-11-07 20:07:58,062 - __main__ - INFO - User inputted Property Address: Floor 1 
+2024-11-07 20:07:58,063 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:08,378 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:10:08,381 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:12,625 - __main__ - INFO - User inputted Property Address: Floor 1 
+2024-11-07 20:10:12,626 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:18,347 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg
+2024-11-07 20:10:18,348 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg']
+2024-11-07 20:10:18,349 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:21,065 - __main__ - INFO - User selected the previous step
+2024-11-07 20:10:22,744 - __main__ - INFO - User selected the previous step
+2024-11-07 20:10:25,956 - __main__ - INFO - User inputted Property Address: 1 Overlee Road, Clarkston, Glasgow, G46 8BU
+2024-11-07 20:10:25,956 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:30,960 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg
+2024-11-07 20:10:30,960 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg', 'https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg']
+2024-11-07 20:10:30,962 - __main__ - INFO - User selected the next step
+2024-11-07 20:10:39,855 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg
+2024-11-07 20:10:40,603 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg
+2024-11-07 20:10:41,304 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg
+2024-11-07 20:10:41,994 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg
+2024-11-07 20:10:42,549 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg
+2024-11-07 20:10:43,253 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-66-Medium.jpg
+2024-11-07 20:10:43,253 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:10:43,310 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:10:43,310 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:10:43,310 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:10:43,310 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:10:43,311 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:10:49,093 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Dining/Family Room with access to the kitchen",
+          "Kitchen adjacent to the dining/family room",
+          "Lounge with front-facing bay window",
+          "Bathroom located centrally",
+          "Bedroom with rear access"
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Two front-facing bedrooms",
+          "Rear-facing bedroom with access to a shower room",
+          "Additional bedroom located at the rear",
+          "Central shower room"
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:10:49,096 - __main__ - INFO - User selected the next step
+2024-11-07 20:11:02,725 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:11:02,726 - __main__ - INFO - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family Room with access to the kitchen",
+                    "Kitchen adjacent to the dining/family room",
+                    "Lounge with front-facing bay window",
+                    "Bathroom located centrally",
+                    "Bedroom with rear access"
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Two front-facing bedrooms",
+                    "Rear-facing bedroom with access to a shower room",
+                    "Additional bedroom located at the rear",
+                    "Central shower room"
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:11:02,727 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:11:02,809 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:11:02,810 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:11:02,810 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:11:02,810 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:11:02,810 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:11:02,822 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G46 8BU\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Dining/Family Room with access to the kitchen\", \"Kitchen adjacent to the dining/family room\", \"Lounge with front-facing bay window\", \"Bathroom located centrally\", \"Bedroom with rear access\"]}}, {\"first_floor\": {\"features\": [\"Two front-facing bedrooms\", \"Rear-facing bedroom with access to a shower room\", \"Additional bedroom located at the rear\", \"Central shower room\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-66-Medium.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:11:12,522 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-07 20:11:12,523 - __main__ - DEBUG - {
+  "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+  "property_overview": [
+    "Charming detached family home",
+    "Five spacious bedrooms",
+    "Bright lounge with bay window",
+    "Modern kitchen with dining area",
+    "Two shower rooms and one bathroom",
+    "Expansive rear garden with patio",
+    "Convenient rear access to bedroom"
+  ],
+  "external_features": [
+    "Large landscaped garden",
+    "Spacious patio area",
+    "Detached garage",
+    "Driveway for multiple cars",
+    "Mature trees and shrubs"
+  ],
+  "local_area_highlights": [
+    "Proximity to Overlee Park for outdoor activities",
+    "Excellent local schools including Williamwood High School",
+    "Convenient shopping at The Avenue Shopping Centre",
+    "Easy access to Clarkston train station for commuting",
+    "Variety of local cafes and restaurants"
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Dining/Family Room with access to the kitchen",
+          "Kitchen adjacent to the dining/family room",
+          "Lounge with front-facing bay window",
+          "Bathroom located centrally",
+          "Bedroom with rear access"
+        ]
+      }
+    },
+    {
+      "first_floor": {
+        "features": [
+          "Two front-facing bedrooms",
+          "Rear-facing bedroom with access to a shower room",
+          "Additional bedroom located at the rear",
+          "Central shower room"
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:11:12,524 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-07 20:11:12,524 - __main__ - DEBUG - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": [
+        "Charming detached family home",
+        "Five spacious bedrooms",
+        "Bright lounge with bay window",
+        "Modern kitchen with dining area",
+        "Two shower rooms and one bathroom",
+        "Expansive rear garden with patio",
+        "Convenient rear access to bedroom"
+    ],
+    "external_features": [
+        "Large landscaped garden",
+        "Spacious patio area",
+        "Detached garage",
+        "Driveway for multiple cars",
+        "Mature trees and shrubs"
+    ],
+    "local_area_highlights": [
+        "Proximity to Overlee Park for outdoor activities",
+        "Excellent local schools including Williamwood High School",
+        "Convenient shopping at The Avenue Shopping Centre",
+        "Easy access to Clarkston train station for commuting",
+        "Variety of local cafes and restaurants"
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family Room with access to the kitchen",
+                    "Kitchen adjacent to the dining/family room",
+                    "Lounge with front-facing bay window",
+                    "Bathroom located centrally",
+                    "Bedroom with rear access"
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Two front-facing bedrooms",
+                    "Rear-facing bedroom with access to a shower room",
+                    "Additional bedroom located at the rear",
+                    "Central shower room"
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:11:12,524 - __main__ - INFO - User selected the next step
+2024-11-07 20:11:12,612 - __main__ - DEBUG - Preprocessing text: ['Charming detached family home', 'Five spacious bedrooms', 'Bright lounge with bay window', 'Modern kitchen with dining area', 'Two shower rooms and one bathroom', 'Expansive rear garden with patio', 'Convenient rear access to bedroom']
+2024-11-07 20:11:12,613 - __main__ - DEBUG - Preprocessing text: ['Large landscaped garden', 'Spacious patio area', 'Detached garage', 'Driveway for multiple cars', 'Mature trees and shrubs']
+2024-11-07 20:11:12,614 - __main__ - DEBUG - Preprocessing text: ['Proximity to Overlee Park for outdoor activities', 'Excellent local schools including Williamwood High School', 'Convenient shopping at The Avenue Shopping Centre', 'Easy access to Clarkston train station for commuting', 'Variety of local cafes and restaurants']
+2024-11-07 20:11:22,417 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-07 20:11:22,419 - __main__ - INFO - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": "Charming detached family home\nFive spacious bedrooms\nBright lounge with bay window\nModern kitchen with dining area\nTwo shower rooms and one bathroom\nExpansive rear garden with patio\nConvenient rear access to bedroom",
+    "external_features": "Large landscaped garden\nSpacious patio area\nDetached garage\nDriveway for multiple cars\nMature trees and shrubs",
+    "local_area_highlights": "Proximity to Overlee Park for outdoor activities\nExcellent local schools including Williamwood High School\nConvenient shopping at The Avenue Shopping Centre\nEasy access to Clarkston train station for commuting\nVariety of local cafes and restaurants",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family Room with access to the kitchen",
+                    "Kitchen adjacent to the dining/family room",
+                    "Lounge with front-facing bay window",
+                    "Bathroom located centrally",
+                    "Bedroom with rear access"
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Two front-facing bedrooms",
+                    "Rear-facing bedroom with access to a shower room",
+                    "Additional bedroom located at the rear",
+                    "Central shower room"
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:11:22,420 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-07 20:11:22,499 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-07 20:11:22,500 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-07 20:11:22,500 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:11:22,500 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:11:22,500 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-07 20:11:30,135 - __main__ - DEBUG - First generation response..
+2024-11-07 20:11:30,136 - __main__ - DEBUG - 
+2024-11-07 20:11:30,136 - __main__ - DEBUG - <DESCRIPTION> 
+This charming detached family home is set within a large landscaped garden and is perfectly placed for all that the local area has to offer.
+
+The ground floor accommodation extends to entrance hallway, lovely dining / family room with access through to modern kitchen, bright spacious lounge with front facing bay window, bathroom and bedroom with rear access. Upstairs a further four good bedrooms (two front facing, two rear facing with the rear having access to a shower room) and a central shower room. The specification includes gas central heating and double glazing.
+
+Externally the subjects enjoy large garden grounds with spacious patio area, detached garage and driveway providing ample space for multiple cars.
+
+Local Area
+A haven for young growing families, the district offers an abundance of local amenities, including shops, supermarkets, cafes, restaurants and bars, and is renowned for its excellent high standard of schooling at both primary and secondary level. The shopping suburb of Newton Mearns is close by, offering The Avenue Shopping Centre and further high street shopping. The surrounding areas of Giffnock and Newton Mearns offer a variety of facilities, including golf courses, tennis clubs, bowling clubs, and parks. Overlee Park is a short distance away offering a variety of outdoor activities. The local train station is Clarkston, which is a short distance away.
+<ENDDESCRIPTION>
+
+2024-11-07 20:11:30,136 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-07 20:11:30,137 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-07 20:11:30,137 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:11:30,137 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-07 20:11:30,138 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G46 8BU\",\n    \"property_overview\": \"Charming detached family home\\nFive spacious bedrooms\\nBright lounge with bay window\\nModern kitchen with dining area\\nTwo shower rooms and one bathroom\\nExpansive rear garden with patio\\nConvenient rear access to bedroom\",\n    \"external_features\": \"Large landscaped garden\\nSpacious patio area\\nDetached garage\\nDriveway for multiple cars\\nMature trees and shrubs\",\n    \"local_area_highlights\": \"Proximity to Overlee Park for outdoor activities\\nExcellent local schools including Williamwood High School\\nConvenient shopping at The Avenue Shopping Centre\\nEasy access to Clarkston train station for commuting\\nVariety of local cafes and restaurants\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Dining/Family Room with access to the kitchen\",\n                    \"Kitchen adjacent to the dining/family room\",\n                    \"Lounge with front-facing bay window\",\n                    \"Bathroom located centrally\",\n                    \"Bedroom with rear access\"\n                ]\n            }\n        },\n        {\n            \"first_floor\": {\n                \"features\": [\n                    \"Two front-facing bedrooms\",\n                    \"Rear-facing bedroom with access to a shower room\",\n                    \"Additional bedroom located at the rear\",\n                    \"Central shower room\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nThis charming detached family home is set within a large landscaped garden and is perfectly placed for all that the local area has to offer.\n\nThe ground floor accommodation extends to entrance hallway, lovely dining / family room with access through to modern kitchen, bright spacious lounge with front facing bay window, bathroom and bedroom with rear access. Upstairs a further four good bedrooms (two front facing, two rear facing with the rear having access to a shower room) and a central shower room. The specification includes gas central heating and double glazing.\n\nExternally the subjects enjoy large garden grounds with spacious patio area, detached garage and driveway providing ample space for multiple cars.\n\nLocal Area\nA haven for young growing families, the district offers an abundance of local amenities, including shops, supermarkets, cafes, restaurants and bars, and is renowned for its excellent high standard of schooling at both primary and secondary level. The shopping suburb of Newton Mearns is close by, offering The Avenue Shopping Centre and further high street shopping. The surrounding areas of Giffnock and Newton Mearns offer a variety of facilities, including golf courses, tennis clubs, bowling clubs, and parks. Overlee Park is a short distance away offering a variety of outdoor activities. The local train station is Clarkston, which is a short distance away.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-07 20:11:37,460 - __main__ - DEBUG - Validation content: This charming detached family home is situated at 1 Overlee Road, Clarkston, Glasgow, G46 8BU, featuring a large landscaped garden and a spacious patio area, perfect for outdoor living.
+
+The ground floor comprises an entrance hallway, a dining/family room with access to the modern kitchen, a bright lounge with a front-facing bay window, a central bathroom, and a bedroom with rear access. Upstairs, there are four additional bedrooms, including two front-facing bedrooms, one rear-facing bedroom with access to a shower room, and an additional rear bedroom, alongside a central shower room.
+
+Externally, the property benefits from a detached garage and a driveway that accommodates multiple cars, surrounded by mature trees and shrubs.
+
+**Local Area**
+
+The property is conveniently located near Overlee Park, offering ample opportunities for outdoor activities. Families will appreciate the excellent local schools, including Williamwood High School. Shopping needs are met at The Avenue Shopping Centre, and the Clarkston train station provides easy access for commuting. A variety of local cafes and restaurants are also within easy reach.
+2024-11-07 20:12:11,199 - __main__ - INFO - Returning to home page
+2024-11-07 20:15:12,228 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:15:12,231 - __main__ - INFO - User selected the next step
+2024-11-07 20:15:13,340 - __main__ - INFO - User inputted Property Address: 
+2024-11-07 20:15:13,340 - __main__ - INFO - User selected the next step
+2024-11-07 20:15:14,432 - __main__ - INFO - Returning to home page
+2024-11-07 20:15:44,515 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:15:44,516 - __main__ - INFO - User selected the next step
+2024-11-07 20:15:45,462 - __main__ - INFO - User inputted Property Address: 
+2024-11-07 20:15:45,463 - __main__ - INFO - User selected the next step
+2024-11-07 20:15:46,315 - __main__ - INFO - Returning to home page
+2024-11-07 20:15:59,259 - __main__ - INFO - User inputted Property Address: 1 Overlee Road, Clarkston, Glasgow, G46 8BU
+2024-11-07 20:15:59,261 - __main__ - INFO - User selected the next step
+2024-11-07 20:16:03,612 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg
+2024-11-07 20:16:03,613 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg']
+2024-11-07 20:16:03,614 - __main__ - INFO - User selected the next step
+2024-11-07 20:16:12,741 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg
+2024-11-07 20:16:13,437 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg
+2024-11-07 20:16:14,261 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg
+2024-11-07 20:16:15,040 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg
+2024-11-07 20:16:15,656 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg
+2024-11-07 20:16:15,656 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:16:15,723 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:16:15,723 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:16:15,723 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:15,724 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:15,724 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:16:21,060 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to the dining/family room and kitchen.",
+          "Dining/family room adjacent to the kitchen.",
+          "Spacious lounge with bay window.",
+          "Bathroom located near the entrance.",
+          "Staircase leading to the first floor."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Three bedrooms, each with access from the central landing.",
+          "Shower room accessible from the landing.",
+          "Bedroom with a bay window."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:16:21,063 - __main__ - INFO - User selected the next step
+2024-11-07 20:16:27,013 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:16:27,014 - __main__ - INFO - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to the dining/family room and kitchen.",
+                    "Dining/family room adjacent to the kitchen.",
+                    "Spacious lounge with bay window.",
+                    "Bathroom located near the entrance.",
+                    "Staircase leading to the first floor."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Three bedrooms, each with access from the central landing.",
+                    "Shower room accessible from the landing.",
+                    "Bedroom with a bay window."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:16:27,014 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:16:27,076 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:16:27,076 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:16:27,076 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:27,077 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:27,077 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:16:27,077 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G46 8BU\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Entrance hall leading to the dining/family room and kitchen.\", \"Dining/family room adjacent to the kitchen.\", \"Spacious lounge with bay window.\", \"Bathroom located near the entrance.\", \"Staircase leading to the first floor.\"]}}, {\"first_floor\": {\"features\": [\"Three bedrooms, each with access from the central landing.\", \"Shower room accessible from the landing.\", \"Bedroom with a bay window.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:16:38,419 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-07 20:16:38,420 - __main__ - DEBUG - {
+  "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+  "property_overview": [
+    "Charming semi-detached house.",
+    "Three spacious bedrooms.",
+    "Bright and airy lounge with bay window.",
+    "Modern kitchen with dining area.",
+    "Two bathrooms, including a shower room on the first floor."
+  ],
+  "external_features": [
+    "Expansive rear garden with mature trees and shrubs.",
+    "Decking area perfect for outdoor dining.",
+    "Detached garage and additional off-street parking.",
+    "Garden shed for extra storage."
+  ],
+  "local_area_highlights": [
+    "Located in the desirable Clarkston area.",
+    "Close proximity to Overlee Park, ideal for outdoor activities.",
+    "Excellent local schools, including Williamwood High School.",
+    "Convenient transport links with Clarkston train station nearby.",
+    "A variety of shops, cafes, and restaurants within walking distance."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to the dining/family room and kitchen.",
+          "Dining/family room adjacent to the kitchen.",
+          "Spacious lounge with bay window.",
+          "Bathroom located near the entrance.",
+          "Staircase leading to the first floor."
+        ]
+      }
+    },
+    {
+      "first_floor": {
+        "features": [
+          "Three bedrooms, each with access from the central landing.",
+          "Shower room accessible from the landing.",
+          "Bedroom with a bay window."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:16:38,420 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-07 20:16:38,421 - __main__ - DEBUG - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": [
+        "Charming semi-detached house.",
+        "Three spacious bedrooms.",
+        "Bright and airy lounge with bay window.",
+        "Modern kitchen with dining area.",
+        "Two bathrooms, including a shower room on the first floor."
+    ],
+    "external_features": [
+        "Expansive rear garden with mature trees and shrubs.",
+        "Decking area perfect for outdoor dining.",
+        "Detached garage and additional off-street parking.",
+        "Garden shed for extra storage."
+    ],
+    "local_area_highlights": [
+        "Located in the desirable Clarkston area.",
+        "Close proximity to Overlee Park, ideal for outdoor activities.",
+        "Excellent local schools, including Williamwood High School.",
+        "Convenient transport links with Clarkston train station nearby.",
+        "A variety of shops, cafes, and restaurants within walking distance."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to the dining/family room and kitchen.",
+                    "Dining/family room adjacent to the kitchen.",
+                    "Spacious lounge with bay window.",
+                    "Bathroom located near the entrance.",
+                    "Staircase leading to the first floor."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Three bedrooms, each with access from the central landing.",
+                    "Shower room accessible from the landing.",
+                    "Bedroom with a bay window."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:16:38,421 - __main__ - INFO - User selected the next step
+2024-11-07 20:16:38,514 - __main__ - DEBUG - Preprocessing text: ['Charming semi-detached house.', 'Three spacious bedrooms.', 'Bright and airy lounge with bay window.', 'Modern kitchen with dining area.', 'Two bathrooms, including a shower room on the first floor.']
+2024-11-07 20:16:38,514 - __main__ - DEBUG - Preprocessing text: ['Expansive rear garden with mature trees and shrubs.', 'Decking area perfect for outdoor dining.', 'Detached garage and additional off-street parking.', 'Garden shed for extra storage.']
+2024-11-07 20:16:38,515 - __main__ - DEBUG - Preprocessing text: ['Located in the desirable Clarkston area.', 'Close proximity to Overlee Park, ideal for outdoor activities.', 'Excellent local schools, including Williamwood High School.', 'Convenient transport links with Clarkston train station nearby.', 'A variety of shops, cafes, and restaurants within walking distance.']
+2024-11-07 20:16:44,412 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-07 20:16:44,413 - __main__ - INFO - {
+    "property_address": "1 Overlee Road, Clarkston, Glasgow, G46 8BU",
+    "property_overview": "Charming semi-detached house.\nThree spacious bedrooms.\nBright and airy lounge with bay window.\nModern kitchen with dining area.\nTwo bathrooms, including a shower room on the first floor.",
+    "external_features": "Expansive rear garden with mature trees and shrubs.\nDecking area perfect for outdoor dining.\nDetached garage and additional off-street parking.\nGarden shed for extra storage.",
+    "local_area_highlights": "Located in the desirable Clarkston area.\nClose proximity to Overlee Park, ideal for outdoor activities.\nExcellent local schools, including Williamwood High School.\nConvenient transport links with Clarkston train station nearby.\nA variety of shops, cafes, and restaurants within walking distance.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to the dining/family room and kitchen.",
+                    "Dining/family room adjacent to the kitchen.",
+                    "Spacious lounge with bay window.",
+                    "Bathroom located near the entrance.",
+                    "Staircase leading to the first floor."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Three bedrooms, each with access from the central landing.",
+                    "Shower room accessible from the landing.",
+                    "Bedroom with a bay window."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:16:44,414 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-07 20:16:44,493 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-07 20:16:44,493 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-07 20:16:44,494 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:44,494 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:44,494 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-07 20:16:57,069 - __main__ - DEBUG - First generation response..
+2024-11-07 20:16:57,069 - __main__ - DEBUG - 
+2024-11-07 20:16:57,069 - __main__ - DEBUG - <DESCRIPTION> 
+A charming semi-detached house with expansive rear garden.
+
+This charming semi-detached house is situated in the highly desirable Clarkston area and is well placed for local amenities. The property is well-proportioned and offers a fantastic opportunity for the family market.
+
+The ground floor accommodation extends to entrance hall, dining / family room which is open plan to the modern kitchen with dining area, spacious bright and airy lounge with bay window and bathroom. Upstairs provides three good bedrooms (one with bay window) and shower room. The specification includes gas central heating and double glazing.
+
+Externally the property is set within expansive garden grounds with decking area, which is ideal for outside dining and entertaining. It is bound by mature trees and shrubs providing a high degree of privacy. Further benefits include detached garage, garden shed and additional off-street parking.
+
+Local Area
+A haven for young growing families, the district offers a wide variety of local amenities including shops, cafes, restaurants and regular bus and train services to the city centre. Overlee Park is minutes away and offers fantastic outdoor recreational space. The shopping suburb of Clarkston offers further facilities including a library, sports centre and is home to some excellent local schooling at both primary and secondary level. Williamwood High School is regarded as one of Scotland’s top performing secondary schools and is a short distance away.
+<ENDDESCRIPTION>
+
+2024-11-07 20:16:57,070 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-07 20:16:57,071 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-07 20:16:57,071 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:16:57,071 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-07 20:16:57,071 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G46 8BU\",\n    \"property_overview\": \"Charming semi-detached house.\\nThree spacious bedrooms.\\nBright and airy lounge with bay window.\\nModern kitchen with dining area.\\nTwo bathrooms, including a shower room on the first floor.\",\n    \"external_features\": \"Expansive rear garden with mature trees and shrubs.\\nDecking area perfect for outdoor dining.\\nDetached garage and additional off-street parking.\\nGarden shed for extra storage.\",\n    \"local_area_highlights\": \"Located in the desirable Clarkston area.\\nClose proximity to Overlee Park, ideal for outdoor activities.\\nExcellent local schools, including Williamwood High School.\\nConvenient transport links with Clarkston train station nearby.\\nA variety of shops, cafes, and restaurants within walking distance.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to the dining/family room and kitchen.\",\n                    \"Dining/family room adjacent to the kitchen.\",\n                    \"Spacious lounge with bay window.\",\n                    \"Bathroom located near the entrance.\",\n                    \"Staircase leading to the first floor.\"\n                ]\n            }\n        },\n        {\n            \"first_floor\": {\n                \"features\": [\n                    \"Three bedrooms, each with access from the central landing.\",\n                    \"Shower room accessible from the landing.\",\n                    \"Bedroom with a bay window.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA charming semi-detached house with expansive rear garden.\n\nThis charming semi-detached house is situated in the highly desirable Clarkston area and is well placed for local amenities. The property is well-proportioned and offers a fantastic opportunity for the family market.\n\nThe ground floor accommodation extends to entrance hall, dining / family room which is open plan to the modern kitchen with dining area, spacious bright and airy lounge with bay window and bathroom. Upstairs provides three good bedrooms (one with bay window) and shower room. The specification includes gas central heating and double glazing.\n\nExternally the property is set within expansive garden grounds with decking area, which is ideal for outside dining and entertaining. It is bound by mature trees and shrubs providing a high degree of privacy. Further benefits include detached garage, garden shed and additional off-street parking.\n\nLocal Area\nA haven for young growing families, the district offers a wide variety of local amenities including shops, cafes, restaurants and regular bus and train services to the city centre. Overlee Park is minutes away and offers fantastic outdoor recreational space. The shopping suburb of Clarkston offers further facilities including a library, sports centre and is home to some excellent local schooling at both primary and secondary level. Williamwood High School is regarded as one of Scotland\u2019s top performing secondary schools and is a short distance away.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-07 20:17:01,978 - __main__ - DEBUG - Validation content: A charming semi-detached house with an expansive rear garden.
+
+Situated in the desirable Clarkston area, this delightful semi-detached property offers three spacious bedrooms and a bright, airy lounge with a bay window. The ground floor features an entrance hall leading to the dining/family room, modern kitchen with dining area, and a bathroom. Upstairs, you'll find three good bedrooms, including one with a bay window, and a shower room.
+
+Externally, the property boasts an expansive garden with mature trees and shrubs, a decking area perfect for outdoor dining, a detached garage, a garden shed, and additional off-street parking.
+
+Located close to Overlee Park, this property benefits from excellent local schools, including Williamwood High School. Convenient transport links are available with Clarkston train station nearby, and a variety of shops, cafes, and restaurants are within walking distance.
+2024-11-07 20:17:19,020 - __main__ - INFO - Returning to home page
+2024-11-07 20:17:42,101 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Glasgow, G11 7HY
+2024-11-07 20:17:42,101 - __main__ - INFO - User selected the next step
+2024-11-07 20:17:48,443 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg
+2024-11-07 20:17:48,444 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg', 'https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg']
+2024-11-07 20:17:48,445 - __main__ - INFO - User selected the next step
+2024-11-07 20:17:57,256 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg
+2024-11-07 20:17:57,592 - __main__ - ERROR - An error occurred during GCS upload: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-11-07 20:17:58,501 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-1-scaled.jpg
+2024-11-07 20:17:59,508 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg
+2024-11-07 20:18:00,429 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg
+2024-11-07 20:18:01,260 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg
+2024-11-07 20:18:02,915 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg
+2024-11-07 20:18:02,916 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:18:02,985 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:18:02,986 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:18:02,986 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:18:02,986 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:18:02,986 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1 Overlee Road, Clarkston, Glasgow, G46 8BU\",\n    \"property_overview\": \"Charming semi-detached house.\\nThree spacious bedrooms.\\nBright and airy lounge with bay window.\\nModern kitchen with dining area.\\nTwo bathrooms, including a shower room on the first floor.\",\n    \"external_features\": \"Expansive rear garden with mature trees and shrubs.\\nDecking area perfect for outdoor dining.\\nDetached garage and additional off-street parking.\\nGarden shed for extra storage.\",\n    \"local_area_highlights\": \"Located in the desirable Clarkston area.\\nClose proximity to Overlee Park, ideal for outdoor activities.\\nExcellent local schools, including Williamwood High School.\\nConvenient transport links with Clarkston train station nearby.\\nA variety of shops, cafes, and restaurants within walking distance.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to the dining/family room and kitchen.\",\n                    \"Dining/family room adjacent to the kitchen.\",\n                    \"Spacious lounge with bay window.\",\n                    \"Bathroom located near the entrance.\",\n                    \"Staircase leading to the first floor.\"\n                ]\n            }\n        },\n        {\n            \"first_floor\": {\n                \"features\": [\n                    \"Three bedrooms, each with access from the central landing.\",\n                    \"Shower room accessible from the landing.\",\n                    \"Bedroom with a bay window.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA charming semi-detached house with expansive rear garden.\n\nThis charming semi-detached house is situated in the highly desirable Clarkston area and is well placed for local amenities. The property is well-proportioned and offers a fantastic opportunity for the family market.\n\nThe ground floor accommodation extends to entrance hall, dining / family room which is open plan to the modern kitchen with dining area, spacious bright and airy lounge with bay window and bathroom. Upstairs provides three good bedrooms (one with bay window) and shower room. The specification includes gas central heating and double glazing.\n\nExternally the property is set within expansive garden grounds with decking area, which is ideal for outside dining and entertaining. It is bound by mature trees and shrubs providing a high degree of privacy. Further benefits include detached garage, garden shed and additional off-street parking.\n\nLocal Area\nA haven for young growing families, the district offers a wide variety of local amenities including shops, cafes, restaurants and regular bus and train services to the city centre. Overlee Park is minutes away and offers fantastic outdoor recreational space. The shopping suburb of Clarkston offers further facilities including a library, sports centre and is home to some excellent local schooling at both primary and secondary level. Williamwood High School is regarded as one of Scotland\u2019s top performing secondary schools and is a short distance away.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    },
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:18:07,553 - __main__ - DEBUG - Response content: I'm unable to analyze images directly. Please describe the floorplan, and I'll help you populate the JSON object based on your description.
+2024-11-07 20:18:07,554 - __main__ - ERROR - Failed to parse JSON: Expecting value: line 1 column 1 (char 0)
+2024-11-07 20:18:07,557 - __main__ - INFO - User selected the next step
+2024-11-07 20:19:25,319 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:19:25,321 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Glasgow, G11 7HY",
+    "property_overview": "Charming semi-detached house.\nThree spacious bedrooms.\nBright and airy lounge with bay window.\nModern kitchen with dining area.\nTwo bathrooms, including a shower room on the first floor.",
+    "external_features": "Expansive rear garden with mature trees and shrubs.\nDecking area perfect for outdoor dining.\nDetached garage and additional off-street parking.\nGarden shed for extra storage.",
+    "local_area_highlights": "Located in the desirable Clarkston area.\nClose proximity to Overlee Park, ideal for outdoor activities.\nExcellent local schools, including Williamwood High School.\nConvenient transport links with Clarkston train station nearby.\nA variety of shops, cafes, and restaurants within walking distance.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to the dining/family room and kitchen.",
+                    "Dining/family room adjacent to the kitchen.",
+                    "Spacious lounge with bay window.",
+                    "Bathroom located near the entrance.",
+                    "Staircase leading to the first floor."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Three bedrooms, each with access from the central landing.",
+                    "Shower room accessible from the landing.",
+                    "Bedroom with a bay window."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:19:25,322 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:19:25,410 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:19:25,410 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:19:25,410 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:19:25,410 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:19:25,410 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:19:25,411 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1/1 30 Woodcroft Avenue, Glasgow, G11 7HY\", \"property_overview\": \"Charming semi-detached house.\\nThree spacious bedrooms.\\nBright and airy lounge with bay window.\\nModern kitchen with dining area.\\nTwo bathrooms, including a shower room on the first floor.\", \"external_features\": \"Expansive rear garden with mature trees and shrubs.\\nDecking area perfect for outdoor dining.\\nDetached garage and additional off-street parking.\\nGarden shed for extra storage.\", \"local_area_highlights\": \"Located in the desirable Clarkston area.\\nClose proximity to Overlee Park, ideal for outdoor activities.\\nExcellent local schools, including Williamwood High School.\\nConvenient transport links with Clarkston train station nearby.\\nA variety of shops, cafes, and restaurants within walking distance.\", \"floorplan\": [{\"ground_floor\": {\"features\": [\"Entrance hall leading to the dining/family room and kitchen.\", \"Dining/family room adjacent to the kitchen.\", \"Spacious lounge with bay window.\", \"Bathroom located near the entrance.\", \"Staircase leading to the first floor.\"]}}, {\"first_floor\": {\"features\": [\"Three bedrooms, each with access from the central landing.\", \"Shower room accessible from the landing.\", \"Bedroom with a bay window.\"]}}], \"additional_notes\": \"\"}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": null,
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-1-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:19:56,124 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:19:56,126 - __main__ - INFO - User selected the next step
+2024-11-07 20:20:16,268 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-07 20:20:16,269 - __main__ - INFO - User selected the next step
+2024-11-07 20:20:22,737 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg
+2024-11-07 20:20:22,738 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg']
+2024-11-07 20:20:22,739 - __main__ - INFO - User selected the next step
+2024-11-07 20:20:34,037 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg
+2024-11-07 20:20:35,134 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg
+2024-11-07 20:20:35,943 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg
+2024-11-07 20:20:36,849 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg
+2024-11-07 20:20:38,543 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg
+2024-11-07 20:20:38,544 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:20:38,617 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:20:38,617 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:20:38,617 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:20:38,617 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:20:38,617 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:20:46,141 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to all main rooms.",
+          "Kitchen located at the front with access from the hall.",
+          "Lounge situated adjacent to the kitchen.",
+          "Two bedrooms positioned at the rear, each with its own access from the hall.",
+          "Bathroom accessible from the hall, equipped with standard facilities.",
+          "En-suite connected to one of the bedrooms.",
+          "Storage cupboard located in the hallway.",
+          "Two additional storage spaces within the bedrooms."
+        ]
+      },
+      "first_floor": {
+        "features": []
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:20:46,146 - __main__ - INFO - User selected the next step
+2024-11-07 20:21:29,059 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:21:29,062 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all main rooms.",
+                    "Kitchen located at the front with access from the hall.",
+                    "Lounge situated adjacent to the kitchen.",
+                    "Two bedrooms positioned at the rear, each with its own access from the hall.",
+                    "Bathroom accessible from the hall, equipped with standard facilities.",
+                    "En-suite connected to one of the bedrooms.",
+                    "Storage cupboard located in the hallway.",
+                    "Two additional storage spaces within the bedrooms."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:21:29,062 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:21:29,166 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:21:29,167 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:21:29,167 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:21:29,167 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:21:29,167 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:21:29,167 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Entrance hall leading to all main rooms.\", \"Kitchen located at the front with access from the hall.\", \"Lounge situated adjacent to the kitchen.\", \"Two bedrooms positioned at the rear, each with its own access from the hall.\", \"Bathroom accessible from the hall, equipped with standard facilities.\", \"En-suite connected to one of the bedrooms.\", \"Storage cupboard located in the hallway.\", \"Two additional storage spaces within the bedrooms.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:21:41,581 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-07 20:21:41,582 - __main__ - DEBUG - {
+  "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+  "property_overview": [
+    "Spacious two-bedroom flat in a desirable Broomhill location.",
+    "Modern kitchen with integrated appliances and dining area.",
+    "Bright lounge adjacent to the kitchen.",
+    "Master bedroom with en-suite bathroom.",
+    "Ample storage with multiple cupboards and built-in spaces.",
+    "Contemporary bathroom with standard facilities."
+  ],
+  "external_features": [
+    "Well-maintained communal garden with lush greenery.",
+    "Dedicated parking space for residents.",
+    "Secure entry system for added safety.",
+    "Attractive brick exterior with modern design."
+  ],
+  "local_area_highlights": [
+    "Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.",
+    "Excellent transport links with nearby bus and train services.",
+    "Walking distance to Victoria Park, perfect for outdoor activities.",
+    "Nearby reputable schools and educational institutions.",
+    "Easy access to Glasgow's vibrant West End and city centre."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to all main rooms.",
+          "Kitchen located at the front with access from the hall.",
+          "Lounge situated adjacent to the kitchen.",
+          "Two bedrooms positioned at the rear, each with its own access from the hall.",
+          "Bathroom accessible from the hall, equipped with standard facilities.",
+          "En-suite connected to one of the bedrooms.",
+          "Storage cupboard located in the hallway.",
+          "Two additional storage spaces within the bedrooms."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:21:41,582 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-07 20:21:41,582 - __main__ - DEBUG - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [
+        "Spacious two-bedroom flat in a desirable Broomhill location.",
+        "Modern kitchen with integrated appliances and dining area.",
+        "Bright lounge adjacent to the kitchen.",
+        "Master bedroom with en-suite bathroom.",
+        "Ample storage with multiple cupboards and built-in spaces.",
+        "Contemporary bathroom with standard facilities."
+    ],
+    "external_features": [
+        "Well-maintained communal garden with lush greenery.",
+        "Dedicated parking space for residents.",
+        "Secure entry system for added safety.",
+        "Attractive brick exterior with modern design."
+    ],
+    "local_area_highlights": [
+        "Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.",
+        "Excellent transport links with nearby bus and train services.",
+        "Walking distance to Victoria Park, perfect for outdoor activities.",
+        "Nearby reputable schools and educational institutions.",
+        "Easy access to Glasgow's vibrant West End and city centre."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all main rooms.",
+                    "Kitchen located at the front with access from the hall.",
+                    "Lounge situated adjacent to the kitchen.",
+                    "Two bedrooms positioned at the rear, each with its own access from the hall.",
+                    "Bathroom accessible from the hall, equipped with standard facilities.",
+                    "En-suite connected to one of the bedrooms.",
+                    "Storage cupboard located in the hallway.",
+                    "Two additional storage spaces within the bedrooms."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:21:41,583 - __main__ - INFO - User selected the next step
+2024-11-07 20:21:41,651 - __main__ - DEBUG - Preprocessing text: ['Spacious two-bedroom flat in a desirable Broomhill location.', 'Modern kitchen with integrated appliances and dining area.', 'Bright lounge adjacent to the kitchen.', 'Master bedroom with en-suite bathroom.', 'Ample storage with multiple cupboards and built-in spaces.', 'Contemporary bathroom with standard facilities.']
+2024-11-07 20:21:41,652 - __main__ - DEBUG - Preprocessing text: ['Well-maintained communal garden with lush greenery.', 'Dedicated parking space for residents.', 'Secure entry system for added safety.', 'Attractive brick exterior with modern design.']
+2024-11-07 20:21:41,653 - __main__ - DEBUG - Preprocessing text: ['Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.', 'Excellent transport links with nearby bus and train services.', 'Walking distance to Victoria Park, perfect for outdoor activities.', 'Nearby reputable schools and educational institutions.', "Easy access to Glasgow's vibrant West End and city centre."]
+2024-11-07 20:21:50,024 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-07 20:21:50,026 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": "Spacious two-bedroom flat in a desirable Broomhill location.\nModern kitchen with integrated appliances and dining area.\nBright lounge adjacent to the kitchen.\nMaster bedroom with en-suite bathroom.\nAmple storage with multiple cupboards and built-in spaces.\nContemporary bathroom with standard facilities.",
+    "external_features": "Well-maintained communal garden with lush greenery.\nDedicated parking space for residents.\nSecure entry system for added safety.\nAttractive brick exterior with modern design.",
+    "local_area_highlights": "Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.\nExcellent transport links with nearby bus and train services.\nWalking distance to Victoria Park, perfect for outdoor activities.\nNearby reputable schools and educational institutions.\nEasy access to Glasgow's vibrant West End and city centre.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all main rooms.",
+                    "Kitchen located at the front with access from the hall.",
+                    "Lounge situated adjacent to the kitchen.",
+                    "Two bedrooms positioned at the rear, each with its own access from the hall.",
+                    "Bathroom accessible from the hall, equipped with standard facilities.",
+                    "En-suite connected to one of the bedrooms.",
+                    "Storage cupboard located in the hallway.",
+                    "Two additional storage spaces within the bedrooms."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:21:50,026 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-07 20:21:50,142 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-07 20:21:50,143 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-07 20:21:50,143 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:21:50,143 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:21:50,143 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-07 20:21:56,564 - __main__ - DEBUG - First generation response..
+2024-11-07 20:21:56,565 - __main__ - DEBUG - 
+2024-11-07 20:21:56,565 - __main__ - DEBUG - <DESCRIPTION> 
+A spacious two-bedroom flat in a desirable Broomhill location.
+
+The property is accessed via a secure entry system into a well-maintained communal close. The accommodation comprises of entrance hall with access to all main apartments, modern kitchen with integrated appliances and space for dining, bright lounge, two bedrooms, master with en-suite, bathroom and ample storage with multiple cupboards and built-in storage in the bedrooms.
+
+Externally, the property has a communal garden to the rear and an allocated parking space.
+
+Local Area
+The property is within walking distance of the Broomhill Shopping Centre, which provides a variety of shops and cafes. Transport is excellent, with bus services on Broomhill Drive and Crow Road and train services at Hyndland and Partick stations. Victoria Park is also within walking distance, providing excellent outdoor recreational space.
+<ENDDESCRIPTION>
+
+2024-11-07 20:21:56,565 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-07 20:21:56,568 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-07 20:21:56,568 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:21:56,568 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-07 20:21:56,568 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Spacious two-bedroom flat in a desirable Broomhill location.\\nModern kitchen with integrated appliances and dining area.\\nBright lounge adjacent to the kitchen.\\nMaster bedroom with en-suite bathroom.\\nAmple storage with multiple cupboards and built-in spaces.\\nContemporary bathroom with standard facilities.\",\n    \"external_features\": \"Well-maintained communal garden with lush greenery.\\nDedicated parking space for residents.\\nSecure entry system for added safety.\\nAttractive brick exterior with modern design.\",\n    \"local_area_highlights\": \"Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.\\nExcellent transport links with nearby bus and train services.\\nWalking distance to Victoria Park, perfect for outdoor activities.\\nNearby reputable schools and educational institutions.\\nEasy access to Glasgow's vibrant West End and city centre.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to all main rooms.\",\n                    \"Kitchen located at the front with access from the hall.\",\n                    \"Lounge situated adjacent to the kitchen.\",\n                    \"Two bedrooms positioned at the rear, each with its own access from the hall.\",\n                    \"Bathroom accessible from the hall, equipped with standard facilities.\",\n                    \"En-suite connected to one of the bedrooms.\",\n                    \"Storage cupboard located in the hallway.\",\n                    \"Two additional storage spaces within the bedrooms.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA spacious two-bedroom flat in a desirable Broomhill location.\n\nThe property is accessed via a secure entry system into a well-maintained communal close. The accommodation comprises of entrance hall with access to all main apartments, modern kitchen with integrated appliances and space for dining, bright lounge, two bedrooms, master with en-suite, bathroom and ample storage with multiple cupboards and built-in storage in the bedrooms.\n\nExternally, the property has a communal garden to the rear and an allocated parking space.\n\nLocal Area\nThe property is within walking distance of the Broomhill Shopping Centre, which provides a variety of shops and cafes. Transport is excellent, with bus services on Broomhill Drive and Crow Road and train services at Hyndland and Partick stations. Victoria Park is also within walking distance, providing excellent outdoor recreational space.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-07 20:22:02,678 - __main__ - DEBUG - Validation content: A spacious two-bedroom flat in a desirable Broomhill location.
+
+The property is accessed via a secure entry system. The accommodation comprises an entrance hall with access to all main rooms, a modern kitchen with integrated appliances and a dining area, a bright lounge, two bedrooms including a master with an en-suite bathroom, a bathroom, and ample storage with multiple cupboards and built-in storage in the bedrooms.
+
+Externally, the property has a well-maintained communal garden to the rear and a dedicated parking space.
+
+Local Area
+
+The property is within walking distance of the Broomhill Shopping Centre, which provides a variety of shops and cafes. Transport is excellent, with nearby bus and train services. Victoria Park is also within walking distance, providing excellent outdoor recreational space.
+2024-11-07 20:23:05,904 - __main__ - INFO - Returning to home page
+2024-11-07 20:23:34,728 - __main__ - INFO - User inputted Property Address: 9 Percy Drive, Giffnock, Glasgow, G46 6NZ
+2024-11-07 20:23:34,729 - __main__ - INFO - User selected the next step
+2024-11-07 20:23:41,608 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg
+2024-11-07 20:23:41,610 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg', 'https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg']
+2024-11-07 20:23:41,611 - __main__ - INFO - User selected the next step
+2024-11-07 20:23:49,483 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/46_img_2080-Medium.jpg
+2024-11-07 20:23:50,118 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/25_img_2001-Medium.jpg
+2024-11-07 20:23:50,762 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/20_img_1973-Medium.jpg
+2024-11-07 20:23:51,373 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17_img_1961-Medium.jpg
+2024-11-07 20:23:51,998 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/14_img_1949-Medium.jpg
+2024-11-07 20:23:51,999 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:23:52,070 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:23:52,071 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:23:52,071 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:23:52,071 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:23:52,071 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Spacious two-bedroom flat in a desirable Broomhill location.\\nModern kitchen with integrated appliances and dining area.\\nBright lounge adjacent to the kitchen.\\nMaster bedroom with en-suite bathroom.\\nAmple storage with multiple cupboards and built-in spaces.\\nContemporary bathroom with standard facilities.\",\n    \"external_features\": \"Well-maintained communal garden with lush greenery.\\nDedicated parking space for residents.\\nSecure entry system for added safety.\\nAttractive brick exterior with modern design.\",\n    \"local_area_highlights\": \"Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.\\nExcellent transport links with nearby bus and train services.\\nWalking distance to Victoria Park, perfect for outdoor activities.\\nNearby reputable schools and educational institutions.\\nEasy access to Glasgow's vibrant West End and city centre.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to all main rooms.\",\n                    \"Kitchen located at the front with access from the hall.\",\n                    \"Lounge situated adjacent to the kitchen.\",\n                    \"Two bedrooms positioned at the rear, each with its own access from the hall.\",\n                    \"Bathroom accessible from the hall, equipped with standard facilities.\",\n                    \"En-suite connected to one of the bedrooms.\",\n                    \"Storage cupboard located in the hallway.\",\n                    \"Two additional storage spaces within the bedrooms.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA spacious two-bedroom flat in a desirable Broomhill location.\n\nThe property is accessed via a secure entry system into a well-maintained communal close. The accommodation comprises of entrance hall with access to all main apartments, modern kitchen with integrated appliances and space for dining, bright lounge, two bedrooms, master with en-suite, bathroom and ample storage with multiple cupboards and built-in storage in the bedrooms.\n\nExternally, the property has a communal garden to the rear and an allocated parking space.\n\nLocal Area\nThe property is within walking distance of the Broomhill Shopping Centre, which provides a variety of shops and cafes. Transport is excellent, with bus services on Broomhill Drive and Crow Road and train services at Hyndland and Partick stations. Victoria Park is also within walking distance, providing excellent outdoor recreational space.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    },
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:23:56,024 - __main__ - DEBUG - Response content: I'm sorry, I can't assist with that.
+2024-11-07 20:23:56,025 - __main__ - ERROR - Failed to parse JSON: Expecting value: line 1 column 1 (char 0)
+2024-11-07 20:23:56,026 - __main__ - INFO - User selected the next step
+2024-11-07 20:26:08,139 - __main__ - INFO - Returning to home page
+2024-11-07 20:26:17,021 - __main__ - INFO - User inputted Property Address: 4 Netherway Avenue, Netherlee, Glasgow, G44
+2024-11-07 20:26:17,022 - __main__ - INFO - User selected the next step
+2024-11-07 20:26:29,032 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Floorplan-9.png
+2024-11-07 20:26:29,034 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg', 'https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg', 'https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Floorplan-9.png']
+2024-11-07 20:26:29,035 - __main__ - INFO - User selected the next step
+2024-11-07 20:26:36,083 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-66-Medium.jpg
+2024-11-07 20:26:37,127 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg
+2024-11-07 20:26:37,737 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg
+2024-11-07 20:26:38,475 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg
+2024-11-07 20:26:38,477 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:26:38,549 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:26:38,549 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:26:38,549 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:26:38,549 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:26:38,550 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Spacious two-bedroom flat in a desirable Broomhill location.\\nModern kitchen with integrated appliances and dining area.\\nBright lounge adjacent to the kitchen.\\nMaster bedroom with en-suite bathroom.\\nAmple storage with multiple cupboards and built-in spaces.\\nContemporary bathroom with standard facilities.\",\n    \"external_features\": \"Well-maintained communal garden with lush greenery.\\nDedicated parking space for residents.\\nSecure entry system for added safety.\\nAttractive brick exterior with modern design.\",\n    \"local_area_highlights\": \"Close proximity to Broomhill Shopping Centre with a variety of shops and cafes.\\nExcellent transport links with nearby bus and train services.\\nWalking distance to Victoria Park, perfect for outdoor activities.\\nNearby reputable schools and educational institutions.\\nEasy access to Glasgow's vibrant West End and city centre.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to all main rooms.\",\n                    \"Kitchen located at the front with access from the hall.\",\n                    \"Lounge situated adjacent to the kitchen.\",\n                    \"Two bedrooms positioned at the rear, each with its own access from the hall.\",\n                    \"Bathroom accessible from the hall, equipped with standard facilities.\",\n                    \"En-suite connected to one of the bedrooms.\",\n                    \"Storage cupboard located in the hallway.\",\n                    \"Two additional storage spaces within the bedrooms.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA spacious two-bedroom flat in a desirable Broomhill location.\n\nThe property is accessed via a secure entry system into a well-maintained communal close. The accommodation comprises of entrance hall with access to all main apartments, modern kitchen with integrated appliances and space for dining, bright lounge, two bedrooms, master with en-suite, bathroom and ample storage with multiple cupboards and built-in storage in the bedrooms.\n\nExternally, the property has a communal garden to the rear and an allocated parking space.\n\nLocal Area\nThe property is within walking distance of the Broomhill Shopping Centre, which provides a variety of shops and cafes. Transport is excellent, with bus services on Broomhill Drive and Crow Road and train services at Hyndland and Partick stations. Victoria Park is also within walking distance, providing excellent outdoor recreational space.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    },
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    },
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Floorplan-9.png",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:26:46,021 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen with access to the family room.",
+          "Family room adjacent to the kitchen.",
+          "Utility room accessible from the hall.",
+          "Bathroom located off the hall.",
+          "Dining room or additional bedroom accessible from the hall.",
+          "Lounge with access from the hall."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Main bedroom with walk-in closet.",
+          "En-suite bathroom accessible from the main bedroom.",
+          "Two additional bedrooms with access from the hall.",
+          "Office space located off the hall.",
+          "Bathroom accessible from the hall."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:26:46,025 - __main__ - INFO - User selected the next step
+2024-11-07 20:30:13,044 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:30:13,047 - __main__ - INFO - User selected the next step
+2024-11-07 20:30:16,326 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-07 20:30:16,327 - __main__ - INFO - User selected the next step
+2024-11-07 20:30:23,325 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg
+2024-11-07 20:30:23,326 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg']
+2024-11-07 20:30:23,328 - __main__ - INFO - User selected the next step
+2024-11-07 20:30:31,381 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg
+2024-11-07 20:30:32,329 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg
+2024-11-07 20:30:33,322 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg
+2024-11-07 20:30:34,093 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg
+2024-11-07 20:30:35,540 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg
+2024-11-07 20:30:35,540 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:30:35,609 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:30:35,609 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:30:35,609 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:30:35,610 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:30:35,610 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/Flat-3-17-Langside-Road-Bothwell-G71-8NG-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:30:40,768 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to all rooms.",
+          "Kitchen located on the left side with direct access from the hallway.",
+          "Lounge adjacent to the kitchen, accessible from the hallway.",
+          "Two bedrooms positioned on the right side of the layout.",
+          "Main bathroom situated near the entrance of the first bedroom.",
+          "En-suite bathroom attached to the first bedroom.",
+          "Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway."
+        ]
+      },
+      "first_floor": {
+        "features": []
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:30:40,772 - __main__ - INFO - User selected the next step
+2024-11-07 20:30:50,180 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:30:50,181 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all rooms.",
+                    "Kitchen located on the left side with direct access from the hallway.",
+                    "Lounge adjacent to the kitchen, accessible from the hallway.",
+                    "Two bedrooms positioned on the right side of the layout.",
+                    "Main bathroom situated near the entrance of the first bedroom.",
+                    "En-suite bathroom attached to the first bedroom.",
+                    "Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:30:50,182 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:30:50,254 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:30:50,255 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:30:50,255 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:30:50,255 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:30:50,255 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:30:50,255 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Entrance hall leading to all rooms.\", \"Kitchen located on the left side with direct access from the hallway.\", \"Lounge adjacent to the kitchen, accessible from the hallway.\", \"Two bedrooms positioned on the right side of the layout.\", \"Main bathroom situated near the entrance of the first bedroom.\", \"En-suite bathroom attached to the first bedroom.\", \"Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-41-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-12-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-19-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-17-scaled.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-39-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:31:01,197 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-07 20:31:01,198 - __main__ - DEBUG - {
+  "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+  "property_overview": [
+    "Spacious two-bedroom flat in a desirable location.",
+    "Modern kitchen with integrated appliances.",
+    "Bright lounge area adjacent to the kitchen.",
+    "Master bedroom with en-suite bathroom.",
+    "Ample storage with multiple cupboards.",
+    "Secure entry system for added safety."
+  ],
+  "external_features": [
+    "Well-maintained communal garden area.",
+    "Private parking space available.",
+    "Attractive brick exterior with modern design.",
+    "Quiet residential street with minimal traffic."
+  ],
+  "local_area_highlights": [
+    "Close proximity to Broomhill Shopping Centre for convenient shopping.",
+    "Nearby Victoria Park offers beautiful green spaces and walking paths.",
+    "Excellent transport links with nearby bus and train services.",
+    "Highly regarded local schools within walking distance.",
+    "A variety of cafes and restaurants in the vibrant Broomhill area."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Entrance hall leading to all rooms.",
+          "Kitchen located on the left side with direct access from the hallway.",
+          "Lounge adjacent to the kitchen, accessible from the hallway.",
+          "Two bedrooms positioned on the right side of the layout.",
+          "Main bathroom situated near the entrance of the first bedroom.",
+          "En-suite bathroom attached to the first bedroom.",
+          "Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:31:01,199 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-07 20:31:01,199 - __main__ - DEBUG - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [
+        "Spacious two-bedroom flat in a desirable location.",
+        "Modern kitchen with integrated appliances.",
+        "Bright lounge area adjacent to the kitchen.",
+        "Master bedroom with en-suite bathroom.",
+        "Ample storage with multiple cupboards.",
+        "Secure entry system for added safety."
+    ],
+    "external_features": [
+        "Well-maintained communal garden area.",
+        "Private parking space available.",
+        "Attractive brick exterior with modern design.",
+        "Quiet residential street with minimal traffic."
+    ],
+    "local_area_highlights": [
+        "Close proximity to Broomhill Shopping Centre for convenient shopping.",
+        "Nearby Victoria Park offers beautiful green spaces and walking paths.",
+        "Excellent transport links with nearby bus and train services.",
+        "Highly regarded local schools within walking distance.",
+        "A variety of cafes and restaurants in the vibrant Broomhill area."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all rooms.",
+                    "Kitchen located on the left side with direct access from the hallway.",
+                    "Lounge adjacent to the kitchen, accessible from the hallway.",
+                    "Two bedrooms positioned on the right side of the layout.",
+                    "Main bathroom situated near the entrance of the first bedroom.",
+                    "En-suite bathroom attached to the first bedroom.",
+                    "Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:31:01,200 - __main__ - INFO - User selected the next step
+2024-11-07 20:31:01,321 - __main__ - DEBUG - Preprocessing text: ['Spacious two-bedroom flat in a desirable location.', 'Modern kitchen with integrated appliances.', 'Bright lounge area adjacent to the kitchen.', 'Master bedroom with en-suite bathroom.', 'Ample storage with multiple cupboards.', 'Secure entry system for added safety.']
+2024-11-07 20:31:01,322 - __main__ - DEBUG - Preprocessing text: ['Well-maintained communal garden area.', 'Private parking space available.', 'Attractive brick exterior with modern design.', 'Quiet residential street with minimal traffic.']
+2024-11-07 20:31:01,322 - __main__ - DEBUG - Preprocessing text: ['Close proximity to Broomhill Shopping Centre for convenient shopping.', 'Nearby Victoria Park offers beautiful green spaces and walking paths.', 'Excellent transport links with nearby bus and train services.', 'Highly regarded local schools within walking distance.', 'A variety of cafes and restaurants in the vibrant Broomhill area.']
+2024-11-07 20:31:08,214 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-07 20:31:08,215 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": "Spacious two-bedroom flat in a desirable location.\nModern kitchen with integrated appliances.\nBright lounge area adjacent to the kitchen.\nMaster bedroom with en-suite bathroom.\nAmple storage with multiple cupboards.\nSecure entry system for added safety.",
+    "external_features": "Well-maintained communal garden area.\nPrivate parking space available.\nAttractive brick exterior with modern design.\nQuiet residential street with minimal traffic.",
+    "local_area_highlights": "Close proximity to Broomhill Shopping Centre for convenient shopping.\nNearby Victoria Park offers beautiful green spaces and walking paths.\nExcellent transport links with nearby bus and train services.\nHighly regarded local schools within walking distance.\nA variety of cafes and restaurants in the vibrant Broomhill area.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Entrance hall leading to all rooms.",
+                    "Kitchen located on the left side with direct access from the hallway.",
+                    "Lounge adjacent to the kitchen, accessible from the hallway.",
+                    "Two bedrooms positioned on the right side of the layout.",
+                    "Main bathroom situated near the entrance of the first bedroom.",
+                    "En-suite bathroom attached to the first bedroom.",
+                    "Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:31:08,215 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-07 20:31:08,277 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-07 20:31:08,277 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-07 20:31:08,277 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:31:08,278 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:31:08,278 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-07 20:31:15,698 - __main__ - DEBUG - First generation response..
+2024-11-07 20:31:15,700 - __main__ - DEBUG - 
+2024-11-07 20:31:15,700 - __main__ - DEBUG - <DESCRIPTION> 
+This spacious two-bedroom flat is set within a desirable location and is sure to appeal to a wide range of buyers.
+
+The property is entered via a secure entry system which leads to the communal hallway. Internally the accommodation comprises; entrance hall with two storage cupboards, bright lounge, modern kitchen with integrated appliances, two double bedrooms, master with en-suite and family bathroom.
+
+The property also benefits from a private parking space, gas central heating and double glazing.
+
+Externally there is a well-maintained communal garden area to the rear of the property.
+
+Local Area
+
+The property is ideally located close to a wide range of local amenities including Broomhill Shopping Centre and the beautiful green spaces of Victoria Park. There are excellent public transport links nearby with regular bus services running along Crow Road and Hyndland Road and regular train services from Hyndland Station. The property is also well placed for access to the Expressway and Clyde Tunnel. Local schooling is also highly regarded at both primary and secondary levels. The vibrant Broomhill area offers a variety of cafes, restaurants and local shopping.
+<ENDDESCRIPTION>
+
+2024-11-07 20:31:15,700 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-07 20:31:15,701 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-07 20:31:15,701 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:31:15,701 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-07 20:31:15,702 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Spacious two-bedroom flat in a desirable location.\\nModern kitchen with integrated appliances.\\nBright lounge area adjacent to the kitchen.\\nMaster bedroom with en-suite bathroom.\\nAmple storage with multiple cupboards.\\nSecure entry system for added safety.\",\n    \"external_features\": \"Well-maintained communal garden area.\\nPrivate parking space available.\\nAttractive brick exterior with modern design.\\nQuiet residential street with minimal traffic.\",\n    \"local_area_highlights\": \"Close proximity to Broomhill Shopping Centre for convenient shopping.\\nNearby Victoria Park offers beautiful green spaces and walking paths.\\nExcellent transport links with nearby bus and train services.\\nHighly regarded local schools within walking distance.\\nA variety of cafes and restaurants in the vibrant Broomhill area.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Entrance hall leading to all rooms.\",\n                    \"Kitchen located on the left side with direct access from the hallway.\",\n                    \"Lounge adjacent to the kitchen, accessible from the hallway.\",\n                    \"Two bedrooms positioned on the right side of the layout.\",\n                    \"Main bathroom situated near the entrance of the first bedroom.\",\n                    \"En-suite bathroom attached to the first bedroom.\",\n                    \"Storage cupboards labeled 'W' and 'C' located near the entrance and in the hallway.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nThis spacious two-bedroom flat is set within a desirable location and is sure to appeal to a wide range of buyers.\n\nThe property is entered via a secure entry system which leads to the communal hallway. Internally the accommodation comprises; entrance hall with two storage cupboards, bright lounge, modern kitchen with integrated appliances, two double bedrooms, master with en-suite and family bathroom.\n\nThe property also benefits from a private parking space, gas central heating and double glazing.\n\nExternally there is a well-maintained communal garden area to the rear of the property.\n\nLocal Area\n\nThe property is ideally located close to a wide range of local amenities including Broomhill Shopping Centre and the beautiful green spaces of Victoria Park. There are excellent public transport links nearby with regular bus services running along Crow Road and Hyndland Road and regular train services from Hyndland Station. The property is also well placed for access to the Expressway and Clyde Tunnel. Local schooling is also highly regarded at both primary and secondary levels. The vibrant Broomhill area offers a variety of cafes, restaurants and local shopping.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-07 20:31:22,553 - __main__ - DEBUG - Validation content: This spacious two-bedroom flat is situated in a desirable location and is sure to appeal to a wide range of buyers.
+
+The property is entered via a secure entry system leading to the entrance hall. Internally, the accommodation comprises an entrance hall with two storage cupboards, a bright lounge adjacent to the kitchen, a modern kitchen with integrated appliances, two bedrooms, the master with an en-suite bathroom, and a main bathroom.
+
+The property also benefits from a private parking space.
+
+Externally, there is a well-maintained communal garden area to the rear of the property.
+
+**Local Area**
+
+The property is ideally located close to a variety of local amenities including Broomhill Shopping Centre and the beautiful green spaces of Victoria Park. There are excellent transport links nearby with nearby bus and train services. Local schools are highly regarded and within walking distance. The vibrant Broomhill area offers a variety of cafes and restaurants.
+2024-11-07 20:31:35,657 - __main__ - INFO - Returning to home page
+2024-11-07 20:31:39,030 - __main__ - INFO - User inputted Property Address: 9 Percy Drive, Giffnock, Glasgow, G46 6NZ
+2024-11-07 20:31:39,031 - __main__ - INFO - User selected the next step
+2024-11-07 20:31:48,624 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg
+2024-11-07 20:31:48,625 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg']
+2024-11-07 20:31:48,626 - __main__ - INFO - User selected the next step
+2024-11-07 20:31:58,213 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-66-Medium.jpg
+2024-11-07 20:31:59,018 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg
+2024-11-07 20:31:59,782 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg
+2024-11-07 20:32:00,639 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg
+2024-11-07 20:32:01,282 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg
+2024-11-07 20:32:01,871 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg
+2024-11-07 20:32:01,872 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-07 20:32:01,942 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-07 20:32:01,942 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-07 20:32:01,942 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:32:01,942 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:32:01,942 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:32:07,500 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Dining/Family room adjacent to a kitchen with direct access to the stairway.",
+          "Kitchen features a compact layout with access to a bathroom.",
+          "Lounge includes a bay window, enhancing natural light."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Four bedrooms, each with distinct access from the central landing.",
+          "Shower room conveniently located near the stairway.",
+          "Bedroom with bay window, providing additional space and light."
+        ]
+      }
+    }
+  ],
+  "additional_notes": [
+  
+  ]
+}
+2024-11-07 20:32:07,503 - __main__ - INFO - User selected the next step
+2024-11-07 20:32:41,258 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-07 20:32:41,259 - __main__ - INFO - {
+    "property_address": "9 Percy Drive, Giffnock, Glasgow, G46 6NZ",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family room adjacent to a kitchen with direct access to the stairway.",
+                    "Kitchen features a compact layout with access to a bathroom.",
+                    "Lounge includes a bay window, enhancing natural light."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Four bedrooms, each with distinct access from the central landing.",
+                    "Shower room conveniently located near the stairway.",
+                    "Bedroom with bay window, providing additional space and light."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:32:41,260 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-07 20:32:41,346 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-07 20:32:41,346 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-07 20:32:41,346 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:32:41,346 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:32:41,347 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-07 20:32:41,347 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"9 Percy Drive, Giffnock, Glasgow, G46 6NZ\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Dining/Family room adjacent to a kitchen with direct access to the stairway.\", \"Kitchen features a compact layout with access to a bathroom.\", \"Lounge includes a bay window, enhancing natural light.\"]}}, {\"first_floor\": {\"features\": [\"Four bedrooms, each with distinct access from the central landing.\", \"Shower room conveniently located near the stairway.\", \"Bedroom with bay window, providing additional space and light.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-66-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-65-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-63-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-50-Medium-1.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-49-Medium-2.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/A-16-Medium-2.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-07 20:32:56,361 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-07 20:32:56,362 - __main__ - DEBUG - {
+  "property_address": "9 Percy Drive, Giffnock, Glasgow, G46 6NZ",
+  "property_overview": [
+    "Charming detached bungalow in a desirable location.",
+    "Four spacious bedrooms with ample natural light.",
+    "Bright lounge with a bay window for enhanced lighting.",
+    "Modern kitchen with adjacent dining/family room.",
+    "Conveniently located shower room on the first floor."
+  ],
+  "external_features": [
+    "Well-maintained front garden with mature shrubs.",
+    "Spacious rear garden with a mix of lawn and patio areas.",
+    "Detached garage and additional driveway parking.",
+    "Private deck area ideal for outdoor entertaining."
+  ],
+  "local_area_highlights": [
+    "Located in the sought-after suburb of Giffnock, known for its vibrant community.",
+    "Close proximity to Rouken Glen Park, offering beautiful walking trails and a boating pond.",
+    "Excellent local schools, including St. Ninian's High School and Giffnock Primary School.",
+    "Convenient transport links with Giffnock train station providing easy access to Glasgow city centre.",
+    "Nearby shopping facilities at The Avenue Shopping Centre and local boutiques."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Dining/Family room adjacent to a kitchen with direct access to the stairway.",
+          "Kitchen features a compact layout with access to a bathroom.",
+          "Lounge includes a bay window, enhancing natural light."
+        ]
+      }
+    },
+    {
+      "first_floor": {
+        "features": [
+          "Four bedrooms, each with distinct access from the central landing.",
+          "Shower room conveniently located near the stairway.",
+          "Bedroom with bay window, providing additional space and light."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-07 20:32:56,364 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-07 20:32:56,364 - __main__ - DEBUG - {
+    "property_address": "9 Percy Drive, Giffnock, Glasgow, G46 6NZ",
+    "property_overview": [
+        "Charming detached bungalow in a desirable location.",
+        "Four spacious bedrooms with ample natural light.",
+        "Bright lounge with a bay window for enhanced lighting.",
+        "Modern kitchen with adjacent dining/family room.",
+        "Conveniently located shower room on the first floor."
+    ],
+    "external_features": [
+        "Well-maintained front garden with mature shrubs.",
+        "Spacious rear garden with a mix of lawn and patio areas.",
+        "Detached garage and additional driveway parking.",
+        "Private deck area ideal for outdoor entertaining."
+    ],
+    "local_area_highlights": [
+        "Located in the sought-after suburb of Giffnock, known for its vibrant community.",
+        "Close proximity to Rouken Glen Park, offering beautiful walking trails and a boating pond.",
+        "Excellent local schools, including St. Ninian's High School and Giffnock Primary School.",
+        "Convenient transport links with Giffnock train station providing easy access to Glasgow city centre.",
+        "Nearby shopping facilities at The Avenue Shopping Centre and local boutiques."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family room adjacent to a kitchen with direct access to the stairway.",
+                    "Kitchen features a compact layout with access to a bathroom.",
+                    "Lounge includes a bay window, enhancing natural light."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Four bedrooms, each with distinct access from the central landing.",
+                    "Shower room conveniently located near the stairway.",
+                    "Bedroom with bay window, providing additional space and light."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-07 20:32:56,364 - __main__ - INFO - User selected the next step
+2024-11-07 20:32:56,477 - __main__ - DEBUG - Preprocessing text: ['Charming detached bungalow in a desirable location.', 'Four spacious bedrooms with ample natural light.', 'Bright lounge with a bay window for enhanced lighting.', 'Modern kitchen with adjacent dining/family room.', 'Conveniently located shower room on the first floor.']
+2024-11-07 20:32:56,478 - __main__ - DEBUG - Preprocessing text: ['Well-maintained front garden with mature shrubs.', 'Spacious rear garden with a mix of lawn and patio areas.', 'Detached garage and additional driveway parking.', 'Private deck area ideal for outdoor entertaining.']
+2024-11-07 20:32:56,479 - __main__ - DEBUG - Preprocessing text: ['Located in the sought-after suburb of Giffnock, known for its vibrant community.', 'Close proximity to Rouken Glen Park, offering beautiful walking trails and a boating pond.', "Excellent local schools, including St. Ninian's High School and Giffnock Primary School.", 'Convenient transport links with Giffnock train station providing easy access to Glasgow city centre.', 'Nearby shopping facilities at The Avenue Shopping Centre and local boutiques.']
+2024-11-07 20:33:04,119 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-07 20:33:04,120 - __main__ - INFO - {
+    "property_address": "9 Percy Drive, Giffnock, Glasgow, G46 6NZ",
+    "property_overview": "Charming detached bungalow in a desirable location.\nFour spacious bedrooms with ample natural light.\nBright lounge with a bay window for enhanced lighting.\nModern kitchen with adjacent dining/family room.\nConveniently located shower room on the first floor.",
+    "external_features": "Well-maintained front garden with mature shrubs.\nSpacious rear garden with a mix of lawn and patio areas.\nDetached garage and additional driveway parking.\nPrivate deck area ideal for outdoor entertaining.",
+    "local_area_highlights": "Located in the sought-after suburb of Giffnock, known for its vibrant community.\nClose proximity to Rouken Glen Park, offering beautiful walking trails and a boating pond.\nExcellent local schools, including St. Ninian's High School and Giffnock Primary School.\nConvenient transport links with Giffnock train station providing easy access to Glasgow city centre.\nNearby shopping facilities at The Avenue Shopping Centre and local boutiques.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Dining/Family room adjacent to a kitchen with direct access to the stairway.",
+                    "Kitchen features a compact layout with access to a bathroom.",
+                    "Lounge includes a bay window, enhancing natural light."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Four bedrooms, each with distinct access from the central landing.",
+                    "Shower room conveniently located near the stairway.",
+                    "Bedroom with bay window, providing additional space and light."
+                ]
+            }
+        }
+    ],
+    "additional_notes": ""
+}
+2024-11-07 20:33:04,121 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-07 20:33:04,186 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-07 20:33:04,186 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-07 20:33:04,186 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:33:04,186 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:33:04,186 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-07 20:33:13,991 - __main__ - DEBUG - First generation response..
+2024-11-07 20:33:13,992 - __main__ - DEBUG - 
+2024-11-07 20:33:13,992 - __main__ - DEBUG - <DESCRIPTION> 
+A charming detached bungalow enjoying a highly popular and convenient location.
+
+This spacious detached bungalow enjoys a highly popular and convenient location within the desirable suburb of Giffnock. The property is set within well maintained garden grounds and provides spacious and flexible accommodation encompassed over two levels.
+
+Ground floor accommodation extends to entrance vestibule, traditional style reception hallway, lovely bright lounge with bay window, generous dining / family room adjacent to a modern kitchen with access to rear garden grounds, and main family bathroom. Upstairs provides four good bedrooms which are light and bright and a convenient shower room. Further storage provided by way of large floored and lined attic space. The specification includes gas central heating and double glazing.
+
+Externally the property is set within easily maintained garden grounds to the front and rear. Rear gardens are spacious with lawn and patio areas. Driveway to side leading to detached garage. It is worthy of note the rear garden grounds have been landscaped to provide a lovely private deck area ideal for entertaining.
+
+Local Area
+A haven for young growing families, the district offers an abundance of sports and recreational facilities, excellent shopping and retail outlets and of course some of the best schooling within the Glasgow area. The shopping suburb of Giffnock offers a variety of supermarkets, restaurants, banks and boutiques. The Avenue Shopping Centre is nearby and Silverburn Shopping Centre is a short drive to the West. The M77 provides commuter to the city centre and Ayrshire. Reputable state and private schooling is available within the district and there are excellent communication links with the city via road and rail, from Giffnock train station.
+<ENDDESCRIPTION>
+
+2024-11-07 20:33:13,993 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-07 20:33:13,994 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-07 20:33:13,994 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-07 20:33:13,995 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-07 20:33:13,995 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"9 Percy Drive, Giffnock, Glasgow, G46 6NZ\",\n    \"property_overview\": \"Charming detached bungalow in a desirable location.\\nFour spacious bedrooms with ample natural light.\\nBright lounge with a bay window for enhanced lighting.\\nModern kitchen with adjacent dining/family room.\\nConveniently located shower room on the first floor.\",\n    \"external_features\": \"Well-maintained front garden with mature shrubs.\\nSpacious rear garden with a mix of lawn and patio areas.\\nDetached garage and additional driveway parking.\\nPrivate deck area ideal for outdoor entertaining.\",\n    \"local_area_highlights\": \"Located in the sought-after suburb of Giffnock, known for its vibrant community.\\nClose proximity to Rouken Glen Park, offering beautiful walking trails and a boating pond.\\nExcellent local schools, including St. Ninian's High School and Giffnock Primary School.\\nConvenient transport links with Giffnock train station providing easy access to Glasgow city centre.\\nNearby shopping facilities at The Avenue Shopping Centre and local boutiques.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Dining/Family room adjacent to a kitchen with direct access to the stairway.\",\n                    \"Kitchen features a compact layout with access to a bathroom.\",\n                    \"Lounge includes a bay window, enhancing natural light.\"\n                ]\n            }\n        },\n        {\n            \"first_floor\": {\n                \"features\": [\n                    \"Four bedrooms, each with distinct access from the central landing.\",\n                    \"Shower room conveniently located near the stairway.\",\n                    \"Bedroom with bay window, providing additional space and light.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA charming detached bungalow enjoying a highly popular and convenient location.\n\nThis spacious detached bungalow enjoys a highly popular and convenient location within the desirable suburb of Giffnock. The property is set within well maintained garden grounds and provides spacious and flexible accommodation encompassed over two levels.\n\nGround floor accommodation extends to entrance vestibule, traditional style reception hallway, lovely bright lounge with bay window, generous dining / family room adjacent to a modern kitchen with access to rear garden grounds, and main family bathroom. Upstairs provides four good bedrooms which are light and bright and a convenient shower room. Further storage provided by way of large floored and lined attic space. The specification includes gas central heating and double glazing.\n\nExternally the property is set within easily maintained garden grounds to the front and rear. Rear gardens are spacious with lawn and patio areas. Driveway to side leading to detached garage. It is worthy of note the rear garden grounds have been landscaped to provide a lovely private deck area ideal for entertaining.\n\nLocal Area\nA haven for young growing families, the district offers an abundance of sports and recreational facilities, excellent shopping and retail outlets and of course some of the best schooling within the Glasgow area. The shopping suburb of Giffnock offers a variety of supermarkets, restaurants, banks and boutiques. The Avenue Shopping Centre is nearby and Silverburn Shopping Centre is a short drive to the West. The M77 provides commuter to the city centre and Ayrshire. Reputable state and private schooling is available within the district and there are excellent communication links with the city via road and rail, from Giffnock train station.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-07 20:33:19,463 - __main__ - DEBUG - Validation content: A charming detached bungalow in a desirable location.
+
+This detached bungalow is situated in the sought-after suburb of Giffnock, offering well-maintained garden grounds and flexible accommodation over two levels. The ground floor features a bright lounge with a bay window, a dining/family room adjacent to a modern kitchen, which provides access to the rear garden. Upstairs, there are four spacious bedrooms with ample natural light and a conveniently located shower room.
+
+Externally, the property boasts a well-maintained front garden with mature shrubs and a spacious rear garden with lawn and patio areas. Additional features include a detached garage, driveway parking, and a private deck area ideal for outdoor entertaining.
+
+Local Area:
+
+Located near Rouken Glen Park, residents can enjoy beautiful walking trails and a boating pond. The area is served by excellent local schools, including St. Ninian's High School and Giffnock Primary School. Convenient transport links are available via Giffnock train station, providing easy access to Glasgow city centre. Nearby shopping facilities include The Avenue Shopping Centre and local boutiques.
+2024-11-07 20:37:05,497 - __main__ - INFO - Returning to home page
+2024-11-07 20:38:48,123 - __main__ - INFO - Returning to home page
+2024-11-07 20:38:50,301 - __main__ - INFO - Returning to home page
+2024-11-07 20:44:00,403 - __main__ - INFO - User Selected Get Started
+2024-11-07 20:44:00,407 - __main__ - INFO - User selected the next step
