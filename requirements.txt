@@ -1,2 +1,15 @@
 streamlit
 streamlit_extras
+json
+re
+time
+tempfile
+os
+yaml
+openai
+google.cloud.storage
+google.oauth2.service_account
+google.cloud.bigquery
+random
+logging
+pyperclip
