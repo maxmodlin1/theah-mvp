@@ -13,6 +13,8 @@ import yaml
 import openai
 from openai import OpenAI
 from google.cloud import storage
+from google.oauth2 import service_account
+from google.cloud import bigquery 
 import random
 import logging
 import pyperclip
@@ -101,7 +103,7 @@ def add_message(role, text, image_url=None):
 
 def add_thread(thread_id, message, role, files=None):
     logger.debug(f"Adding thread: thread_id={thread_id}, message={message}, role={role}, files={files}")
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     messages = [{"type": "text", "text": message}]
     if files:
         for file in files:
@@ -111,11 +113,19 @@ def add_thread(thread_id, message, role, files=None):
     return messages
 
 def upload_to_gcs(source_file_path, file_name):
-    #logger.debug(f"Uploading to GCS: source_file_path={source_file_path}, file_name={file_name}")
     bucket_name = "bucket-quickstart_maxs-first-project-408116"
     destination_blob_name = f"client_uploads/{file_name}"
-    storage_client = storage.Client()
+    credentials = service_account.Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"]
+    )
+
+    # Use the credentials to create clients
+    bigquery_client = bigquery.Client(credentials=credentials)
+    storage_client = storage.Client(credentials=credentials)
+
+    # Get the bucket
     bucket = storage_client.bucket(bucket_name)
+
     try:
         blob = bucket.blob(destination_blob_name)
         blob.upload_from_filename(source_file_path)
@@ -127,7 +137,7 @@ def upload_to_gcs(source_file_path, file_name):
 
 def upload_files(uploaded_file, type=None):
     #logger.debug(f"Uploading file: {uploaded_file.name}, type={type}")
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     temp_dir = tempfile.mkdtemp()
     file_path = os.path.join(temp_dir, uploaded_file.name)
     with open(file_path, "wb") as f:
@@ -152,7 +162,7 @@ def go_home():
 
 def create_assistant(name, instructions, model):
     logger.debug(f"Creating assistant: name={name}, instructions={instructions}, model={model}")
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     assistant = client.beta.assistants.create(name=name, instructions=instructions, model=st.session_state['model'])
     thread = client.beta.threads.create()
     obj = {"assistantid": assistant.id, "threadid": thread.id}
@@ -160,7 +170,7 @@ def create_assistant(name, instructions, model):
 
 def run_assistant(threadid, assistantid):
     logger.debug(f"Running assistant: threadid={threadid}, assistantid={assistantid}")
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     run = client.beta.threads.runs.create(thread_id=threadid, assistant_id=assistantid)
     while True:
         run_status = client.beta.threads.runs.retrieve(thread_id=threadid, run_id=run.id)
@@ -173,14 +183,14 @@ def run_assistant(threadid, assistantid):
 
 def print_last_assistant_message(threadid):
     logger.debug(f"Printing last assistant message: threadid={threadid}")
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     messages = client.beta.threads.messages.list(thread_id=threadid)
     if messages.data:
         return messages.data[0].content[0].text.value
 
 def generate_json():
     st.session_state['chat_messages'] = []
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     json_obj = st.session_state['json_object']
     json_str = json.dumps(json_obj)
     system = get_theah_content("system_buildjson")
@@ -219,7 +229,7 @@ def generate_json():
         logger.error(f"Failed to parse JSON: {e}")
 
 def make_floorplan_review_call(floorplan_url):
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     system = get_theah_content("system_floorplan")
     floorplan = get_theah_content("user_floorplan")
     add_message(role="system", text=system)
@@ -246,7 +256,7 @@ def generate_description():
     pretty_json = json.dumps(st.session_state['json_object'], indent=4)
     #logger.debug(f"Pretty JSON: {pretty_json}")
 
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets["openai"]["api_key"])
     system = get_theah_content("system_gendescription")
     description = get_theah_content("user_gendescription")
     update_description = description.replace('{{ JSON }}', str(pretty_json))
@@ -881,7 +891,7 @@ def main():
             theah_convo = yaml.safe_load(file)
             st.session_state['theah_convo'] = theah_convo
 
-        st.session_state['api_key'] = st.secrets["api_key"]
+        st.session_state['api_key'] = st.secrets["openai"]["api_key"]
 
         if 'page' not in st.session_state:
             st.session_state.page = 0

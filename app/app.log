@@ -21330,3 +21330,10 @@ Located near Rouken Glen Park, residents can enjoy beautiful walking trails and 
 2024-11-07 20:38:50,301 - __main__ - INFO - Returning to home page
 2024-11-07 20:44:00,403 - __main__ - INFO - User Selected Get Started
 2024-11-07 20:44:00,407 - __main__ - INFO - User selected the next step
+2024-11-07 21:10:22,706 - __main__ - INFO - User Selected Get Started
+2024-11-07 21:10:22,708 - __main__ - INFO - User selected the next step
+2024-11-07 21:10:25,492 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-07 21:10:25,493 - __main__ - INFO - User selected the next step
+2024-11-07 21:10:29,933 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg
+2024-11-07 21:10:29,935 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4-Netherway-Netherlee-FP-scaled.jpg']
+2024-11-07 21:10:29,937 - __main__ - INFO - User selected the next step
