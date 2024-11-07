@@ -1,2 +1,3 @@
 venv
 googlecloudkey
+.streamlit/secrets.toml
