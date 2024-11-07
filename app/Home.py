@@ -881,12 +881,12 @@ def main():
     if not st.session_state.logged_in:
         login()
     else:
-        with open('/Users/maxmodlin/maxdev/Streamlit_UI_Template/templates/generation.json', 'r') as f:
+        with open('templates/generation.json', 'r') as f:
         #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
             data = json.load(f)
             st.session_state['data'] = data
 
-        with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
+        with open('prompts/theah_conversation.yml', 'r') as file:
         #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
             theah_convo = yaml.safe_load(file)
             st.session_state['theah_convo'] = theah_convo
