@@ -937,14 +937,10 @@ def main():
     if not st.session_state.logged_in:
         login()
     else:
-        with open('/Users/maxmodlin/maxdev/theah-mvp/templates/generation.json', 'r') as f:
-        #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
-            data = json.load(f)
-            st.session_state['data'] = data
-
-        with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
-        #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
-            theah_convo = yaml.safe_load(file)
+        script_dir = os.path.dirname(__file__)
+        conversation = os.path.join(script_dir, '../prompts/theah_conversation.yml')
+        with open(conversation) as f:
+            theah_convo = yaml.safe_load(f)
             st.session_state['theah_convo'] = theah_convo
 
         st.session_state['api_key'] = st.secrets["openai"]["api_key"]
