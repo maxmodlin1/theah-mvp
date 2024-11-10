@@ -359,7 +359,7 @@ def page_1():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/no-property-img.webp", width=500)
-        st.write("Welcome to Corum's AI Property Description Generator!")
+        st.write("Welcome to Corum's AI Property Description Assistant!")
         st.markdown("This tool will help you write a detailed property listing description in minutes, using an AI model developed specifically for Corum Clarkston.")
         st.markdown("Click the button below to get started!") 
         if st.button("Get Started"):
@@ -906,9 +906,20 @@ def page_7():
     # Custom CSS for text area height
     custom_css = """
         <style>
-            .stTextArea textarea {
-                height: 500px !important; /* Set the height of the text area */
-            }
+            
+        .stTextArea [data-baseweb="base-input"] {
+            background-color: #0D1342;
+            height: 500px !important;
+            caret-color: #ffffff;
+        }
+
+        .stTextArea [data-baseweb="base-input"] > textarea {
+            color: white !important;
+            font-size: 14px;
+            height: 500px !important;
+            caret-color: #ffffff;
+
+        }
         </style>
         """
 
