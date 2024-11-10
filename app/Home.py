@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from styling import template1_page_style
 from streamlit_extras.stylable_container import stylable_container
+from streamlit_extras.app_logo import add_logo
 import json
 import re
 import streamlit.components.v1 as components
@@ -43,21 +44,76 @@ logger = logging.getLogger(__name__)
 import streamlit as st
 
 def login():
+    
+    # Custom CSS
+    st.markdown("""
+    <style>
 
-    st.image("https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-negative.png",width=250)
-    st.markdown("<br>", unsafe_allow_html=True)
+        .stButton > button {
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .stButton > button:hover {
+            background-color: #45a049;
+        }
+        .css-1cpxqw2 {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .icon-input {
+            display: flex;
+            align-items: center;
+        }
+        .icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+                
+        .stTextInput {
+            margin-bottom: -25px;
+        }
+                
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }      
+    </style>
+    """, unsafe_allow_html=True)
 
-    st.title("Login")
+    col1, col2, col3 = st.columns([1,2,1])
 
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+    with col2:
 
-    if st.button("Login"):
-        if username == "clarkston@corumproperty.co.uk" and password == "CorumClarkston":
-            st.session_state.logged_in = True
-            st.rerun()
-        else:
-            st.error("Invalid username or password")
+        st.markdown("""
+            <div class="centered-image">
+                <img src="https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/corum/logo-negative.png" width="250">
+            </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+       
+        username = st.text_input("", placeholder="Username", key="username")
+        password = st.text_input("", placeholder="Password", type="password", key="password")
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        if st.button("Login", use_container_width=True):
+            username = st.secrets["general"]["corumuser"]
+            password = st.secrets["general"]["corumkey"]
+            if username == "clarkston@corumproperty.co.uk" and password == "CorumClarkston":
+                st.session_state.logged_in = True
+                st.success("Login successful!")
+                st.rerun()
+            else:
+                st.error("Invalid username or password")
 
 def update_json_object(key, value):
     logger.debug(f"Updating JSON object: {key} = {value}")
@@ -881,12 +937,12 @@ def main():
     if not st.session_state.logged_in:
         login()
     else:
-        with open('templates/generation.json', 'r') as f:
+        with open('/Users/maxmodlin/maxdev/theah-mvp/templates/generation.json', 'r') as f:
         #with open('C:\\Users\\Administrator\\theah-mvp\\templates\\generation.json', 'r') as f:
             data = json.load(f)
             st.session_state['data'] = data
 
-        with open('prompts/theah_conversation.yml', 'r') as file:
+        with open('/Users/maxmodlin/maxdev/theah-mvp/prompts/theah_conversation.yml', 'r') as file:
         #with open('C:\\Users\\Administrator\\theah-mvp\\prompts\\theah_conversation.yml', 'r') as file:
             theah_convo = yaml.safe_load(file)
             st.session_state['theah_convo'] = theah_convo

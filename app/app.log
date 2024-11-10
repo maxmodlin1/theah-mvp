@@ -22097,3 +22097,485 @@ Externally, the property boasts a well-maintained front garden, a driveway with 
   ]
 }
 2024-11-07 21:40:07,370 - __main__ - INFO - User selected the next step
+2024-11-10 10:08:27,050 - __main__ - INFO - User Selected Get Started
+2024-11-10 10:08:27,052 - __main__ - INFO - User selected the next step
+2024-11-10 10:08:29,877 - __main__ - INFO - User inputted Property Address: 
+2024-11-10 10:08:29,878 - __main__ - INFO - User selected the next step
+2024-11-10 10:08:31,635 - __main__ - INFO - User selected the previous step
+2024-11-10 10:09:11,441 - __main__ - INFO - User Selected Get Started
+2024-11-10 10:09:11,443 - __main__ - INFO - User selected the next step
+2024-11-10 10:10:26,668 - __main__ - INFO - User Selected Get Started
+2024-11-10 10:10:26,670 - __main__ - INFO - User selected the next step
+2024-11-10 10:11:09,470 - __main__ - INFO - User Selected Get Started
+2024-11-10 10:11:09,471 - __main__ - INFO - User selected the next step
+2024-11-10 10:13:02,426 - __main__ - INFO - User Selected Get Started
+2024-11-10 10:13:02,429 - __main__ - INFO - User selected the next step
+2024-11-10 10:13:06,200 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-10 10:13:06,201 - __main__ - INFO - User selected the next step
+2024-11-10 10:13:15,070 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg
+2024-11-10 10:13:15,071 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg']
+2024-11-10 10:13:15,072 - __main__ - INFO - User selected the next step
+2024-11-10 10:13:22,512 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17_img_1961-Medium.jpg
+2024-11-10 10:13:23,130 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/20_img_1973-Medium.jpg
+2024-11-10 10:13:23,833 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/25_img_2001-Medium.jpg
+2024-11-10 10:13:23,833 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-10 10:13:23,900 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-10 10:13:23,900 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-10 10:13:23,900 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 10:13:23,900 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 10:13:23,900 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-10 10:13:29,695 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen adjacent to the family room.",
+          "Family room with access to the rear.",
+          "Utility room connected to the hall.",
+          "Bathroom located near the utility room.",
+          "Dining room or optional additional bedroom.",
+          "Lounge with bay window."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Main bedroom with walk-in closet.",
+          "Ensuite bathroom adjoining the main bedroom.",
+          "Additional bathroom accessible from the hall.",
+          "Two further bedrooms on either side of the hall.",
+          "Office space near the staircase.",
+          "Eaves storage accessible from the hall."
+        ]
+      }
+    }
+  ],
+  "additional_notes": [
+  
+  ]
+}
+2024-11-10 10:13:29,698 - __main__ - INFO - User selected the next step
+2024-11-10 10:13:44,434 - __main__ - INFO - Returning to home page
+2024-11-10 12:43:06,942 - __main__ - INFO - User Selected Get Started
+2024-11-10 12:43:06,949 - __main__ - INFO - User selected the next step
+2024-11-10 12:43:20,410 - __main__ - INFO - User selected the previous step
+2024-11-10 12:43:26,782 - __main__ - INFO - User Selected Get Started
+2024-11-10 12:43:26,783 - __main__ - INFO - User selected the next step
+2024-11-10 12:43:28,465 - __main__ - INFO - User inputted Property Address: 
+2024-11-10 12:43:28,466 - __main__ - INFO - User selected the next step
+2024-11-10 12:43:32,850 - __main__ - INFO - User selected the previous step
+2024-11-10 13:25:19,060 - __main__ - INFO - User Selected Get Started
+2024-11-10 13:25:19,061 - __main__ - INFO - User selected the next step
+2024-11-10 13:25:24,251 - __main__ - INFO - User inputted Property Address: 1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY
+2024-11-10 13:25:24,252 - __main__ - INFO - User selected the next step
+2024-11-10 13:25:31,376 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg
+2024-11-10 13:25:31,377 - __main__ - DEBUG - Floorplan URL: ['https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg']
+2024-11-10 13:25:31,378 - __main__ - INFO - User selected the next step
+2024-11-10 13:25:39,397 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/46_img_2080-Medium.jpg
+2024-11-10 13:25:40,059 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/10_img_1945-Medium.jpg
+2024-11-10 13:25:40,781 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4_img_1939-Medium.jpg
+2024-11-10 13:25:41,381 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/25_img_2001-Medium.jpg
+2024-11-10 13:25:42,021 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/20_img_1973-Medium.jpg
+2024-11-10 13:25:42,661 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17_img_1961-Medium.jpg
+2024-11-10 13:25:43,302 - __main__ - INFO - File uploaded to GCS: https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/14_img_1949-Medium.jpg
+2024-11-10 13:25:43,302 - __main__ - INFO - Making the OpenAI call to review the floorplan
+2024-11-10 13:25:43,369 - __main__ - DEBUG - Getting content for role: system_floorplan
+2024-11-10 13:25:43,369 - __main__ - DEBUG - Getting content for role: user_floorplan
+2024-11-10 13:25:43,369 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:25:43,370 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:25:43,370 - __main__ - DEBUG - Sending this JSON Object to OpenAI: [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience in crafting property descriptions for the UK real estate market. You are assisting a property agent in reviewing a floorplan to create an accurate, appealing, and factually verified property listing description.\n\nThe property agent has provided a JSON structure where each property attribute, including the \"floorplan\" section, will be meticulously populated. Your task is to analyze the floorplan image and accurately describe the layout, features, and structural elements of the property.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Objective: Your task is to study the provided floorplan image and populate only the \"floorplan\" section of the JSON object with factually accurate details. Any error or inferred detail will result in a $10,000 fine, emphasizing the need for strict accuracy and trustworthiness. \n\nPlease follow these guidelines to complete this task:\n\nExamine the Floorplan: Identify each room, structural features, and noteworthy layout element as depicted in the floorplan.\n\nPopulate JSON: Populate the \"floorplan\" section of the JSON object with specific data, using punctual descriptive language that summarises each floor but remains accurate and fact-based. Avoid speculative statements or embellishments. Try not to sound robotic and do NOT use subjective words like \"contemporary or \"lovely\" to describe area's as it's impossible to know this from the floorplan. Do no specify dimensions and do not referance Bedrooms by numbers i.e \"Bedroom 1\" or \"Bedroom 2\" to avoid sounding robotic. \n\nStructure and Clarity: Maintain the JSON format as provided without deviations. Be precise, ensuring clarity and appeal in each entry while strictly adhering to the property details shown in the image.\n\nError-Free Execution: To avoid any penalties, verify each point by double-checking the floorplan against the input JSON structure, ensuring absolute alignment with the visual details provided.\n\nOnly output the updated JSON object as per the provided format, with no additional commentary, instructions, or explanations. Do not even add ```json tags. Ensure all information is clearly stated, factual, and punctuated accurately.\n\nTake a deep breath and work on this problem step-by-step.\n\n{\n  \"property_address\": \"\",\n  \"property_overview\": [],\n  \"external_features\": [],\n  \"local_area_highlights\": [],\n  \"floorplan\": [\n    {\n      \"ground_floor\": {\n        \"features\": [\n\n        ]\n      },\n      \"first_floor\": {\n        \"features\": [\n\n        ]\n      }\n    }\n  ],\n  \"additional_notes\": [\n  \n  ]\n}\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/all_floors_9_sunbury_avenue_glasgow_with_dim-1-scaled.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-10 13:25:49,592 - __main__ - DEBUG - Response content: {
+  "property_address": "",
+  "property_overview": [],
+  "external_features": [],
+  "local_area_highlights": [],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen adjacent to the family room.",
+          "Family room located at the rear with access to the outdoors.",
+          "Utility room accessible from the hall.",
+          "Bathroom situated near the utility room.",
+          "Dining room or additional bedroom option near the entrance.",
+          "Lounge positioned at the front with bay window."
+        ]
+      },
+      "first_floor": {
+        "features": [
+          "Primary bedroom includes a walk-in closet.",
+          "Ensuite bathroom connected to the primary bedroom.",
+          "Two eaves storage areas accessible from the hall.",
+          "Additional bathroom located centrally.",
+          "Office space adjacent to the hall.",
+          "Two further bedrooms located on this floor."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-10 13:25:49,594 - __main__ - INFO - User selected the next step
+2024-11-10 13:26:24,599 - __main__ - INFO - User populated the floorplan section and selected the next step. Their choices are noted below
+2024-11-10 13:26:24,602 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [],
+    "external_features": [],
+    "local_area_highlights": [],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen adjacent to the family room.",
+                    "Family room located at the rear with access to the outdoors.",
+                    "Utility room accessible from the hall.",
+                    "Bathroom situated near the utility room.",
+                    "Dining room or additional bedroom option near the entrance.",
+                    "Lounge positioned at the front with bay window."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Primary bedroom includes a walk-in closet.",
+                    "Ensuite bathroom connected to the primary bedroom.",
+                    "Two eaves storage areas accessible from the hall.",
+                    "Additional bathroom located centrally.",
+                    "Office space adjacent to the hall.",
+                    "Two further bedrooms located on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-10 13:26:24,608 - __main__ - INFO - Moving on to the populate the 'local area, overview and external features' section
+2024-11-10 13:26:24,692 - __main__ - DEBUG - Getting content for role: system_buildjson
+2024-11-10 13:26:24,693 - __main__ - DEBUG - Getting content for role: user_buildjson
+2024-11-10 13:26:24,693 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:26:24,693 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:26:24,693 - __main__ - INFO - Sending the following JSON object to OpenAI to populate the JSON...
+2024-11-10 13:26:24,701 - __main__ - DEBUG - [
+    {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like an expert copywriter with over 20 years of experience specializing in property sales in the UK. You are assisting a client, a property agent, in creating a detailed and attractive property listing description.\n\nYour task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Your task will be to generate a compelling property listing description based on a JSON object thats been provided by the client.\n\nYour task is to analyze the property images and JSON object provided, then comprehensively populate the \"local_area_highlights\", \"property_overview\", and \"external_features\" fields in the JSON object below. Ensure the information is accurate, specific, and contextually relevant to appeal to potential property buyers or renters.\n\n{\"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\", \"property_overview\": [], \"external_features\": [], \"local_area_highlights\": [], \"floorplan\": [{\"ground_floor\": {\"features\": [\"Kitchen adjacent to the family room.\", \"Family room located at the rear with access to the outdoors.\", \"Utility room accessible from the hall.\", \"Bathroom situated near the utility room.\", \"Dining room or additional bedroom option near the entrance.\", \"Lounge positioned at the front with bay window.\"]}}, {\"first_floor\": {\"features\": [\"Primary bedroom includes a walk-in closet.\", \"Ensuite bathroom connected to the primary bedroom.\", \"Two eaves storage areas accessible from the hall.\", \"Additional bathroom located centrally.\", \"Office space adjacent to the hall.\", \"Two further bedrooms located on this floor.\"]}}], \"additional_notes\": []}\n\nHere are the guidelines to follow when completing this task:\n\n1. The \"Property Overview\" should be punctual and put into a list format. It should not be written in paragraph form. It should contains some key features of the property that make it unique or desirable. Ensure you mention what type of property is it, based on the images. These features will be used in the opening paragraph of the property listing description.\n\n2. When populating the \"Local Area Highlights\" section, use the property address (found in the JSON) to identify notable neighborhood or community highlights such as parks, shopping areas, schools, transportation links, and popular amenities. Describe each highlight briefly but specifically, focusing on details that would appeal to potential buyers or renters.\n\n3. When populating the \"External Features\" section, review the images and note any visable external property features such as landscaping, parking options, fencing, patio/deck areas, or other outdoor amenities. Prioritize features that add functional or aesthetic value to the property, making it attractive to prospective buyers or tenants.\n\nOutput Requirements\n\nDeliverable: Provide only the completed JSON object with populated \"local_area_highlights\", \"property_overview\", and \"external_features\" fields. Do not output any additional content or explanations outside the JSON structure. Do not include ```json tags.\n\n  Format: JSON object only, with no additional commentary or explanations outside of the JSON structure.\n\n  Take a deep breath and work on this problem step-by-step.\n"
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/46_img_2080-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/10_img_1945-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/4_img_1939-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/25_img_2001-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/20_img_1973-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/17_img_1961-Medium.jpg",
+                    "detail": "high"
+                }
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": "https://storage.googleapis.com/bucket-quickstart_maxs-first-project-408116/client_uploads/14_img_1949-Medium.jpg",
+                    "detail": "high"
+                }
+            }
+        ]
+    }
+]
+2024-11-10 13:26:35,955 - __main__ - DEBUG - The Response from OpenAI. Trying to convert it to JSON now..
+2024-11-10 13:26:35,957 - __main__ - DEBUG - {
+  "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+  "property_overview": [
+    "Detached family home in a desirable location.",
+    "Spacious lounge with bay window.",
+    "Modern kitchen with island and dining area.",
+    "Primary bedroom with walk-in closet and ensuite.",
+    "Flexible dining room or additional bedroom option.",
+    "Office space ideal for remote working."
+  ],
+  "external_features": [
+    "Well-maintained front garden with driveway.",
+    "Integrated garage for secure parking.",
+    "Landscaped rear garden with patio area.",
+    "Garden room perfect for gym or office use."
+  ],
+  "local_area_highlights": [
+    "Close proximity to Broomhill Shopping Centre.",
+    "Excellent transport links via nearby train station.",
+    "Walking distance to local parks and green spaces.",
+    "Highly regarded schools in the vicinity.",
+    "Vibrant community with cafes and restaurants."
+  ],
+  "floorplan": [
+    {
+      "ground_floor": {
+        "features": [
+          "Kitchen adjacent to the family room.",
+          "Family room located at the rear with access to the outdoors.",
+          "Utility room accessible from the hall.",
+          "Bathroom situated near the utility room.",
+          "Dining room or additional bedroom option near the entrance.",
+          "Lounge positioned at the front with bay window."
+        ]
+      }
+    },
+    {
+      "first_floor": {
+        "features": [
+          "Primary bedroom includes a walk-in closet.",
+          "Ensuite bathroom connected to the primary bedroom.",
+          "Two eaves storage areas accessible from the hall.",
+          "Additional bathroom located centrally.",
+          "Office space adjacent to the hall.",
+          "Two further bedrooms located on this floor."
+        ]
+      }
+    }
+  ],
+  "additional_notes": []
+}
+2024-11-10 13:26:35,958 - __main__ - DEBUG - The Response from OpenAI and presented to the user..
+2024-11-10 13:26:35,958 - __main__ - DEBUG - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": [
+        "Detached family home in a desirable location.",
+        "Spacious lounge with bay window.",
+        "Modern kitchen with island and dining area.",
+        "Primary bedroom with walk-in closet and ensuite.",
+        "Flexible dining room or additional bedroom option.",
+        "Office space ideal for remote working."
+    ],
+    "external_features": [
+        "Well-maintained front garden with driveway.",
+        "Integrated garage for secure parking.",
+        "Landscaped rear garden with patio area.",
+        "Garden room perfect for gym or office use."
+    ],
+    "local_area_highlights": [
+        "Close proximity to Broomhill Shopping Centre.",
+        "Excellent transport links via nearby train station.",
+        "Walking distance to local parks and green spaces.",
+        "Highly regarded schools in the vicinity.",
+        "Vibrant community with cafes and restaurants."
+    ],
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen adjacent to the family room.",
+                    "Family room located at the rear with access to the outdoors.",
+                    "Utility room accessible from the hall.",
+                    "Bathroom situated near the utility room.",
+                    "Dining room or additional bedroom option near the entrance.",
+                    "Lounge positioned at the front with bay window."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Primary bedroom includes a walk-in closet.",
+                    "Ensuite bathroom connected to the primary bedroom.",
+                    "Two eaves storage areas accessible from the hall.",
+                    "Additional bathroom located centrally.",
+                    "Office space adjacent to the hall.",
+                    "Two further bedrooms located on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": []
+}
+2024-11-10 13:26:35,959 - __main__ - INFO - User selected the next step
+2024-11-10 13:26:36,078 - __main__ - DEBUG - Preprocessing text: ['Detached family home in a desirable location.', 'Spacious lounge with bay window.', 'Modern kitchen with island and dining area.', 'Primary bedroom with walk-in closet and ensuite.', 'Flexible dining room or additional bedroom option.', 'Office space ideal for remote working.']
+2024-11-10 13:26:36,080 - __main__ - DEBUG - Preprocessing text: ['Well-maintained front garden with driveway.', 'Integrated garage for secure parking.', 'Landscaped rear garden with patio area.', 'Garden room perfect for gym or office use.']
+2024-11-10 13:26:36,081 - __main__ - DEBUG - Preprocessing text: ['Close proximity to Broomhill Shopping Centre.', 'Excellent transport links via nearby train station.', 'Walking distance to local parks and green spaces.', 'Highly regarded schools in the vicinity.', 'Vibrant community with cafes and restaurants.']
+2024-11-10 13:26:56,924 - __main__ - DEBUG - Preprocessing text: ['Detached family home in a desirable location.', 'Spacious lounge with bay window.', 'Modern kitchen with island and dining area.', 'Primary bedroom with walk-in closet and ensuite.', 'Flexible dining room or additional bedroom option.', 'Office space ideal for remote working.']
+2024-11-10 13:26:56,927 - __main__ - DEBUG - Preprocessing text: ['Well-maintained front garden with driveway.', 'Integrated garage for secure parking.', 'Landscaped rear garden with patio area.', 'Garden room perfect for gym or office use.']
+2024-11-10 13:26:56,928 - __main__ - DEBUG - Preprocessing text: ['Close proximity to Broomhill Shopping Centre.', 'Excellent transport links via nearby train station.', 'Walking distance to local parks and green spaces.', 'Highly regarded schools in the vicinity.', 'Vibrant community with cafes and restaurants.']
+2024-11-10 13:26:57,081 - __main__ - INFO - User populated the local area, overview and external features section and selected the next step. Their choices are noted below
+2024-11-10 13:26:57,082 - __main__ - INFO - {
+    "property_address": "1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY",
+    "property_overview": "Detached family home in a desirable location.\nSpacious lounge with bay window.\nModern kitchen with island and dining area.\nPrimary bedroom with walk-in closet and ensuite.\nFlexible dining room or additional bedroom option.\nOffice space ideal for remote working.",
+    "external_features": "Well-maintained front garden with driveway.\nIntegrated garage for secure parking.\nLandscaped rear garden with patio area.\nGarden room perfect for gym or office use.",
+    "local_area_highlights": "Close proximity to Broomhill Shopping Centre.\nExcellent transport links via nearby train station.\nWalking distance to local parks and green spaces.\nHighly regarded schools in the vicinity.\nVibrant community with cafes and restaurants.",
+    "floorplan": [
+        {
+            "ground_floor": {
+                "features": [
+                    "Kitchen adjacent to the family room.",
+                    "Family room located at the rear with access to the outdoors.",
+                    "Utility room accessible from the hall.",
+                    "Bathroom situated near the utility room.",
+                    "Dining room or additional bedroom option near the entrance.",
+                    "Lounge positioned at the front with bay window."
+                ]
+            }
+        },
+        {
+            "first_floor": {
+                "features": [
+                    "Primary bedroom includes a walk-in closet.",
+                    "Ensuite bathroom connected to the primary bedroom.",
+                    "Two eaves storage areas accessible from the hall.",
+                    "Additional bathroom located centrally.",
+                    "Office space adjacent to the hall.",
+                    "Two further bedrooms located on this floor."
+                ]
+            }
+        }
+    ],
+    "additional_notes": "Gas Central Heating\nHome to Max Conrad Bell"
+}
+2024-11-10 13:26:57,082 - __main__ - INFO - Going to generate the description based on the JSON object above
+2024-11-10 13:26:57,128 - __main__ - DEBUG - Getting content for role: system_gendescription
+2024-11-10 13:26:57,128 - __main__ - DEBUG - Getting content for role: user_gendescription
+2024-11-10 13:26:57,128 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:26:57,128 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:26:57,128 - __main__ - INFO - Sending this JSON object to OpenAI to generate the description...
+2024-11-10 13:27:05,430 - __main__ - DEBUG - First generation response..
+2024-11-10 13:27:05,432 - __main__ - DEBUG - 
+2024-11-10 13:27:05,432 - __main__ - DEBUG - <DESCRIPTION> 
+A well presented detached family home in a desirable location.
+
+This well presented family home offers flexible accommodation and is situated in a desirable location. The property is formed over two levels and comprises of a spacious lounge with bay window, modern kitchen with island and dining area, primary bedroom with walk-in closet and ensuite, flexible dining room or additional bedroom option and office space ideal for remote working.
+
+The ground floor accommodation comprises of the kitchen adjacent to the family room which is located at the rear of the property. The family room is a great space and has access to the outdoors. The utility room is accessed from the hall and is situated next to the bathroom. The dining room or additional bedroom option is located near the entrance and the lounge is positioned at the front of the property with bay window.
+
+The first floor comprises of the primary bedroom which includes a walk-in closet and ensuite. There are two eaves storage areas which are accessed from the hall. The bathroom is located centrally and the office space is adjacent to the hall. There are two further bedrooms located on this floor.
+
+Externally, the front garden is well maintained and has a driveway leading to the integrated garage. The rear garden is landscaped and has a patio area. The garden room is a great space and could be used as a gym or office.
+
+Local Area
+Broomhill is a popular West End suburb, with excellent transport links, including a train station, and is perfectly placed for gaining quick, easy access to the Expressway and, therefore, the Clyde Tunnel, M8, City Centre and Glasgow International Airport. The area offers a diverse range of facilities, with Broomhill Shopping Centre, a selection of cafes, restaurants and bars, and is within walking distance of local parks and green spaces. The property is also within the catchment area for some highly regarded schools.
+<ENDDESCRIPTION>
+
+2024-11-10 13:27:05,433 - __main__ - DEBUG - Validating the description against new AI model..
+2024-11-10 13:27:05,433 - __main__ - DEBUG - Getting content for role: user_validate
+2024-11-10 13:27:05,434 - __main__ - DEBUG - Building the message to send to OpenAI
+2024-11-10 13:27:05,434 - __main__ - INFO - Sending the this prompt to OpenAI to validate the description...
+2024-11-10 13:27:05,434 - __main__ - DEBUG - [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "Act like a highly skilled UK-based property copywriter with over 20 years of expertise in crafting accurate and compelling property descriptions that capture buyer interest. \n\nYou specialize in ensuring property descriptions align perfectly with provided feature lists, removing any inaccuracies or exaggerations and improving the overall quality of the listing.\n\nA client has given you a JSON object containing the essential features of a property. They have also provided a draft of the property listing description, which you will review closely. \n\nYour task is to ensure that the description reflects only the features in the JSON object, removing any additional or exaggerated details not explicitly included in it.\n\nTo perform this task:\n\n- Compare each feature in the description with those listed in the JSON object.\n- Remove any features or language that are not factually supported by the JSON.\n- Output the revised property listing description and ensure all paragraphs and openening lines are formatted correctly.\n\nProvide the revised property listing description only, without extra explanations or comments.\n\nTake a deep breath and work on this problem step-by-step.\n\n### JSON OBJECT ###\n\n{\n    \"property_address\": \"1/1 30 Woodcroft Avenue, Broomhill, Glasgow, G11 7HY\",\n    \"property_overview\": \"Detached family home in a desirable location.\\nSpacious lounge with bay window.\\nModern kitchen with island and dining area.\\nPrimary bedroom with walk-in closet and ensuite.\\nFlexible dining room or additional bedroom option.\\nOffice space ideal for remote working.\",\n    \"external_features\": \"Well-maintained front garden with driveway.\\nIntegrated garage for secure parking.\\nLandscaped rear garden with patio area.\\nGarden room perfect for gym or office use.\",\n    \"local_area_highlights\": \"Close proximity to Broomhill Shopping Centre.\\nExcellent transport links via nearby train station.\\nWalking distance to local parks and green spaces.\\nHighly regarded schools in the vicinity.\\nVibrant community with cafes and restaurants.\",\n    \"floorplan\": [\n        {\n            \"ground_floor\": {\n                \"features\": [\n                    \"Kitchen adjacent to the family room.\",\n                    \"Family room located at the rear with access to the outdoors.\",\n                    \"Utility room accessible from the hall.\",\n                    \"Bathroom situated near the utility room.\",\n                    \"Dining room or additional bedroom option near the entrance.\",\n                    \"Lounge positioned at the front with bay window.\"\n                ]\n            }\n        },\n        {\n            \"first_floor\": {\n                \"features\": [\n                    \"Primary bedroom includes a walk-in closet.\",\n                    \"Ensuite bathroom connected to the primary bedroom.\",\n                    \"Two eaves storage areas accessible from the hall.\",\n                    \"Additional bathroom located centrally.\",\n                    \"Office space adjacent to the hall.\",\n                    \"Two further bedrooms located on this floor.\"\n                ]\n            }\n        }\n    ],\n    \"additional_notes\": \"Gas Central Heating\\nHome to Max Conrad Bell\"\n}\n\n### ORIGINAL DESCRIPTION ###\n  \n<DESCRIPTION> \nA well presented detached family home in a desirable location.\n\nThis well presented family home offers flexible accommodation and is situated in a desirable location. The property is formed over two levels and comprises of a spacious lounge with bay window, modern kitchen with island and dining area, primary bedroom with walk-in closet and ensuite, flexible dining room or additional bedroom option and office space ideal for remote working.\n\nThe ground floor accommodation comprises of the kitchen adjacent to the family room which is located at the rear of the property. The family room is a great space and has access to the outdoors. The utility room is accessed from the hall and is situated next to the bathroom. The dining room or additional bedroom option is located near the entrance and the lounge is positioned at the front of the property with bay window.\n\nThe first floor comprises of the primary bedroom which includes a walk-in closet and ensuite. There are two eaves storage areas which are accessed from the hall. The bathroom is located centrally and the office space is adjacent to the hall. There are two further bedrooms located on this floor.\n\nExternally, the front garden is well maintained and has a driveway leading to the integrated garage. The rear garden is landscaped and has a patio area. The garden room is a great space and could be used as a gym or office.\n\nLocal Area\nBroomhill is a popular West End suburb, with excellent transport links, including a train station, and is perfectly placed for gaining quick, easy access to the Expressway and, therefore, the Clyde Tunnel, M8, City Centre and Glasgow International Airport. The area offers a diverse range of facilities, with Broomhill Shopping Centre, a selection of cafes, restaurants and bars, and is within walking distance of local parks and green spaces. The property is also within the catchment area for some highly regarded schools.\n<ENDDESCRIPTION>\n\n"
+            }
+        ]
+    }
+]
+2024-11-10 13:27:14,764 - __main__ - DEBUG - Validation content: <DESCRIPTION>
+A well presented detached family home in a desirable location.
+
+This family home offers flexible accommodation and is situated in a desirable location. The property is formed over two levels and comprises a spacious lounge with bay window, modern kitchen with island and dining area, primary bedroom with walk-in closet and ensuite, flexible dining room or additional bedroom option, and office space ideal for remote working.
+
+The ground floor accommodation features the kitchen adjacent to the family room located at the rear of the property. The family room provides access to the outdoors. The utility room is accessible from the hall and situated next to the bathroom. The dining room or additional bedroom option is near the entrance, and the lounge is positioned at the front of the property with a bay window.
+
+The first floor consists of the primary bedroom, which includes a walk-in closet and ensuite. There are two eaves storage areas accessed from the hall. The bathroom is centrally located, and the office space is adjacent to the hall. Additionally, there are two further bedrooms on this floor.
+
+Externally, the front garden is well maintained and has a driveway leading to the integrated garage. The rear garden is landscaped and features a patio area. The garden room is a versatile space suitable for a gym or office.
+
+Local Area
+Broomhill is a popular West End suburb with excellent transport links via the nearby train station. The area offers a diverse range of facilities, including Broomhill Shopping Centre, a selection of cafes and restaurants, and is within walking distance of local parks and green spaces. The property is also within the catchment area for highly regarded schools.
+</DESCRIPTION>
+2024-11-10 13:33:10,382 - __main__ - INFO - User Selected Get Started
+2024-11-10 13:33:10,385 - __main__ - INFO - User selected the next step
